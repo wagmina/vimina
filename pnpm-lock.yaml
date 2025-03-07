@@ -74,7 +74,7 @@ importers:
     dependencies:
       viem:
         specifier: file:../../src/
-        version: file:src(typescript@5.8.2)
+        version: vimina@file:src(typescript@5.8.2)
 
   environments/next:
     dependencies:
@@ -89,7 +89,7 @@ importers:
         version: 18.2.0(react@18.2.0)
       viem:
         specifier: file:../../src/
-        version: file:src(typescript@5.6.2)
+        version: vimina@file:src(typescript@5.6.2)
     devDependencies:
       '@playwright/test':
         specifier: 1.41.2
@@ -111,7 +111,7 @@ importers:
     dependencies:
       viem:
         specifier: file:../../src/
-        version: file:src(typescript@5.8.2)
+        version: vimina@file:src(typescript@5.8.2)
 
   environments/tsc:
     dependencies:
@@ -120,13 +120,13 @@ importers:
         version: 5.8.2
       viem:
         specifier: file:../../src/
-        version: file:src(typescript@5.8.2)
+        version: vimina@file:src(typescript@5.8.2)
 
   environments/vite:
     dependencies:
       viem:
         specifier: file:../../src/
-        version: file:src(typescript@5.6.2)
+        version: vimina@file:src(typescript@5.6.2)
     devDependencies:
       '@playwright/test':
         specifier: 1.41.2
@@ -962,7 +962,6 @@ packages:
 
   bun@1.1.30:
     resolution: {integrity: sha512-ysRL1pq10Xba0jqVLPrKU3YIv0ohfp3cTajCPtpjCyppbn3lfiAVNpGoHfyaxS17OlPmWmR67UZRPw/EueQuug==}
-    cpu: [arm64, x64]
     os: [darwin, linux, win32]
     hasBin: true
 
@@ -2004,7 +2003,7 @@ packages:
     resolution: {integrity: sha512-OljLrQ9SQdOUqTaQxqL5dEfZWrXExyyWsozYlAWFawPVNuD83igl7uJD2RTkNMbniIYgt8l81eCJGIdQF7avLQ==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
 
-  viem@file:src:
+  vimina@file:src:
     resolution: {directory: src, type: directory}
     peerDependencies:
       typescript: '>=5.0.4'
@@ -3939,7 +3938,7 @@ snapshots:
 
   validate-npm-package-name@5.0.1: {}
 
-  viem@file:src(typescript@5.6.2):
+  vimina@file:src(typescript@5.6.2):
     dependencies:
       '@mina-js/connect': https://pkg.pr.new/palladians/mina-js/@mina-js/connect@d652e7a(typescript@5.6.2)
       '@mina-js/providers': https://pkg.pr.new/palladians/mina-js/@mina-js/providers@d652e7a(typescript@5.6.2)
@@ -3959,7 +3958,7 @@ snapshots:
       - encoding
       - utf-8-validate
 
-  viem@file:src(typescript@5.8.2):
+  vimina@file:src(typescript@5.8.2):
     dependencies:
       '@mina-js/connect': https://pkg.pr.new/palladians/mina-js/@mina-js/connect@d652e7a(typescript@5.8.2)
       '@mina-js/providers': https://pkg.pr.new/palladians/mina-js/@mina-js/providers@d652e7a(typescript@5.8.2)
