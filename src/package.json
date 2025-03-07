@@ -69,13 +69,27 @@
   },
   "typesVersions": {
     "*": {
-      "accounts": ["./_types/accounts/index.d.ts"],
-      "actions": ["./_types/actions/index.d.ts"],
-      "chains": ["./_types/chains/index.d.ts"],
-      "chains/utils": ["./_types/chains/utils.d.ts"],
-      "node": ["./_types/node/index.d.ts"],
-      "utils": ["./_types/utils/index.d.ts"],
-      "window": ["./_types/window/index.d.ts"]
+      "accounts": [
+        "./_types/accounts/index.d.ts"
+      ],
+      "actions": [
+        "./_types/actions/index.d.ts"
+      ],
+      "chains": [
+        "./_types/chains/index.d.ts"
+      ],
+      "chains/utils": [
+        "./_types/chains/utils.d.ts"
+      ],
+      "node": [
+        "./_types/node/index.d.ts"
+      ],
+      "utils": [
+        "./_types/utils/index.d.ts"
+      ],
+      "window": [
+        "./_types/window/index.d.ts"
+      ]
     }
   },
   "peerDependencies": {
@@ -94,6 +108,7 @@
     "@noble/hashes": "1.6.1",
     "@scure/bip32": "1.6.0",
     "@scure/bip39": "1.5.0",
+    "bs58": "^6.0.0",
     "isows": "1.0.6",
     "o1js": "^1.6.0",
     "ws": "8.18.0"
@@ -101,14 +116,23 @@
   "license": "MIT",
   "homepage": "https://viem.sh",
   "repository": "wevm/viem",
-  "authors": ["awkweb.eth", "jxom.eth"],
+  "authors": [
+    "awkweb.eth",
+    "jxom.eth"
+  ],
   "funding": [
     {
       "type": "github",
       "url": "https://github.com/sponsors/wevm"
     }
   ],
-  "keywords": ["mina", "dapps", "wallet", "web3", "typescript"],
+  "keywords": [
+    "mina",
+    "dapps",
+    "wallet",
+    "web3",
+    "typescript"
+  ],
   "devDependencies": {
     "@aurowallet/mina-provider": "^1.0.7"
   }

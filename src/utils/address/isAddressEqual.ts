@@ -1,5 +1,4 @@
-import type { Address } from '@/lib/connect/viem'
-
+import type { Address } from '../../accounts/index.js'
 import {
   InvalidAddressError,
   type InvalidAddressErrorType,
