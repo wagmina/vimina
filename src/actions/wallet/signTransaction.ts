@@ -1,7 +1,6 @@
 import type { SendTransactionArgs } from '@aurowallet/mina-provider'
 import { formatMina } from '@mina-js/utils'
 import type { ZkappCommand } from 'o1js/dist/web/bindings/mina-transaction/gen/transaction-json'
-import { TransactionTypeNotSupportedError } from '~viem/actions/wallet/sendTransaction.js'
 import type { Account } from '../../accounts/types.js'
 import {
   type ParseAccountErrorType,
@@ -36,6 +35,7 @@ import {
   type GetNetworkIdErrorType,
   getNetworkId,
 } from '../public/getNetworkId.js'
+import { TransactionTypeNotSupportedError } from './sendTransaction.js'
 
 export type SignTransactionRequest = UnionOmit<TransactionRequest, 'from'>
 
