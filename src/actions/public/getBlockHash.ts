@@ -1,31 +1,31 @@
-import type { Client } from "../../clients/createClient";
-import type { Transport } from "../../clients/transports/createTransport";
-import type { ErrorType } from "../../errors/utils";
-import type { Chain } from "../../types/chain";
-import type { RequestErrorType } from "../../utils/buildRequest";
+import type { Client } from '../../clients/createClient.js'
+import type { Transport } from '../../clients/transports/createTransport.js'
+import type { ErrorType } from '../../errors/utils.js'
+import type { Chain } from '../../types/chain.js'
+import type { RequestErrorType } from '../../utils/buildRequest.js'
 import {
-  getCache,
   type GetCacheErrorType,
+  getCache,
   withCache,
-} from "../../utils/promise/withCache";
+} from '../../utils/promise/withCache.js'
 
 export type GetBlockHashParameters = {
   /** Time (in ms) that cached block number will remain in memory. */
-  cacheTime?: number | undefined;
-};
+  cacheTime?: number | undefined
+}
 
-export type GetBlockHashReturnType = string;
+export type GetBlockHashReturnType = string
 
-export type GetBlockHashErrorType = RequestErrorType | ErrorType;
+export type GetBlockHashErrorType = RequestErrorType | ErrorType
 
-const cacheKey = (id: string) => `blockNumber.${id}`;
+const cacheKey = (id: string) => `blockNumber.${id}`
 
 /** @internal */
-export type GetBlockHashCacheErrorType = GetCacheErrorType | ErrorType;
+export type GetBlockHashCacheErrorType = GetCacheErrorType | ErrorType
 
 /** @internal */
 export function getBlockHashCache(id: string) {
-  return getCache(cacheKey(id));
+  return getCache(cacheKey(id))
 }
 
 /**
@@ -53,13 +53,13 @@ export function getBlockHashCache(id: string) {
  */
 export async function getBlockHash<chain extends Chain | undefined>(
   client: Client<Transport, chain>,
-  { cacheTime = client.cacheTime }: GetBlockHashParameters = {}
+  { cacheTime = client.cacheTime }: GetBlockHashParameters = {},
 ): Promise<GetBlockHashReturnType> {
   return withCache(
     () =>
       client.request({
-        method: "mina_blockHash",
+        method: 'mina_blockHash',
       }),
-    { cacheKey: cacheKey(client.uid), cacheTime }
-  );
+    { cacheKey: cacheKey(client.uid), cacheTime },
+  )
 }
