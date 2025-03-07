@@ -1,5 +1,4 @@
-import type { Address } from '@/lib/connect/viem'
-
+import type { Address } from '../accounts/index.js'
 import { getTransactionCount } from '../actions/public/getTransactionCount.js'
 import type { Client } from '../clients/createClient.js'
 import type { MaybePromise } from '../types/utils.js'

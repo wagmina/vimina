@@ -36,5 +36,5 @@ export type ParseAccount<
   ? Prettify<JsonRpcAccount<accountOrAddress>>
   : accountOrAddress
 
-export type { Account } from '../accounts/types.js'
+export type { Address, Account } from '../accounts/types.js'
 export type { HDKey } from '@scure/bip32'

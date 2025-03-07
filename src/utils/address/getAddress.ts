@@ -1,10 +1,7 @@
-import {
-  type Address,
-  InvalidAddressError,
-  isAddress,
-} from '@/lib/connect/viem'
+import type { Address } from '../../accounts/index.js'
+import { InvalidAddressError } from '../../errors/address.js'
 import type { ErrorType } from '../../errors/utils.js'
-import type { IsAddressErrorType } from './isAddress.js'
+import { type IsAddressErrorType, isAddress } from './isAddress.js'
 
 export type GetAddressErrorType = IsAddressErrorType | ErrorType
 

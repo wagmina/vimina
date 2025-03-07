@@ -1,6 +1,6 @@
-import type { Address } from '@/lib/connect/viem'
 import { sha256 } from '@noble/hashes/sha256'
 import bs58 from 'bs58'
+import type { Address } from '../../accounts/index.js'
 import type { ErrorType } from '../../errors/utils.js'
 import { LruMap } from '../lru.js'
 

@@ -1,6 +1,4 @@
-import type { Address } from '@/lib/connect/viem'
-
-import type { Account } from '../accounts/types.js'
+import type { Account, Address } from '../accounts/types.js'
 import type { ErrorType } from '../errors/utils.js'
 import type { ParseAccount } from '../types/account.js'
 import type { Chain } from '../types/chain.js'

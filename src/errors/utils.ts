@@ -1,4 +1,4 @@
-import type { Address } from '@/lib/connect/viem'
+import type { Address } from '../accounts/index.js'
 
 export type ErrorType<name extends string = 'Error'> = Error & { name: name }
 
