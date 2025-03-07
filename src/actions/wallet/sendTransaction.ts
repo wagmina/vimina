@@ -165,6 +165,7 @@ export async function sendTransaction<
       case 'zkapp': {
         const auroWalletTransactionParams: SendTransactionArgs = {
           transaction: JSON.stringify(parameters.zkappCommand),
+          // @ts-ignore for exactOptionalPropertyTypes
           feePayer: parameters.feePayer
             ? {
                 fee: parameters.feePayer.fee
@@ -186,6 +187,7 @@ export async function sendTransaction<
         return res.hash
       }
       case 'payment': {
+        // @ts-ignore for exactOptionalPropertyTypes
         const auroWalletPaymentParams: SendPaymentArgs = {
           to: parameters.to,
           fee: parameters.fee ? Number(formatMina(parameters.fee)) : undefined,
@@ -205,6 +207,7 @@ export async function sendTransaction<
         return res.hash
       }
       case 'delegation': {
+        // @ts-ignore for exactOptionalPropertyTypes
         const auroWalletDelegationParams: SendStakeDelegationArgs = {
           to: parameters.to,
           fee: parameters.fee ? Number(formatMina(parameters.fee)) : undefined,

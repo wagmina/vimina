@@ -163,6 +163,7 @@ export async function signTransaction<
       try {
         const auroWalletTransactionParams: SendTransactionArgs = {
           transaction: JSON.stringify(parameters.zkappCommand),
+          // @ts-ignore for exactOptionalPropertyTypes
           feePayer: parameters.feePayer
             ? {
                 fee: parameters.feePayer.fee

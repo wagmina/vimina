@@ -178,8 +178,8 @@ importers:
         version: 8.18.0
     devDependencies:
       '@aurowallet/mina-provider':
-        specifier: ^1.0.7
-        version: 1.0.7
+        specifier: 1.0.6
+        version: 1.0.6
 
 packages:
 
@@ -199,8 +199,8 @@ packages:
     resolution: {integrity: sha512-FYp6GBAgsNz81BkfItRz8RLZO03w5+BaeiPma1uCfmxTnxbtuMrI/dbzGiOk8VghO108uFI0oJo0OkewdSHw7g==}
     engines: {node: '>=18'}
 
-  '@aurowallet/mina-provider@1.0.7':
-    resolution: {integrity: sha512-AOTkm6LnqK4K/sRZ96wNxQ+jX9vcEUIpazddBqFRzLOArvF8EPJqmBK8Knv280uEOKi3y3oG5tTZ+UBHK2wf+g==}
+  '@aurowallet/mina-provider@1.0.6':
+    resolution: {integrity: sha512-QJwE9eOD6zAUs6FGE3/ix5QNEc4/VZbz0gu4rcnfuWSbfNcLZPAf/9UYI33sRl3oo5Ttsf7lM/WAFhF5hipetw==}
 
   '@babel/helper-string-parser@7.25.9':
     resolution: {integrity: sha512-4A/SCr/2KLd5jrtOMFzaKjVtAei3+2r/NChoBNoZ3EyP/+GlhoaEGoWOZUmFmoITP7zOJyHIMm+DYRd8o3PvHA==}
@@ -2174,7 +2174,7 @@ snapshots:
       typescript: 5.3.3
       validate-npm-package-name: 5.0.1
 
-  '@aurowallet/mina-provider@1.0.7':
+  '@aurowallet/mina-provider@1.0.6':
     dependencies:
       '@types/eventemitter3': 2.0.4
       '@types/uuid': 8.3.4
@@ -3948,6 +3948,7 @@ snapshots:
       '@noble/hashes': 1.6.1
       '@scure/bip32': 1.6.0
       '@scure/bip39': 1.5.0
+      bs58: 6.0.0
       isows: 1.0.6(ws@8.18.0)
       o1js: 1.9.1
       ws: 8.18.0
@@ -3967,6 +3968,7 @@ snapshots:
       '@noble/hashes': 1.6.1
       '@scure/bip32': 1.6.0
       '@scure/bip39': 1.5.0
+      bs58: 6.0.0
       isows: 1.0.6(ws@8.18.0)
       o1js: 1.9.1
       ws: 8.18.0

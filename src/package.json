@@ -134,6 +134,6 @@
     "typescript"
   ],
   "devDependencies": {
-    "@aurowallet/mina-provider": "^1.0.7"
+    "@aurowallet/mina-provider": "1.0.6"
   }
 }
