@@ -5,10 +5,8 @@
     "bench": "vitest bench",
     "bench:types": "TYPES=true vitest -c ./test/vitest.config.ts bench-d.ts",
     "build": "pnpm clean && pnpm build:cjs && pnpm build:esm && pnpm build:types",
-    "build:cjs": "pnpm build:trustedSetups:start && tsc --project ./tsconfig.build.json --module commonjs --outDir ./src/_cjs --removeComments --verbatimModuleSyntax false && printf '{\"type\":\"commonjs\"}' > ./src/_cjs/package.json && pnpm build:trustedSetups:end",
+    "build:cjs": "tsc --project ./tsconfig.build.json --module commonjs --outDir ./src/_cjs --removeComments --verbatimModuleSyntax false && printf '{\"type\":\"commonjs\"}' > ./src/_cjs/package.json",
     "build:esm": "tsc --project ./tsconfig.build.json --module es2020 --outDir ./src/_esm && printf '{\"type\": \"module\",\"sideEffects\":false}' > ./src/_esm/package.json",
-    "build:trustedSetups:start": "mv src/node/trustedSetups.ts src/node/trustedSetups_esm.ts && mv src/node/trustedSetups_cjs.ts src/node/trustedSetups.ts",
-    "build:trustedSetups:end": "mv src/node/trustedSetups.ts src/node/trustedSetups_cjs.ts && mv src/node/trustedSetups_esm.ts src/node/trustedSetups.ts",
     "build:types": "tsc --project ./tsconfig.build.json --module esnext --declarationDir ./src/_types --emitDeclarationOnly --declaration --declarationMap",
     "changeset:prepublish": "pnpm version:update && bun scripts/prepublishOnly.ts && pnpm build",
     "changeset:publish": "pnpm changeset:prepublish && changeset publish",
@@ -85,10 +83,9 @@
       "src": {
         "entry": [
           "index.ts!",
-          "{account-abstraction,accounts,actions,celo,chains,ens,experimental,experimental/erc7739,linea,node,nonce,op-stack,siwe,utils,window,zksync}/index.ts!",
+          "{accounts,actions,chains,node,nonce,utils,window}/index.ts!",
           "chains/utils.ts!"
-        ],
-        "ignore": ["node/trustedSetups_cjs.ts"]
+        ]
       },
       "site": {
         "project": ["**/*.ts", "**/*.tsx"]
