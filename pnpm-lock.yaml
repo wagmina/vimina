@@ -74,7 +74,7 @@ importers:
     dependencies:
       viem:
         specifier: file:../../src/
-        version: link:../../src
+        version: file:src(typescript@5.8.2)
 
   environments/next:
     dependencies:
@@ -89,7 +89,7 @@ importers:
         version: 18.2.0(react@18.2.0)
       viem:
         specifier: file:../../src/
-        version: file:src(typescript@5.6.2)(zod@3.23.8)
+        version: file:src(typescript@5.6.2)
     devDependencies:
       '@playwright/test':
         specifier: 1.41.2
@@ -111,22 +111,22 @@ importers:
     dependencies:
       viem:
         specifier: file:../../src/
-        version: link:../../src
+        version: file:src(typescript@5.8.2)
 
   environments/tsc:
     dependencies:
       typescript:
         specifier: latest
-        version: 5.7.2
+        version: 5.8.2
       viem:
         specifier: file:../../src/
-        version: link:../../src
+        version: file:src(typescript@5.8.2)
 
   environments/vite:
     dependencies:
       viem:
         specifier: file:../../src/
-        version: file:src(typescript@5.6.2)(zod@3.23.8)
+        version: file:src(typescript@5.6.2)
     devDependencies:
       '@playwright/test':
         specifier: 1.41.2
@@ -143,6 +143,15 @@ importers:
 
   src:
     dependencies:
+      '@mina-js/connect':
+        specifier: https://pkg.pr.new/palladians/mina-js/@mina-js/connect@d652e7a
+        version: https://pkg.pr.new/palladians/mina-js/@mina-js/connect@d652e7a(typescript@5.8.2)
+      '@mina-js/providers':
+        specifier: https://pkg.pr.new/palladians/mina-js/@mina-js/providers@d652e7a
+        version: https://pkg.pr.new/palladians/mina-js/@mina-js/providers@d652e7a(typescript@5.8.2)
+      '@mina-js/utils':
+        specifier: https://pkg.pr.new/palladians/mina-js/@mina-js/utils@d652e7a
+        version: https://pkg.pr.new/palladians/mina-js/@mina-js/utils@d652e7a(typescript@5.8.2)
       '@noble/curves':
         specifier: 1.7.0
         version: 1.7.0
@@ -158,14 +167,18 @@ importers:
       isows:
         specifier: 1.0.6
         version: 1.0.6(ws@8.18.0)
+      o1js:
+        specifier: ^1.6.0
+        version: 1.6.0
       ws:
         specifier: 8.18.0
         version: 8.18.0
+    devDependencies:
+      '@aurowallet/mina-provider':
+        specifier: ^1.0.7
+        version: 1.0.7
 
 packages:
-
-  '@adraffy/ens-normalize@1.11.0':
-    resolution: {integrity: sha512-/3DDPKHqqIqxUULp8yP4zODUY1i+2xvVWsv8A79xGWdCAG+8sb0hRh0Rk2QyOJUnnbyPUAZYcpBuRe3nS2OIUg==}
 
   '@ampproject/remapping@2.3.0':
     resolution: {integrity: sha512-30iZtAPgz+LTIYoeivqYo853f02jBYSd5uGnGpkFV0M3xOt9aN73erkgYAmZU43x4VfqcnLxW9Kpg3R5LC4YYw==}
@@ -182,6 +195,9 @@ packages:
   '@arethetypeswrong/core@0.15.1':
     resolution: {integrity: sha512-FYp6GBAgsNz81BkfItRz8RLZO03w5+BaeiPma1uCfmxTnxbtuMrI/dbzGiOk8VghO108uFI0oJo0OkewdSHw7g==}
     engines: {node: '>=18'}
+
+  '@aurowallet/mina-provider@1.0.7':
+    resolution: {integrity: sha512-AOTkm6LnqK4K/sRZ96wNxQ+jX9vcEUIpazddBqFRzLOArvF8EPJqmBK8Knv280uEOKi3y3oG5tTZ+UBHK2wf+g==}
 
   '@babel/helper-string-parser@7.25.9':
     resolution: {integrity: sha512-4A/SCr/2KLd5jrtOMFzaKjVtAei3+2r/NChoBNoZ3EyP/+GlhoaEGoWOZUmFmoITP7zOJyHIMm+DYRd8o3PvHA==}
@@ -498,6 +514,36 @@ packages:
   '@manypkg/get-packages@1.1.3':
     resolution: {integrity: sha512-fo+QhuU3qE/2TQMQmbVMqaQ6EWbMhi4ABWP+O4AM1NqPBuy0OrApV5LO6BrrgnhtAHS2NH6RrVk9OL181tTi8A==}
 
+  '@mina-js/accounts@https://pkg.pr.new/palladians/mina-js/@mina-js/accounts@d652e7a':
+    resolution: {tarball: https://pkg.pr.new/palladians/mina-js/@mina-js/accounts@d652e7a}
+    version: 0.0.1
+    peerDependencies:
+      typescript: ^5.0.0
+
+  '@mina-js/connect@https://pkg.pr.new/palladians/mina-js/@mina-js/connect@d652e7a':
+    resolution: {tarball: https://pkg.pr.new/palladians/mina-js/@mina-js/connect@d652e7a}
+    version: 0.0.1
+    peerDependencies:
+      typescript: ^5.0.0
+
+  '@mina-js/klesia-sdk@https://pkg.pr.new/palladians/mina-js/@mina-js/klesia-sdk@d652e7a':
+    resolution: {tarball: https://pkg.pr.new/palladians/mina-js/@mina-js/klesia-sdk@d652e7a}
+    version: 0.0.1
+    peerDependencies:
+      typescript: ^5.0.0
+
+  '@mina-js/providers@https://pkg.pr.new/palladians/mina-js/@mina-js/providers@d652e7a':
+    resolution: {tarball: https://pkg.pr.new/palladians/mina-js/@mina-js/providers@d652e7a}
+    version: 0.0.1
+    peerDependencies:
+      typescript: ^5.0.0
+
+  '@mina-js/utils@https://pkg.pr.new/palladians/mina-js/@mina-js/utils@d652e7a':
+    resolution: {tarball: https://pkg.pr.new/palladians/mina-js/@mina-js/utils@d652e7a}
+    version: 0.0.1
+    peerDependencies:
+      typescript: ^5.0.0
+
   '@next/env@14.2.15':
     resolution: {integrity: sha512-S1qaj25Wru2dUpcIZMjxeMVSwkt8BK4dmWHHiBuRstcIyOsMapqT4A4jSB6onvqeygkSSmOkyny9VVx8JIGamQ==}
 
@@ -555,9 +601,19 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@noble/ciphers@0.6.0':
+    resolution: {integrity: sha512-mIbq/R9QXk5/cTfESb1OKtyFnk7oc1Om/8onA1158K9/OZUQFDEVy55jVTato+xmp3XX6F6Qh0zz0Nc1AxAlRQ==}
+
+  '@noble/curves@1.4.2':
+    resolution: {integrity: sha512-TavHr8qycMChk8UwMld0ZDRvatedkzWfH8IiaeGCfymOP5i0hSCozz9vHOL0nkwk7HRMlFnAiKpS2jrUmSybcw==}
+
   '@noble/curves@1.7.0':
     resolution: {integrity: sha512-UTMhXK9SeDhFJVrHeUJ5uZlI6ajXg10O6Ddocf9S6GjbSBVZsJo88HzKwXznNfGpMTRDyJkqMjNDPYgf0qFWnw==}
     engines: {node: ^14.21.3 || >=16}
+
+  '@noble/hashes@1.4.0':
+    resolution: {integrity: sha512-V1JJ1WTRUqHHrOSh597hURcMqVKVGL/ea3kv0gSnEdsEZ0/+VyPghM1lMNGc00z7CIQorSvbKpuJkxvuHbvdbg==}
+    engines: {node: '>= 16'}
 
   '@noble/hashes@1.6.0':
     resolution: {integrity: sha512-YUULf0Uk4/mAA89w+k3+yUYh6NrEvxZa5T6SY3wlMvE2chHkxFUUIDI8/XW1QSC357iA5pSnqt7XEhvFOqmDyQ==}
@@ -622,6 +678,7 @@ packages:
   '@playwright/test@1.41.2':
     resolution: {integrity: sha512-qQB9h7KbibJzrDpkXkYvsmiDJK14FULCCZgEcoe2AvFAS64oCirWTwzTlAYEbKaRxWs5TFesE1Na6izMv3HfGg==}
     engines: {node: '>=16'}
+    deprecated: Please update to the latest version of Playwright to test up-to-date browsers.
     hasBin: true
 
   '@polka/url@1.0.0-next.28':
@@ -717,11 +774,20 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@scure/base@1.1.9':
+    resolution: {integrity: sha512-8YKhl8GHiNI/pU2VMaofa2Tor7PJRAjwQLBBuilkJ9L5+13yVbC7JO/wS7piioAvPSwR3JKM1IJ/u4xQzbcXKg==}
+
   '@scure/base@1.2.1':
     resolution: {integrity: sha512-DGmGtC8Tt63J5GfHgfl5CuAXh96VF/LD8K9Hr/Gv0J2lAoRGlPOMpqMpMbCTOoOJMZCk2Xt+DskdDyn6dEFdzQ==}
 
+  '@scure/bip32@1.4.0':
+    resolution: {integrity: sha512-sVUpc0Vq3tXCkDGYVWGIZTRfnvu8LoTDaev7vbwh0omSvVORONr960MQWdKqJDCReIEmTj3PAr73O3aoxz7OPg==}
+
   '@scure/bip32@1.6.0':
     resolution: {integrity: sha512-82q1QfklrUUdXJzjuRU7iG7D7XiFx5PHYVS0+oeNKhyDLT7WPqs6pBcM2W5ZdwOwKCwoE1Vy1se+DHjcXwCYnA==}
+
+  '@scure/bip39@1.3.0':
+    resolution: {integrity: sha512-disdg7gHuTDZtY+ZdkmLpPCk7fxZSu3gBiEGuoC1XYxv9cGx3Z6cpTggCgW6odSOOIXCiDjuGejW+aJKCY/pIQ==}
 
   '@scure/bip39@1.5.0':
     resolution: {integrity: sha512-Dop+ASYhnrwm9+HA/HwXg7j2ZqM6yk2fyLWb5znexjctFY3+E+eU8cIWI0Pql0Qx4hPZCijlGq4OL71g+Uz30A==}
@@ -750,6 +816,10 @@ packages:
   '@types/estree@1.0.6':
     resolution: {integrity: sha512-AYnb1nQyY49te+VRAVgmzfcgjYS91mY5P0TKUDCLEM+gNnA+3T6rWITXRLYCpahpqSQbN5cE+gHpnPyXjHWxcw==}
 
+  '@types/eventemitter3@2.0.4':
+    resolution: {integrity: sha512-em+O0kpbHLUB4TAu49b674ERppsDT/PFghJYZ5ISP/BwehjNn2Brqs4jO3xb5FM5Tosmz6TUd2Yy2pRxTwTRmw==}
+    deprecated: This is a stub types definition. eventemitter3 provides its own type definitions, so you do not need this installed.
+
   '@types/istanbul-lib-coverage@2.0.6':
     resolution: {integrity: sha512-2QF/t/auWm0lsy8XtKVPG19v3sSOQlJe/YHZgfjb/KBBHOGSV+J2q/S671rcq9uTBrLAXmZpqJiaQbMT+zNU1w==}
 
@@ -773,6 +843,9 @@ packages:
 
   '@types/scheduler@0.23.0':
     resolution: {integrity: sha512-YIoDCTH3Af6XM5VuwGG/QL/CJqga1Zm3NkU3HZ4ZHK2fRMPYP1VczsTUqtsf43PH/iJNVlPHAo2oWX7BSdB2Hw==}
+
+  '@types/uuid@8.3.4':
+    resolution: {integrity: sha512-c/I8ZRb51j+pYGAu5CrFMRxqZ2ke4y2grEBO5AUjgSkSk+qT2Ea+OdWElz/OiMf5MNpn2b17kuVBwZLQJXzihw==}
 
   '@types/ws@8.5.13':
     resolution: {integrity: sha512-osM/gWBTPKgHV8XkTunnegTRIsvF6owmf5w+JtAfOw472dptdm0dlGv4xCt6GwQRcC2XVOvvRE/0bAoQcL2QkA==}
@@ -801,17 +874,6 @@ packages:
 
   '@vitest/utils@1.0.4':
     resolution: {integrity: sha512-gsswWDXxtt0QvtK/y/LWukN7sGMYmnCcv1qv05CsY6cU/Y1zpGX1QuvLs+GO1inczpE6Owixeel3ShkjhYtGfA==}
-
-  abitype@1.0.6:
-    resolution: {integrity: sha512-MMSqYh4+C/aVqI2RQaWqbvI4Kxo5cQV40WQ4QFtDnNzCkqChm8MuENhElmynZlO0qUy/ObkEUaXtKqYnx1Kp3A==}
-    peerDependencies:
-      typescript: '>=5.0.4'
-      zod: ^3 >=3.22.0
-    peerDependenciesMeta:
-      typescript:
-        optional: true
-      zod:
-        optional: true
 
   acorn-walk@8.3.4:
     resolution: {integrity: sha512-ueEepnujpqee2o5aIYnvHU6C0A42MNdsIDeqy5BydrkuC5R1ZuUFnm27EeFJGoEHJQgn3uleRvmTXaJgfXbt4g==}
@@ -873,6 +935,9 @@ packages:
     resolution: {integrity: sha512-pbnl5XzGBdrFU/wT4jqmJVPn2B6UHPBOhzMQkY/SPUPB6QtUXtmBHBIwCbXJol93mOpGMnQyP/+BB19q04xj7g==}
     engines: {node: '>=4'}
 
+  blakejs@1.2.1:
+    resolution: {integrity: sha512-QXUSXI3QVc/gJME0dBpXrag1kbzOqCjCX8/b54ntNyW6sjtoqxqRk3LTmXzaJoh71zMsDCjM+47jS7XiwN/+fQ==}
+
   brace-expansion@1.1.11:
     resolution: {integrity: sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA==}
 
@@ -888,6 +953,7 @@ packages:
 
   bun@1.1.30:
     resolution: {integrity: sha512-ysRL1pq10Xba0jqVLPrKU3YIv0ohfp3cTajCPtpjCyppbn3lfiAVNpGoHfyaxS17OlPmWmR67UZRPw/EueQuug==}
+    cpu: [arm64, x64]
     os: [darwin, linux, win32]
     hasBin: true
 
@@ -902,6 +968,10 @@ packages:
   cac@6.7.14:
     resolution: {integrity: sha512-b6Ilus+c3RrdDk+JhLKUAQfzzgLEPy6wcXqS7f/xe1EETvsDP6GORG7SFuOs6cID5YkqchW/LXZbX5bc8j7ZcQ==}
     engines: {node: '>=8'}
+
+  cachedir@2.4.0:
+    resolution: {integrity: sha512-9EtFOZR8g22CL7BWjJ9BUx1+A/djkofnyW3aOXZORNW2kxoUpx2h+uN2cOqwPmFhnpVmxg+KW2OjOSgChTEvsQ==}
+    engines: {node: '>=6'}
 
   caniuse-lite@1.0.30001677:
     resolution: {integrity: sha512-fmfjsOlJUpMWu+mAAtZZZHz7UEwsUxIIvu1TJfO1HqFQvB/B+ii0xr9B5HpbZY/mC4XZ8SvjHJqtAY6pDPQEog==}
@@ -983,6 +1053,10 @@ packages:
   convert-source-map@2.0.0:
     resolution: {integrity: sha512-Kvp459HrV2FEJ1CAsi1Ku+MY3kasH19TFykTz2xWmMeq6bk2NU3XXvfJ+Q61m0xktWwt+1HSYf3JZsTms3aRJg==}
 
+  copy-anything@3.0.5:
+    resolution: {integrity: sha512-yCEafptTtb4bk7GLEQoM8KVJpxAfdBJYaXyzQEgQQQgYrZiDp8SJmGKlYza6CYjEDNstAdNdKA3UuoULlEbS6w==}
+    engines: {node: '>=12.13'}
+
   cross-spawn@5.1.0:
     resolution: {integrity: sha512-pTgQJ5KC0d2hcY8eyL1IzlBPYjTkyH72XRZPnLyKus2mBfNjQs3klqbJU2VILqZryAZUt9JOb3h/mWMy23/f5A==}
 
@@ -1063,8 +1137,8 @@ packages:
     engines: {node: '>=4'}
     hasBin: true
 
-  eventemitter3@5.0.1:
-    resolution: {integrity: sha512-GWkBvjiSZK87ELrYOSESUYeVIc9mvLLf/nXalMOS5dYrgZq9o5OVkbZAVM06CVxYsCwH9BDZFPlQTlPA1j4ahA==}
+  eventemitter3@4.0.7:
+    resolution: {integrity: sha512-8guHBZCwKnFhYdHr2ysuRWErTwhoN2X8XELRlrRwpmfeY2jjuUN4taQMsULKUVo1K4DvZl+0pgfyoysHxvmvEw==}
 
   execa@8.0.1:
     resolution: {integrity: sha512-VyhnebXciFV2DESc+p6B+y0LjSm0krU4OgJN44qFAhBY0TJ+1V61tYD2+wHusZ6F9n5K+vl8k0sTy7PEfV4qpg==}
@@ -1222,12 +1296,19 @@ packages:
     resolution: {integrity: sha512-2AT6j+gXe/1ueqbW6fLZJiIw3F8iXGJtt0yDrZaBhAZEG1raiTxKWU+IPqMCzQAXOUCKdA4UDMgacKH25XG2Cw==}
     engines: {node: '>=4'}
 
+  is-what@4.1.16:
+    resolution: {integrity: sha512-ZhMwEosbFJkA0YhFnNDgTM4ZxDRsS6HqTo7qsZM08fehyRYIYa0yHu5R6mgo1n/8MgaPBXiPimPD77baVFYg+A==}
+    engines: {node: '>=12.13'}
+
   is-windows@1.0.2:
     resolution: {integrity: sha512-eXK1UInq2bPmjyX6e3VHIzMLobc4J94i4AWn+Hpq3OU5KkrRC96OAcR3PRJ/pGu6m8TRnBHP9dkXQVsT/COVIA==}
     engines: {node: '>=0.10.0'}
 
   isexe@2.0.0:
     resolution: {integrity: sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==}
+
+  isomorphic-fetch@3.0.0:
+    resolution: {integrity: sha512-qvUtwJ3j6qwsF3jLxkZ72qCgjMysPzDfeV240JHiGZsANBYd+EEuu35v7dfrJ9Up0Ak07D7GGSkGhCHTqg/5wA==}
 
   isows@1.0.6:
     resolution: {integrity: sha512-lPHCayd40oW98/I0uvgaHKWCSvkzY27LjWLbtzOm64yQ+G3Q5npjjbdppU65iZXkK1Zt+kH9pfegli0AYfwYYw==}
@@ -1253,6 +1334,9 @@ packages:
   jiti@2.4.0:
     resolution: {integrity: sha512-H5UpaUI+aHOqZXlYOaFP/8AzKsg+guWu+Pr3Y8i7+Y3zr1aXAvCvTAQ1RxSc6oVD8R8c7brgNtTVP91E7upH/g==}
     hasBin: true
+
+  js-sha256@0.9.0:
+    resolution: {integrity: sha512-sga3MHh9sgQN2+pJ9VYZ+1LPwXOxuBJBA5nrR5/ofPfuiJBE2hnjsaN8se8JznOmGLN2p49Pe5U/ttafcs/apA==}
 
   js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
@@ -1329,6 +1413,9 @@ packages:
     resolution: {integrity: sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==}
     engines: {node: '>= 8'}
 
+  micro-ftch@0.4.2:
+    resolution: {integrity: sha512-7gXEYECF4DAoDUOViftg/rhUg/1R5n7tGHv/9Lc7xp9e32+FnLNcA6hMV+c2/gEnP+35CQVe09RWf6l4j7K6vA==}
+
   micromatch@4.0.8:
     resolution: {integrity: sha512-PXwfBhYu0hBCPw8Dn0E+WDYb7af3dSLVWKi3HGv84IdF4TyFoC0ysxFd0Goxw7nSv4T/PzEJQxsYsEiFCKo2BA==}
     engines: {node: '>=8.6'}
@@ -1336,6 +1423,9 @@ packages:
   mimic-fn@4.0.0:
     resolution: {integrity: sha512-vqiC06CuhBTUdZH+RYl8sFrL096vA45Ok5ISO6sE/Mr1jRbGH4Csnhi8f3wKVl7x8mO4Au7Ir9D3Oyv1VYMFJw==}
     engines: {node: '>=12'}
+
+  mina-signer@3.0.7:
+    resolution: {integrity: sha512-7eYp/6WWj2VzJjvfC8dNeGMud/brdBrzkUsCdysFFXnfV2/FVpVhAGCMfaS6hs0HJtS4+eplmiD2hXfshQS8CQ==}
 
   minimatch@3.1.2:
     resolution: {integrity: sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==}
@@ -1420,6 +1510,16 @@ packages:
     resolution: {integrity: sha512-ppwTtiJZq0O/ai0z7yfudtBpWIoxM8yE6nHi1X47eFR2EWORqfbu6CnPlNsjeN683eT0qG6H/Pyf9fCcvjnnnQ==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
 
+  o1js@1.6.0:
+    resolution: {integrity: sha512-5pHCM0qIHG+MhLlcRJZRK8YFC7MOCjlxwSYbmrLDKER267eUip7JRDtWATytIRxtCPqOBvqKeJb0hR/mvjWxqg==}
+    engines: {node: '>=18.14.0'}
+    hasBin: true
+
+  o1js@1.9.1:
+    resolution: {integrity: sha512-QbeFb2WU4YpCRIz/2hu3lhwioDntpmn8M7Zl6LrIh3fIPoHMQcN9OIqE8whN83ttcioV3HsJwszKtfkBC5vEYQ==}
+    engines: {node: '>=18.14.0'}
+    hasBin: true
+
   object-assign@4.1.1:
     resolution: {integrity: sha512-rJgTQnkUnH1sFw8yT6VSU3zD3sWmu6sZhIseY8VX+GRu3P6F7Fu+JNDoXfklElbLJSnc3FUQHVe4cU5hj+BcUg==}
     engines: {node: '>=0.10.0'}
@@ -1437,14 +1537,6 @@ packages:
 
   outdent@0.5.0:
     resolution: {integrity: sha512-/jHxFIzoMXdqPzTaCpFzAAWhpkSjZPF4Vsn6jAfNpmbH/ymsmd7Qc6VE9BGn0L6YMj6uwpQLxCECpus4ukKS9Q==}
-
-  ox@0.1.2:
-    resolution: {integrity: sha512-ak/8K0Rtphg9vnRJlbOdaX9R7cmxD2MiSthjWGaQdMk3D7hrAlDoM+6Lxn7hN52Za3vrXfZ7enfke/5WjolDww==}
-    peerDependencies:
-      typescript: '>=5.4.0'
-    peerDependenciesMeta:
-      typescript:
-        optional: true
 
   p-filter@2.1.0:
     resolution: {integrity: sha512-ZBxxZ5sL2HghephhpGAQdoskxplTwr7ICaehZwLIlfL6acuVgZPm8yBNuRAFBGEqtD/hmUeq9eqLg2ys9Xr/yw==}
@@ -1595,6 +1687,9 @@ packages:
   readdirp@4.0.2:
     resolution: {integrity: sha512-yDMz9g+VaZkqBYS/ozoBJwaBhTbZo3UNYQHNRw1D3UFQB8oHB4uS/tAODO+ZLjGWmUbKnIlOWO+aaIiAxrUWHA==}
     engines: {node: '>= 14.16.0'}
+
+  reflect-metadata@0.1.14:
+    resolution: {integrity: sha512-ZhYeb6nRaXCfhnndflDK8qI6ZQ/YcWZCISRAWICW9XYqMUwjZM9Z0DveWX/ABN01oxSHwVxKQmxeYZSsm0jh5A==}
 
   regenerator-runtime@0.14.1:
     resolution: {integrity: sha512-dYnhHh0nJoMfnkZs6GmmhFknAGRrLznOu5nc9ML+EJxGvrx6H7teuevqVqCuPcPK//3eDrrjQhehXVx9cnkGdw==}
@@ -1782,6 +1877,10 @@ packages:
   summary@2.1.0:
     resolution: {integrity: sha512-nMIjMrd5Z2nuB2RZCKJfFMjgS3fygbeyGk9PxPPaJR1RIcyN9yn4A63Isovzm3ZtQuEkLBVgMdPup8UeLH7aQw==}
 
+  superjson@2.2.1:
+    resolution: {integrity: sha512-8iGv75BYOa0xRJHK5vRLEjE2H/i4lulTjzpUXic3Eg8akftYjkmQDa8JARQ42rlczXyFR3IeRoeFCc7RxHsYZA==}
+    engines: {node: '>=16'}
+
   supports-color@7.2.0:
     resolution: {integrity: sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw==}
     engines: {node: '>=8'}
@@ -1842,6 +1941,9 @@ packages:
   ts-expose-internals-conditionally@1.0.0-empty.0:
     resolution: {integrity: sha512-F8m9NOF6ZhdOClDVdlM8gj3fDCav4ZIFSs/EI3ksQbAAXVSCN/Jh5OCJDDZWBuBy9psFc6jULGDlPwjMYMhJDw==}
 
+  ts-pattern@5.6.2:
+    resolution: {integrity: sha512-d4IxJUXROL5NCa3amvMg6VQW2HVtZYmUTPfvVtO7zJWGYLJ+mry9v2OmYm+z67aniQoQ8/yFNadiEwtNS9qQiw==}
+
   tslib@2.8.1:
     resolution: {integrity: sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==}
 
@@ -1859,8 +1961,8 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
-  typescript@5.7.2:
-    resolution: {integrity: sha512-i5t66RHxDvVN40HfDd1PsEThGNnlMCMT3jMUuoh9/0TaqWevNontacunWyN02LA9/fIbEWlcHZcgTKb9QoaLfg==}
+  typescript@5.8.2:
+    resolution: {integrity: sha512-aJn6wq13/afZp/jT9QZmwEjDqqvSGp1VT5GVg+f/t6/oVyrgXM6BY1h9BRh/O5p3PlUPAe+WuiEZOmb/49RqoQ==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -1880,6 +1982,10 @@ packages:
   universalify@0.1.2:
     resolution: {integrity: sha512-rBJeI5CXAlmy1pV+617WB9J63U6XcazHHF2f2dbJix4XzpUF0RS3Zbj0FGIOCAva5P/d/GBOYaACQ1w+0azUkg==}
     engines: {node: '>= 4.0.0'}
+
+  uuid@8.3.2:
+    resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}
+    hasBin: true
 
   v8-to-istanbul@9.3.0:
     resolution: {integrity: sha512-kiGUalWN+rgBJ/1OHZsBtU4rXZOfj/7rKQxULKlIzwzQSvMJUUNgPwJEEh7gU6xEVxC0ahoOBvN2YI8GH6FNgA==}
@@ -1961,11 +2067,11 @@ packages:
   wcwidth@1.0.1:
     resolution: {integrity: sha512-XHPEwS0q6TaxcvG85+8EYkbiCux2XtWG2mkc47Ng2A77BQu9+DqIOJldST4HgPkuea7dvKSj5VgX3P1d4rW8Tg==}
 
-  webauthn-p256@0.0.10:
-    resolution: {integrity: sha512-EeYD+gmIT80YkSIDb2iWq0lq2zbHo1CxHlQTeJ+KkCILWpVy3zASH3ByD4bopzfk0uCwXxLqKGLqp2W4O28VFA==}
-
   webidl-conversions@3.0.1:
     resolution: {integrity: sha512-2JAn3z8AR6rjK8Sm8orRC0h/bcl/DqL7tRPdGZ4I1CjdF+EaMLmYxBHyXuKL849eucPFhvBoxMsflfOb8kxaeQ==}
+
+  whatwg-fetch@3.6.20:
+    resolution: {integrity: sha512-EqhiFU6daOA8kpjOWTL0olhVOF3i7OrFzSYiGsEMB8GcXS+RrzauAERX65xMeNWVqxA6HXH2m69Z9LaKKdisfg==}
 
   whatwg-url@5.0.0:
     resolution: {integrity: sha512-saE57nupxk6v3HY35+jzBwYa0rKSy0XR8JSxZPwgLr7ys0IBzhGviA1/TUGJLmSVqs8pb9AnvICXEuOHLprYTw==}
@@ -2033,8 +2139,6 @@ packages:
 
 snapshots:
 
-  '@adraffy/ens-normalize@1.11.0': {}
-
   '@ampproject/remapping@2.3.0':
     dependencies:
       '@jridgewell/gen-mapping': 0.3.5
@@ -2060,6 +2164,13 @@ snapshots:
       ts-expose-internals-conditionally: 1.0.0-empty.0
       typescript: 5.3.3
       validate-npm-package-name: 5.0.1
+
+  '@aurowallet/mina-provider@1.0.7':
+    dependencies:
+      '@types/eventemitter3': 2.0.4
+      '@types/uuid': 8.3.4
+      eventemitter3: 4.0.7
+      uuid: 8.3.2
 
   '@babel/helper-string-parser@7.25.9': {}
 
@@ -2385,6 +2496,84 @@ snapshots:
       globby: 11.1.0
       read-yaml-file: 1.1.0
 
+  '@mina-js/accounts@https://pkg.pr.new/palladians/mina-js/@mina-js/accounts@d652e7a(typescript@5.6.2)':
+    dependencies:
+      '@mina-js/providers': https://pkg.pr.new/palladians/mina-js/@mina-js/providers@d652e7a(typescript@5.6.2)
+      '@noble/ciphers': 0.6.0
+      '@noble/curves': 1.4.2
+      '@noble/hashes': 1.4.0
+      '@scure/base': 1.2.1
+      '@scure/bip32': 1.4.0
+      '@scure/bip39': 1.3.0
+      mina-signer: 3.0.7
+      typescript: 5.6.2
+      zod: 3.23.8
+
+  '@mina-js/accounts@https://pkg.pr.new/palladians/mina-js/@mina-js/accounts@d652e7a(typescript@5.8.2)':
+    dependencies:
+      '@mina-js/providers': https://pkg.pr.new/palladians/mina-js/@mina-js/providers@d652e7a(typescript@5.8.2)
+      '@noble/ciphers': 0.6.0
+      '@noble/curves': 1.4.2
+      '@noble/hashes': 1.4.0
+      '@scure/base': 1.2.1
+      '@scure/bip32': 1.4.0
+      '@scure/bip39': 1.3.0
+      mina-signer: 3.0.7
+      typescript: 5.8.2
+      zod: 3.23.8
+
+  '@mina-js/connect@https://pkg.pr.new/palladians/mina-js/@mina-js/connect@d652e7a(typescript@5.6.2)':
+    dependencies:
+      '@mina-js/accounts': https://pkg.pr.new/palladians/mina-js/@mina-js/accounts@d652e7a(typescript@5.6.2)
+      '@mina-js/klesia-sdk': https://pkg.pr.new/palladians/mina-js/@mina-js/klesia-sdk@d652e7a(typescript@5.6.2)
+      '@mina-js/providers': https://pkg.pr.new/palladians/mina-js/@mina-js/providers@d652e7a(typescript@5.6.2)
+      '@mina-js/utils': https://pkg.pr.new/palladians/mina-js/@mina-js/utils@d652e7a(typescript@5.6.2)
+      ts-pattern: 5.6.2
+      typescript: 5.6.2
+      zod: 3.23.8
+
+  '@mina-js/connect@https://pkg.pr.new/palladians/mina-js/@mina-js/connect@d652e7a(typescript@5.8.2)':
+    dependencies:
+      '@mina-js/accounts': https://pkg.pr.new/palladians/mina-js/@mina-js/accounts@d652e7a(typescript@5.8.2)
+      '@mina-js/klesia-sdk': https://pkg.pr.new/palladians/mina-js/@mina-js/klesia-sdk@d652e7a(typescript@5.8.2)
+      '@mina-js/providers': https://pkg.pr.new/palladians/mina-js/@mina-js/providers@d652e7a(typescript@5.8.2)
+      '@mina-js/utils': https://pkg.pr.new/palladians/mina-js/@mina-js/utils@d652e7a(typescript@5.8.2)
+      ts-pattern: 5.6.2
+      typescript: 5.8.2
+      zod: 3.23.8
+
+  '@mina-js/klesia-sdk@https://pkg.pr.new/palladians/mina-js/@mina-js/klesia-sdk@d652e7a(typescript@5.6.2)':
+    dependencies:
+      micro-ftch: 0.4.2
+      ts-pattern: 5.6.2
+      typescript: 5.6.2
+
+  '@mina-js/klesia-sdk@https://pkg.pr.new/palladians/mina-js/@mina-js/klesia-sdk@d652e7a(typescript@5.8.2)':
+    dependencies:
+      micro-ftch: 0.4.2
+      ts-pattern: 5.6.2
+      typescript: 5.8.2
+
+  '@mina-js/providers@https://pkg.pr.new/palladians/mina-js/@mina-js/providers@d652e7a(typescript@5.6.2)':
+    dependencies:
+      typescript: 5.6.2
+
+  '@mina-js/providers@https://pkg.pr.new/palladians/mina-js/@mina-js/providers@d652e7a(typescript@5.8.2)':
+    dependencies:
+      typescript: 5.8.2
+
+  '@mina-js/utils@https://pkg.pr.new/palladians/mina-js/@mina-js/utils@d652e7a(typescript@5.6.2)':
+    dependencies:
+      mina-signer: 3.0.7
+      superjson: 2.2.1
+      typescript: 5.6.2
+
+  '@mina-js/utils@https://pkg.pr.new/palladians/mina-js/@mina-js/utils@d652e7a(typescript@5.8.2)':
+    dependencies:
+      mina-signer: 3.0.7
+      superjson: 2.2.1
+      typescript: 5.8.2
+
   '@next/env@14.2.15': {}
 
   '@next/swc-darwin-arm64@14.2.15':
@@ -2414,9 +2603,17 @@ snapshots:
   '@next/swc-win32-x64-msvc@14.2.15':
     optional: true
 
+  '@noble/ciphers@0.6.0': {}
+
+  '@noble/curves@1.4.2':
+    dependencies:
+      '@noble/hashes': 1.4.0
+
   '@noble/curves@1.7.0':
     dependencies:
       '@noble/hashes': 1.6.0
+
+  '@noble/hashes@1.4.0': {}
 
   '@noble/hashes@1.6.0': {}
 
@@ -2518,13 +2715,26 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.24.3':
     optional: true
 
+  '@scure/base@1.1.9': {}
+
   '@scure/base@1.2.1': {}
+
+  '@scure/bip32@1.4.0':
+    dependencies:
+      '@noble/curves': 1.4.2
+      '@noble/hashes': 1.4.0
+      '@scure/base': 1.1.9
 
   '@scure/bip32@1.6.0':
     dependencies:
       '@noble/curves': 1.7.0
       '@noble/hashes': 1.6.1
       '@scure/base': 1.2.1
+
+  '@scure/bip39@1.3.0':
+    dependencies:
+      '@noble/hashes': 1.4.0
+      '@scure/base': 1.1.9
 
   '@scure/bip39@1.5.0':
     dependencies:
@@ -2554,6 +2764,10 @@ snapshots:
 
   '@types/estree@1.0.6': {}
 
+  '@types/eventemitter3@2.0.4':
+    dependencies:
+      eventemitter3: 4.0.7
+
   '@types/istanbul-lib-coverage@2.0.6': {}
 
   '@types/node@12.20.55': {}
@@ -2579,6 +2793,8 @@ snapshots:
       csstype: 3.1.3
 
   '@types/scheduler@0.23.0': {}
+
+  '@types/uuid@8.3.4': {}
 
   '@types/ws@8.5.13':
     dependencies:
@@ -2642,11 +2858,6 @@ snapshots:
       loupe: 2.3.7
       pretty-format: 29.7.0
 
-  abitype@1.0.6(typescript@5.6.2)(zod@3.23.8):
-    optionalDependencies:
-      typescript: 5.6.2
-      zod: 3.23.8
-
   acorn-walk@8.3.4:
     dependencies:
       acorn: 8.14.0
@@ -2692,6 +2903,8 @@ snapshots:
     dependencies:
       is-windows: 1.0.2
 
+  blakejs@1.2.1: {}
+
   brace-expansion@1.1.11:
     dependencies:
       balanced-match: 1.0.2
@@ -2728,6 +2941,8 @@ snapshots:
   bytes-iec@3.1.1: {}
 
   cac@6.7.14: {}
+
+  cachedir@2.4.0: {}
 
   caniuse-lite@1.0.30001677: {}
 
@@ -2805,6 +3020,10 @@ snapshots:
   confbox@0.1.8: {}
 
   convert-source-map@2.0.0: {}
+
+  copy-anything@3.0.5:
+    dependencies:
+      is-what: 4.1.16
 
   cross-spawn@5.1.0:
     dependencies:
@@ -2897,7 +3116,7 @@ snapshots:
 
   esprima@4.0.1: {}
 
-  eventemitter3@5.0.1: {}
+  eventemitter3@4.0.7: {}
 
   execa@8.0.1:
     dependencies:
@@ -3051,9 +3270,18 @@ snapshots:
     dependencies:
       better-path-resolve: 1.0.0
 
+  is-what@4.1.16: {}
+
   is-windows@1.0.2: {}
 
   isexe@2.0.0: {}
+
+  isomorphic-fetch@3.0.0:
+    dependencies:
+      node-fetch: 2.7.0
+      whatwg-fetch: 3.6.20
+    transitivePeerDependencies:
+      - encoding
 
   isows@1.0.6(ws@8.18.0):
     dependencies:
@@ -3081,6 +3309,8 @@ snapshots:
       istanbul-lib-report: 3.0.1
 
   jiti@2.4.0: {}
+
+  js-sha256@0.9.0: {}
 
   js-tokens@4.0.0: {}
 
@@ -3175,12 +3405,19 @@ snapshots:
 
   merge2@1.4.1: {}
 
+  micro-ftch@0.4.2: {}
+
   micromatch@4.0.8:
     dependencies:
       braces: 3.0.3
       picomatch: 2.3.1
 
   mimic-fn@4.0.0: {}
+
+  mina-signer@3.0.7:
+    dependencies:
+      blakejs: 1.2.1
+      js-sha256: 0.9.0
 
   minimatch@3.1.2:
     dependencies:
@@ -3271,6 +3508,28 @@ snapshots:
     dependencies:
       path-key: 4.0.0
 
+  o1js@1.6.0:
+    dependencies:
+      blakejs: 1.2.1
+      cachedir: 2.4.0
+      isomorphic-fetch: 3.0.0
+      js-sha256: 0.9.0
+      reflect-metadata: 0.1.14
+      tslib: 2.8.1
+    transitivePeerDependencies:
+      - encoding
+
+  o1js@1.9.1:
+    dependencies:
+      blakejs: 1.2.1
+      cachedir: 2.4.0
+      isomorphic-fetch: 3.0.0
+      js-sha256: 0.9.0
+      reflect-metadata: 0.1.14
+      tslib: 2.8.1
+    transitivePeerDependencies:
+      - encoding
+
   object-assign@4.1.1: {}
 
   once@1.4.0:
@@ -3284,20 +3543,6 @@ snapshots:
   os-tmpdir@1.0.2: {}
 
   outdent@0.5.0: {}
-
-  ox@0.1.2(typescript@5.6.2)(zod@3.23.8):
-    dependencies:
-      '@adraffy/ens-normalize': 1.11.0
-      '@noble/curves': 1.7.0
-      '@noble/hashes': 1.6.1
-      '@scure/bip32': 1.6.0
-      '@scure/bip39': 1.5.0
-      abitype: 1.0.6(typescript@5.6.2)(zod@3.23.8)
-      eventemitter3: 5.0.1
-    optionalDependencies:
-      typescript: 5.6.2
-    transitivePeerDependencies:
-      - zod
 
   p-filter@2.1.0:
     dependencies:
@@ -3425,6 +3670,8 @@ snapshots:
       strip-bom: 3.0.0
 
   readdirp@4.0.2: {}
+
+  reflect-metadata@0.1.14: {}
 
   regenerator-runtime@0.14.1: {}
 
@@ -3589,6 +3836,10 @@ snapshots:
 
   summary@2.1.0: {}
 
+  superjson@2.2.1:
+    dependencies:
+      copy-anything: 3.0.5
+
   supports-color@7.2.0:
     dependencies:
       has-flag: 4.0.0
@@ -3641,6 +3892,8 @@ snapshots:
 
   ts-expose-internals-conditionally@1.0.0-empty.0: {}
 
+  ts-pattern@5.6.2: {}
+
   tslib@2.8.1: {}
 
   type-detect@4.1.0: {}
@@ -3649,7 +3902,7 @@ snapshots:
 
   typescript@5.6.2: {}
 
-  typescript@5.7.2: {}
+  typescript@5.8.2: {}
 
   ufo@1.5.4: {}
 
@@ -3661,6 +3914,8 @@ snapshots:
 
   universalify@0.1.2: {}
 
+  uuid@8.3.2: {}
+
   v8-to-istanbul@9.3.0:
     dependencies:
       '@jridgewell/trace-mapping': 0.3.25
@@ -3669,23 +3924,43 @@ snapshots:
 
   validate-npm-package-name@5.0.1: {}
 
-  viem@file:src(typescript@5.6.2)(zod@3.23.8):
+  viem@file:src(typescript@5.6.2):
     dependencies:
+      '@mina-js/connect': https://pkg.pr.new/palladians/mina-js/@mina-js/connect@d652e7a(typescript@5.6.2)
+      '@mina-js/providers': https://pkg.pr.new/palladians/mina-js/@mina-js/providers@d652e7a(typescript@5.6.2)
+      '@mina-js/utils': https://pkg.pr.new/palladians/mina-js/@mina-js/utils@d652e7a(typescript@5.6.2)
       '@noble/curves': 1.7.0
       '@noble/hashes': 1.6.1
       '@scure/bip32': 1.6.0
       '@scure/bip39': 1.5.0
-      abitype: 1.0.6(typescript@5.6.2)(zod@3.23.8)
       isows: 1.0.6(ws@8.18.0)
-      ox: 0.1.2(typescript@5.6.2)(zod@3.23.8)
-      webauthn-p256: 0.0.10
+      o1js: 1.9.1
       ws: 8.18.0
     optionalDependencies:
       typescript: 5.6.2
     transitivePeerDependencies:
       - bufferutil
+      - encoding
       - utf-8-validate
-      - zod
+
+  viem@file:src(typescript@5.8.2):
+    dependencies:
+      '@mina-js/connect': https://pkg.pr.new/palladians/mina-js/@mina-js/connect@d652e7a(typescript@5.8.2)
+      '@mina-js/providers': https://pkg.pr.new/palladians/mina-js/@mina-js/providers@d652e7a(typescript@5.8.2)
+      '@mina-js/utils': https://pkg.pr.new/palladians/mina-js/@mina-js/utils@d652e7a(typescript@5.8.2)
+      '@noble/curves': 1.7.0
+      '@noble/hashes': 1.6.1
+      '@scure/bip32': 1.6.0
+      '@scure/bip39': 1.5.0
+      isows: 1.0.6(ws@8.18.0)
+      o1js: 1.9.1
+      ws: 8.18.0
+    optionalDependencies:
+      typescript: 5.8.2
+    transitivePeerDependencies:
+      - bufferutil
+      - encoding
+      - utf-8-validate
 
   vite-node@1.0.4(@types/node@20.16.12):
     dependencies:
@@ -3755,12 +4030,9 @@ snapshots:
       defaults: 1.0.4
     optional: true
 
-  webauthn-p256@0.0.10:
-    dependencies:
-      '@noble/curves': 1.7.0
-      '@noble/hashes': 1.6.1
-
   webidl-conversions@3.0.1: {}
+
+  whatwg-fetch@3.6.20: {}
 
   whatwg-url@5.0.0:
     dependencies:

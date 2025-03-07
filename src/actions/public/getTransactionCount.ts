@@ -1,30 +1,29 @@
-import type { Address } from "@/lib/connect/viem";
-import type { Account } from "../../accounts/types";
-import type { Client } from "../../clients/createClient";
-import type { Transport } from "../../clients/transports/createTransport";
-import type { ErrorType } from "../../errors/utils";
-import type { BlockTag } from "../../types/block";
-import type { Chain } from "../../types/chain";
-import type { RequestErrorType } from "../../utils/buildRequest";
+import type { Account, Address } from '../../accounts/types.js'
+import type { Client } from '../../clients/createClient.js'
+import type { Transport } from '../../clients/transports/createTransport.js'
+import type { ErrorType } from '../../errors/utils.js'
+import type { BlockTag } from '../../types/block.js'
+import type { Chain } from '../../types/chain.js'
+import type { RequestErrorType } from '../../utils/buildRequest.js'
 
 export type GetTransactionCountParameters = {
   /** The account address. */
-  address: Address;
+  address: Address
 } & (
   | {
       /** The block number. */
-      blockNumber?: bigint | undefined;
-      blockTag?: undefined;
+      blockNumber?: bigint | undefined
+      blockTag?: undefined
     }
   | {
-      blockNumber?: undefined;
+      blockNumber?: undefined
       /** The block tag. Defaults to 'latest'. */
-      blockTag?: BlockTag | undefined;
+      blockTag?: BlockTag | undefined
     }
-);
-export type GetTransactionCountReturnType = number;
+)
+export type GetTransactionCountReturnType = number
 
-export type GetTransactionCountErrorType = RequestErrorType | ErrorType;
+export type GetTransactionCountErrorType = RequestErrorType | ErrorType
 
 /**
  * Returns the number of [Transactions](https://viem.sh/docs/glossary/terms#transaction) an Account has sent.
@@ -51,23 +50,23 @@ export type GetTransactionCountErrorType = RequestErrorType | ErrorType;
  */
 export async function getTransactionCount<
   chain extends Chain | undefined,
-  account extends Account | undefined
+  account extends Account | undefined,
 >(
   client: Client<Transport, chain, account>,
-  { address, blockTag = "latest", blockNumber }: GetTransactionCountParameters
+  { address, blockNumber }: GetTransactionCountParameters,
 ): Promise<GetTransactionCountReturnType> {
   // TODO: fix this method's type
   const accountData: {
-    nonce: string;
-    balance: string;
+    nonce: string
+    balance: string
   } = await client.request(
     {
       // @ts-ignore
-      method: "mina_getAccount",
+      method: 'mina_getAccount',
       // params: [address, blockNumber ? numberToHex(blockNumber) : blockTag],
       params: [address],
     },
-    { dedupe: Boolean(blockNumber) }
-  );
-  return Number(accountData.nonce);
+    { dedupe: Boolean(blockNumber) },
+  )
+  return Number(accountData.nonce)
 }

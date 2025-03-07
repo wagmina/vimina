@@ -1,7 +1,5 @@
-import type { Address } from '@/lib/connect/viem'
-
 import type { ErrorType } from '../../errors/utils.js'
-import type { Account } from '../types.js'
+import type { Account, Address } from '../types.js'
 
 export type ParseAccountErrorType = ErrorType
 

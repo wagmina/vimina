@@ -1,4 +1,4 @@
-import type { Address } from '@/lib/connect/viem'
+import type { Address } from '../../accounts/index.js'
 
 import { PublicKey, fetchAccount as o1js_fetchAccount } from 'o1js'
 import type { Account } from 'o1js/dist/node/lib/mina/account'

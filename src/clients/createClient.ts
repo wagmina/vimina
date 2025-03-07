@@ -1,6 +1,4 @@
-import type { Address } from '@/lib/connect/viem'
-
-import type { JsonRpcAccount } from '../accounts/types.js'
+import type { Address, JsonRpcAccount } from '../accounts/types.js'
 import {
   type ParseAccountErrorType,
   parseAccount,

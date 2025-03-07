@@ -1,11 +1,14 @@
-import type { Address, TransactionRequest, UnionOmit } from '@/lib/connect/viem'
+import type { Address } from '../../accounts/index.js'
+
+import type { TransactionRequest } from '../../types/transaction.js'
+import type { UnionOmit } from '../../types/utils.js'
 
 import type {
   SendPaymentArgs,
   SendStakeDelegationArgs,
   SendTransactionArgs,
-} from '@aurowallet/mina-provider' // import type {SendSignedTransactionErrorType} from './sendSignedTransaction.js'
-import { formatMina } from '@mina-js/utils' // import type {SendSignedTransactionErrorType} from './sendSignedTransaction.js'
+} from '@aurowallet/mina-provider'
+import { formatMina } from '@mina-js/utils'
 import type { Account } from '../../accounts/types.js'
 import {
   type ParseAccountErrorType,

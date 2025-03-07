@@ -1,15 +1,7 @@
-import type {
-  Signature,
-  TransactionRequest,
-  TransactionRequestDelegation,
-  TransactionRequestPayment,
-  TransactionRequestZkApp,
-  TransactionType,
-} from '@/lib/connect/viem'
-import { TransactionTypeNotSupportedError } from '@/lib/connect/viem/actions/wallet/sendTransaction'
 import type { SendTransactionArgs } from '@aurowallet/mina-provider'
 import { formatMina } from '@mina-js/utils'
 import type { ZkappCommand } from 'o1js/dist/web/bindings/mina-transaction/gen/transaction-json'
+import { TransactionTypeNotSupportedError } from '~viem/actions/wallet/sendTransaction.js'
 import type { Account } from '../../accounts/types.js'
 import {
   type ParseAccountErrorType,
@@ -21,6 +13,14 @@ import { AccountNotFoundError } from '../../errors/account.js'
 import type { ErrorType } from '../../errors/utils.js'
 import type { GetAccountParameter } from '../../types/account.js'
 import type { Chain, GetChainParameter } from '../../types/chain.js'
+import type { Signature } from '../../types/misc.js'
+import type {
+  TransactionRequest,
+  TransactionRequestDelegation,
+  TransactionRequestPayment,
+  TransactionRequestZkApp,
+  TransactionType,
+} from '../../types/transaction.js'
 import type { UnionOmit } from '../../types/utils.js'
 import type { RequestErrorType } from '../../utils/buildRequest.js'
 import {
