@@ -20,7 +20,7 @@ runs:
         cache-dependency-path: ./wagmi/pnpm-lock.yaml
         node-version: 22
 
-    - name: Build viem
+    - name: Build vimina
       shell: bash
       run: pnpm build
 
@@ -30,7 +30,7 @@ runs:
       working-directory: ./wagmi
 
     - shell: bash
-      run: pnpm i viem@file:../src -w
+      run: pnpm i vimina@file:../src -w
       working-directory: ./wagmi
 
     - name: Build packages

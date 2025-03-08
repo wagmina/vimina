@@ -1,5 +1,5 @@
 ---
-"viem": patch
+"vimina": patch
 ---
 
 Updated dependencies.

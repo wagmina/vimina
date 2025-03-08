@@ -1,5 +1,5 @@
 ---
-"viem": patch
+"vimina": patch
 ---
 
 Added ZKSync local hyperchain networks.

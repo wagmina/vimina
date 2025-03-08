@@ -31,10 +31,10 @@ export type FetchAccountErrorType =
 /**
  * Returns the balance of an address in wei.
  *
- * - Docs: https://viem.sh/docs/actions/public/fetchAccount
+ * - Docs: https://vimina.sh/docs/actions/public/fetchAccount
  * - JSON-RPC Methods: [`mina_fetchAccount`](https://ethereum.org/en/developers/docs/apis/json-rpc/#mina_getbalance)
  *
- * You can convert the balance to ether units with [`formatEther`](https://viem.sh/docs/utilities/formatEther).
+ * You can convert the balance to ether units with [`formatEther`](https://vimina.sh/docs/utilities/formatEther).
  *
  * ```ts
  * const balance = await fetchAccount(client, {
@@ -50,9 +50,9 @@ export type FetchAccountErrorType =
  * @returns The balance of the address in wei. {@link FetchAccountReturnType}
  *
  * @example
- * import { createPublicClient, http } from 'viem'
- * import { mainnet } from 'viem/chains'
- * import { fetchAccount } from 'viem/public'
+ * import { createPublicClient, http } from 'vimina'
+ * import { mainnet } from 'vimina/chains'
+ * import { fetchAccount } from 'vimina/public'
  *
  * const client = createPublicClient({
  *   chain: mainnet,

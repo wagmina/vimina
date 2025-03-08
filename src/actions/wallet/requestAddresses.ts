@@ -13,7 +13,7 @@ export type RequestAddressesErrorType = RequestErrorType | ErrorType
 /**
  * Requests a list of accounts managed by a wallet.
  *
- * - Docs: https://viem.sh/docs/actions/wallet/requestAddresses
+ * - Docs: https://vimina.sh/docs/actions/wallet/requestAddresses
  * - JSON-RPC Methods: [`mina_requestAccounts`](https://eips.ethereum.org/EIPS/eip-1102)
  *
  * Sends a request to the wallet, asking for permission to access the user's accounts. After the user accepts the request, it will return a list of accounts (addresses).
@@ -24,9 +24,9 @@ export type RequestAddressesErrorType = RequestErrorType | ErrorType
  * @returns List of accounts managed by a wallet {@link RequestAddressesReturnType}
  *
  * @example
- * import { createWalletClient, custom } from 'viem'
- * import { mainnet } from 'viem/chains'
- * import { requestAddresses } from 'viem/wallet'
+ * import { createWalletClient, custom } from 'vimina'
+ * import { mainnet } from 'vimina/chains'
+ * import { requestAddresses } from 'vimina/wallet'
  *
  * const client = createWalletClient({
  *   chain: mainnet,

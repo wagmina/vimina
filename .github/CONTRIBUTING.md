@@ -1,14 +1,14 @@
 # Contributing
 
-Thanks for your interest in contributing to Viem! Please take a moment to review this document **before submitting a pull request.**
+Thanks for your interest in contributing to vimina! Please take a moment to review this document **before submitting a pull request.**
 
-If you want to contribute, but aren't sure where to start, you can create a [new discussion](https://github.com/wevm/viem/discussions).
+If you want to contribute, but aren't sure where to start, you can create a [new discussion](https://github.com/wevm/vimina/discussions).
 
-If you are contributing to add a new chain to `viem/chains`, please read the [Chains section](#chains).
+If you are contributing to add a new chain to `vimina/chains`, please read the [Chains section](#chains).
 
 ## Rules
 
-1. Significant changes to the API or implementation must be reviewed before a Pull Request is created. Create a [Feature Request](https://github.com/wevm/viem/discussions/new?category=ideas) first to discuss any API changes or new ideas. 
+1. Significant changes to the API or implementation must be reviewed before a Pull Request is created. Create a [Feature Request](https://github.com/wevm/vimina/discussions/new?category=ideas) first to discuss any API changes or new ideas. 
 2. Contributors must be humans, not bots.
 3. Contributor GitHub Accounts must have at least one non-trivial contribution to another repository.
 4. First time contributions must not contain only spelling or grammatical fixes.
@@ -33,13 +33,13 @@ This guide is intended to help you get started with contributing. By following t
 To start contributing to the project, clone it to your local machine using git:
 
 ```bash
-git clone https://github.com/wevm/viem.git --recurse-submodules
+git clone https://github.com/wevm/vimina.git --recurse-submodules
 ```
 
 Or the [GitHub CLI](https://cli.github.com):
 
 ```bash
-gh repo clone wevm/viem -- --recurse-submodules
+gh repo clone wevm/vimina -- --recurse-submodules
 ```
 
 <div align="right">
@@ -50,7 +50,7 @@ gh repo clone wevm/viem -- --recurse-submodules
 
 ### Installing Node.js and pnpm
 
-Viem uses [pnpm workspaces](https://pnpm.io/workspaces) to manage multiple projects. You need to install **Node.js v22 or higher** and **pnpm v9.1.0 or higher**.
+vimina uses [pnpm workspaces](https://pnpm.io/workspaces) to manage multiple projects. You need to install **Node.js v22 or higher** and **pnpm v9.1.0 or higher**.
 
 You can run the following commands in your terminal to check your local Node.js and pnpm versions:
 
@@ -72,7 +72,7 @@ If the versions are not correct or you don't have Node.js or pnpm installed, dow
 
 ### Installing Foundry
 
-Viem uses [Foundry](https://book.getfoundry.sh/) for testing. We run a local [Anvil](https://github.com/foundry-rs/foundry/tree/master/anvil) instance against a forked Ethereum node, where we can also use tools like [Forge](https://book.getfoundry.sh/forge/) to deploy test contracts to it.
+vimina uses [Foundry](https://book.getfoundry.sh/) for testing. We run a local [Anvil](https://github.com/foundry-rs/foundry/tree/master/anvil) instance against a forked Ethereum node, where we can also use tools like [Forge](https://book.getfoundry.sh/forge/) to deploy test contracts to it.
 
 Install Foundry using the following command:
 
@@ -132,7 +132,7 @@ When adding new features or fixing bugs, it's important to add test cases to cov
 
 ### Writing documentation
 
-Documentation is crucial to helping developers of all experience levels use Viem. Viem uses [Vocs](https://vocs.dev) and Markdown for the documentation site (located at [`site`](../site)). To start the site in dev mode, run:
+Documentation is crucial to helping developers of all experience levels use vimina. vimina uses [Vocs](https://vocs.dev) and Markdown for the documentation site (located at [`site`](../site)). To start the site in dev mode, run:
 
 ```bash
 pnpm docs:dev 
@@ -182,7 +182,7 @@ If your PR is making changes to an area that already has a changeset (e.g. there
 <br>
 
 <div>
-  ✅ Now you're ready to contribute to Viem!
+  ✅ Now you're ready to contribute to vimina!
 </div>
 
 <div align="right">
@@ -193,7 +193,7 @@ If your PR is making changes to an area that already has a changeset (e.g. there
 
 ## Chains
 
-If you wish to contribute to add an additional Chain to the `viem/chains` entrypoint, there are a few requirements to note before submitting a pull request.
+If you wish to contribute to add an additional Chain to the `vimina/chains` entrypoint, there are a few requirements to note before submitting a pull request.
 
 ### Requirements
 
@@ -311,7 +311,7 @@ Add a `patch` changeset with the description `"Added <your chain here> chain."`.
 ```diff
 > pnpm changeset
 
-What kind of change is this for Viem?
+What kind of change is this for vimina?
 + patch
 
 Please enter a summary for this change

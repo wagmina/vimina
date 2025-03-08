@@ -1,8 +1,8 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { http, createPublicClient, webSocket } from 'viem'
-import { mainnet } from 'viem/chains'
+import { http, createPublicClient } from 'vimina'
+import { mainnet } from 'vimina/chains'
 
 export function Client() {
   const [success, setSuccess] = useState<boolean | undefined>()
@@ -10,18 +10,10 @@ export function Client() {
     ;(async () => {
       const client = createPublicClient({
         chain: mainnet,
-        transport: http('https://eth.drpc.org'),
+        transport: http('https://mainnet.klesia.palladians.xyz/api'),
       })
 
-      const webSocketClient = createPublicClient({
-        chain: mainnet,
-        transport: webSocket(
-          'wss://eth-mainnet.g.alchemy.com/v2/WV-bLot1hKjjCfpPq603Ro-jViFzwYX8',
-        ),
-      })
-
-      await client.getBlockNumber()
-      await webSocketClient.getBlockNumber()
+      await client.getBlockHash()
 
       setSuccess(true)
     })()

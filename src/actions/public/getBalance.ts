@@ -29,10 +29,10 @@ export type GetBalanceErrorType = RequestErrorType | ErrorType
 /**
  * Returns the balance of an address in wei.
  *
- * - Docs: https://viem.sh/docs/actions/public/getBalance
+ * - Docs: https://vimina.sh/docs/actions/public/getBalance
  * - JSON-RPC Methods: [`mina_getBalance`](https://ethereum.org/en/developers/docs/apis/json-rpc/#mina_getbalance)
  *
- * You can convert the balance to ether units with [`formatEther`](https://viem.sh/docs/utilities/formatEther).
+ * You can convert the balance to ether units with [`formatEther`](https://vimina.sh/docs/utilities/formatEther).
  *
  * ```ts
  * const balance = await getBalance(client, {
@@ -48,9 +48,9 @@ export type GetBalanceErrorType = RequestErrorType | ErrorType
  * @returns The balance of the address in wei. {@link GetBalanceReturnType}
  *
  * @example
- * import { createPublicClient, http } from 'viem'
- * import { mainnet } from 'viem/chains'
- * import { getBalance } from 'viem/public'
+ * import { createPublicClient, http } from 'vimina'
+ * import { mainnet } from 'vimina/chains'
+ * import { getBalance } from 'vimina/public'
  *
  * const client = createPublicClient({
  *   chain: mainnet,

@@ -11,7 +11,7 @@ overrides:
   ws@>=7.0.0 <7.5.10: ^7.5.10
   hono@<4.5.8: ^4.5.8
   micromatch@<4.0.8: ^4.0.8
-  permissionless>viem: workspace:*
+  permissionless>vimina: workspace:*
   send@<0.19.0: ^0.19.0
   serve-static@<1.16.0: ^1.16.0
   cookie@<0.7.0: ^0.7.0
@@ -41,7 +41,7 @@ importers:
         version: 20.16.12
       '@vitest/coverage-v8':
         specifier: ^1.0.4
-        version: 1.0.4(vitest@1.0.4)
+        version: 1.0.4(vitest@1.0.4(@types/node@20.16.12)(@vitest/ui@1.0.4))
       '@vitest/ui':
         specifier: ^1.0.4
         version: 1.0.4(vitest@1.0.4)
@@ -72,9 +72,9 @@ importers:
 
   environments/bun:
     dependencies:
-      viem:
+      vimina:
         specifier: file:../../src/
-        version: vimina@file:src(typescript@5.8.2)
+        version: file:src(typescript@5.8.2)
 
   environments/next:
     dependencies:
@@ -87,9 +87,9 @@ importers:
       react-dom:
         specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
-      viem:
+      vimina:
         specifier: file:../../src/
-        version: vimina@file:src(typescript@5.6.2)
+        version: file:src(typescript@5.6.2)
     devDependencies:
       '@playwright/test':
         specifier: 1.41.2
@@ -109,24 +109,24 @@ importers:
 
   environments/node:
     dependencies:
-      viem:
+      vimina:
         specifier: file:../../src/
-        version: vimina@file:src(typescript@5.8.2)
+        version: file:src(typescript@5.8.2)
 
   environments/tsc:
     dependencies:
       typescript:
         specifier: latest
         version: 5.8.2
-      viem:
+      vimina:
         specifier: file:../../src/
-        version: vimina@file:src(typescript@5.8.2)
+        version: file:src(typescript@5.8.2)
 
   environments/vite:
     dependencies:
-      viem:
+      vimina:
         specifier: file:../../src/
-        version: vimina@file:src(typescript@5.6.2)
+        version: file:src(typescript@5.6.2)
     devDependencies:
       '@playwright/test':
         specifier: 1.41.2
@@ -2808,7 +2808,7 @@ snapshots:
     dependencies:
       '@types/node': 20.16.12
 
-  '@vitest/coverage-v8@1.0.4(vitest@1.0.4)':
+  '@vitest/coverage-v8@1.0.4(vitest@1.0.4(@types/node@20.16.12)(@vitest/ui@1.0.4))':
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@bcoe/v8-coverage': 0.2.3

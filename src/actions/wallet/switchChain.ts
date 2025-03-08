@@ -15,16 +15,16 @@ export type SwitchChainErrorType = RequestErrorType | ErrorType
 /**
  * Switch the target chain in a wallet.
  *
- * - Docs: https://viem.sh/docs/actions/wallet/switchChain
+ * - Docs: https://vimina.sh/docs/actions/wallet/switchChain
  * - JSON-RPC Methods: [`mina_switchEthereumChain`](https://eips.ethereum.org/EIPS/eip-3326)
  *
  * @param client - Client to use
  * @param parameters - {@link SwitchChainParameters}
  *
  * @example
- * import { createWalletClient, custom } from 'viem'
- * import { mainnet, optimism } from 'viem/chains'
- * import { switchChain } from 'viem/wallet'
+ * import { createWalletClient, custom } from 'vimina'
+ * import { mainnet, optimism } from 'vimina/chains'
+ * import { switchChain } from 'vimina/wallet'
  *
  * const client = createWalletClient({
  *   chain: mainnet,

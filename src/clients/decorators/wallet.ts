@@ -39,14 +39,14 @@ export type WalletActions<
   /**
    * Adds an EVM chain to the wallet.
    *
-   * - Docs: https://viem.sh/docs/actions/wallet/addChain
+   * - Docs: https://vimina.sh/docs/actions/wallet/addChain
    * - JSON-RPC Methods: [`mina_addEthereumChain`](https://eips.ethereum.org/EIPS/eip-3085)
    *
    * @param args - {@link AddChainParameters}
    *
    * @example
-   * import { createWalletClient, custom } from 'viem'
-   * import { optimism } from 'viem/chains'
+   * import { createWalletClient, custom } from 'vimina'
+   * import { optimism } from 'vimina/chains'
    *
    * const client = createWalletClient({
    *   transport: custom(window.ethereum),
@@ -57,14 +57,14 @@ export type WalletActions<
   /**
    * Returns a list of account addresses owned by the wallet or client.
    *
-   * - Docs: https://viem.sh/docs/actions/wallet/getAddresses
+   * - Docs: https://vimina.sh/docs/actions/wallet/getAddresses
    * - JSON-RPC Methods: [`mina_accounts`](https://ethereum.org/en/developers/docs/apis/json-rpc/#mina_accounts)
    *
    * @returns List of account addresses owned by the wallet or client. {@link GetAddressesReturnType}
    *
    * @example
-   * import { createWalletClient, custom } from 'viem'
-   * import { mainnet } from 'viem/chains'
+   * import { createWalletClient, custom } from 'vimina'
+   * import { mainnet } from 'vimina/chains'
    *
    * const client = createWalletClient({
    *   chain: mainnet,
@@ -76,14 +76,14 @@ export type WalletActions<
   /**
    * Returns the chain ID associated with the current network.
    *
-   * - Docs: https://viem.sh/docs/actions/public/getNetworkId
+   * - Docs: https://vimina.sh/docs/actions/public/getNetworkId
    * - JSON-RPC Methods: [`mina_networkId`](https://ethereum.org/en/developers/docs/apis/json-rpc/#mina_networkId)
    *
    * @returns The current chain ID. {@link GetNetworkIdReturnType}
    *
    * @example
-   * import { createWalletClient, http } from 'viem'
-   * import { mainnet } from 'viem/chains'
+   * import { createWalletClient, http } from 'vimina'
+   * import { mainnet } from 'vimina/chains'
    *
    * const client = createWalletClient({
    *   chain: mainnet,
@@ -96,14 +96,14 @@ export type WalletActions<
   /**
    * Gets the wallets current permissions.
    *
-   * - Docs: https://viem.sh/docs/actions/wallet/getPermissions
+   * - Docs: https://vimina.sh/docs/actions/wallet/getPermissions
    * - JSON-RPC Methods: [`wallet_getPermissions`](https://eips.ethereum.org/EIPS/eip-2255)
    *
    * @returns The wallet permissions. {@link GetPermissionsReturnType}
    *
    * @example
-   * import { createWalletClient, custom } from 'viem'
-   * import { mainnet } from 'viem/chains'
+   * import { createWalletClient, custom } from 'vimina'
+   * import { mainnet } from 'vimina/chains'
    *
    * const client = createWalletClient({
    *   chain: mainnet,
@@ -115,7 +115,7 @@ export type WalletActions<
   /**
    * Requests a list of accounts managed by a wallet.
    *
-   * - Docs: https://viem.sh/docs/actions/wallet/requestAddresses
+   * - Docs: https://vimina.sh/docs/actions/wallet/requestAddresses
    * - JSON-RPC Methods: [`mina_requestAccounts`](https://eips.ethereum.org/EIPS/eip-1102)
    *
    * Sends a request to the wallet, asking for permission to access the user's accounts. After the user accepts the request, it will return a list of accounts (addresses).
@@ -125,8 +125,8 @@ export type WalletActions<
    * @returns List of accounts managed by a wallet {@link RequestAddressesReturnType}
    *
    * @example
-   * import { createWalletClient, custom } from 'viem'
-   * import { mainnet } from 'viem/chains'
+   * import { createWalletClient, custom } from 'vimina'
+   * import { mainnet } from 'vimina/chains'
    *
    * const client = createWalletClient({
    *   chain: mainnet,
@@ -138,15 +138,15 @@ export type WalletActions<
   /**
    * Requests permissions for a wallet.
    *
-   * - Docs: https://viem.sh/docs/actions/wallet/requestPermissions
+   * - Docs: https://vimina.sh/docs/actions/wallet/requestPermissions
    * - JSON-RPC Methods: [`wallet_requestPermissions`](https://eips.ethereum.org/EIPS/eip-2255)
    *
    * @param args - {@link RequestPermissionsParameters}
    * @returns The wallet permissions. {@link RequestPermissionsReturnType}
    *
    * @example
-   * import { createWalletClient, custom } from 'viem'
-   * import { mainnet } from 'viem/chains'
+   * import { createWalletClient, custom } from 'vimina'
+   * import { mainnet } from 'vimina/chains'
    *
    * const client = createWalletClient({
    *   chain: mainnet,
@@ -162,14 +162,14 @@ export type WalletActions<
   /**
    * Switch the target chain in a wallet.
    *
-   * - Docs: https://viem.sh/docs/actions/wallet/switchChain
+   * - Docs: https://vimina.sh/docs/actions/wallet/switchChain
    * - JSON-RPC Methods: [`mina_switchEthereumChain`](https://eips.ethereum.org/EIPS/eip-3326)
    *
    * @param args - {@link SwitchChainParameters}
    *
    * @example
-   * import { createWalletClient, custom } from 'viem'
-   * import { mainnet, optimism } from 'viem/chains'
+   * import { createWalletClient, custom } from 'vimina'
+   * import { mainnet, optimism } from 'vimina/chains'
    *
    * const client = createWalletClient({
    *   chain: mainnet,

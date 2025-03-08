@@ -1,5 +1,5 @@
 {
-  "name": "@wevm/viem",
+  "name": "@wevm/vimina",
   "version": "2.21.53",
   "exports": {
     ".": "./index.ts",

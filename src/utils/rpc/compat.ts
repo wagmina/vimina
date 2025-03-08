@@ -55,8 +55,8 @@ async function webSocketAsync(
  * @deprecated use `getSocketClient` instead.
  *
  * ```diff
- * -import { getSocket } from '@/lib/connect/viem/utils'
- * +import { getSocketClient } from '@/lib/connect/viem/utils'
+ * -import { getSocket } from '@/lib/connect/vimina/utils'
+ * +import { getSocketClient } from '@/lib/connect/vimina/utils'
  *
  * -const socket = await getSocket(url)
  * +const socketClient = await getSocketClient(url)
@@ -76,8 +76,8 @@ export const rpc = {
    * @deprecated use `getHttpRpcClient` instead.
    *
    * ```diff
-   * -import { rpc } from '@/lib/connect/viem/utils'
-   * +import { getHttpRpcClient } from '@/lib/connect/viem/utils'
+   * -import { rpc } from '@/lib/connect/vimina/utils'
+   * +import { getHttpRpcClient } from '@/lib/connect/vimina/utils'
    *
    * -rpc.http(url, params)
    * +const httpClient = getHttpRpcClient(url)
@@ -91,8 +91,8 @@ export const rpc = {
    * @deprecated use `getWebSocketRpcClient` instead.
    *
    * ```diff
-   * -import { rpc } from '@/lib/connect/viem/utils'
-   * +import { getWebSocketRpcClient } from '@/lib/connect/viem/utils'
+   * -import { rpc } from '@/lib/connect/vimina/utils'
+   * +import { getWebSocketRpcClient } from '@/lib/connect/vimina/utils'
    *
    * -rpc.webSocket(url, params)
    * +const webSocketClient = getWebSocketRpcClient(url)
@@ -104,8 +104,8 @@ export const rpc = {
    * @deprecated use `getWebSocketRpcClient` instead.
    *
    * ```diff
-   * -import { rpc } from '@/lib/connect/viem/utils'
-   * +import { getWebSocketRpcClient } from '@/lib/connect/viem/utils'
+   * -import { rpc } from '@/lib/connect/vimina/utils'
+   * +import { getWebSocketRpcClient } from '@/lib/connect/vimina/utils'
    *
    * -const response = await rpc.webSocketAsync(url, params)
    * +const webSocketClient = getWebSocketRpcClient(url)

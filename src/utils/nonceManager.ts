@@ -29,7 +29,7 @@ export type NonceManager = {
 /**
  * Creates a nonce manager for auto-incrementing transaction nonces.
  *
- * - Docs: https://@/lib/connect/viem.sh/docs/accounts/createNonceManager
+ * - Docs: https://@/lib/connect/vimina.sh/docs/accounts/createNonceManager
  *
  * @example
  * ```ts

@@ -12,7 +12,7 @@ let errorConfig: ErrorConfig = {
     docsSlug,
   }: BaseErrorParameters) =>
     docsPath
-      ? `${docsBaseUrl ?? 'https://viem.sh'}${docsPath}${
+      ? `${docsBaseUrl ?? 'https://vimina.sh'}${docsPath}${
           docsSlug ? `#${docsSlug}` : ''
         }`
       : undefined,

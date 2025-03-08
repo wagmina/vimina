@@ -71,7 +71,7 @@ export type SignTransactionErrorType =
 /**
  * Signs a transaction.
  *
- * - Docs: https://viem.sh/docs/actions/wallet/signTransaction
+ * - Docs: https://vimina.sh/docs/actions/wallet/signTransaction
  * - JSON-RPC Methods:
  *   - JSON-RPC Accounts: [`eth_signTransaction`](https://ethereum.github.io/execution-apis/api-documentation/)
  *   - Local Accounts: Signs locally. No JSON-RPC request.
@@ -80,9 +80,9 @@ export type SignTransactionErrorType =
  * @returns The signed serialized transaction. {@link SignTransactionReturnType}
  *
  * @example
- * import { createWalletClient, custom } from 'viem'
- * import { mainnet } from 'viem/chains'
- * import { signTransaction } from 'viem/actions'
+ * import { createWalletClient, custom } from 'vimina'
+ * import { mainnet } from 'vimina/chains'
+ * import { signTransaction } from 'vimina/actions'
  *
  * const client = createWalletClient({
  *   chain: mainnet,
@@ -96,10 +96,10 @@ export type SignTransactionErrorType =
  *
  * @example
  * // Account Hoisting
- * import { createWalletClient, http } from 'viem'
- * import { privateKeyToAccount } from 'viem/accounts'
- * import { mainnet } from 'viem/chains'
- * import { signTransaction } from 'viem/actions'
+ * import { createWalletClient, http } from 'vimina'
+ * import { privateKeyToAccount } from 'vimina/accounts'
+ * import { mainnet } from 'vimina/chains'
+ * import { signTransaction } from 'vimina/actions'
  *
  * const client = createWalletClient({
  *   account: privateKeyToAccount('0x…'),

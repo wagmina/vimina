@@ -15,16 +15,16 @@ export type AddChainErrorType = RequestErrorType | ErrorType
 /**
  * Adds an EVM chain to the wallet.
  *
- * - Docs: https://viem.sh/docs/actions/wallet/addChain
+ * - Docs: https://vimina.sh/docs/actions/wallet/addChain
  * - JSON-RPC Methods: [`mina_addEthereumChain`](https://eips.ethereum.org/EIPS/eip-3085)
  *
  * @param client - Client to use
  * @param parameters - {@link AddChainParameters}
  *
  * @example
- * import { createWalletClient, custom } from 'viem'
- * import { optimism } from 'viem/chains'
- * import { addChain } from 'viem/wallet'
+ * import { createWalletClient, custom } from 'vimina'
+ * import { optimism } from 'vimina/chains'
+ * import { addChain } from 'vimina/wallet'
  *
  * const client = createWalletClient({
  *   transport: custom(window.ethereum),

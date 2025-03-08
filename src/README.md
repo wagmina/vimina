@@ -1,13 +1,13 @@
 <!-- > [!IMPORTANT] -->
-<!-- > Viem is participating in Gitcoin Grants round 21. Consider <a href="https://explorer.gitcoin.co/#/round/42161/389/73">supporting the project</a>. Thank you. 🙏 -->
+<!-- > vimina is participating in Gitcoin Grants round 21. Consider <a href="https://explorer.gitcoin.co/#/round/42161/389/73">supporting the project</a>. Thank you. 🙏 -->
 
 <br/>
 
 <p align="center">
-  <a href="https://viem.sh">
+  <a href="https://vimina.sh">
       <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/wevm/viem/main/.github/gh-logo-dark.svg">
-        <img alt="viem logo" src="https://raw.githubusercontent.com/wevm/viem/main/.github/gh-logo-light.svg" width="auto" height="60">
+        <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/wevm/vimina/main/.github/gh-logo-dark.svg">
+        <img alt="vimina logo" src="https://raw.githubusercontent.com/wevm/vimina/main/.github/gh-logo-light.svg" width="auto" height="60">
       </picture>
 </a>
 </p>
@@ -17,34 +17,34 @@
 <p>
 
 <p align="center">
-  <a href="https://www.npmjs.com/package/viem">
+  <a href="https://www.npmjs.com/package/vimina">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/npm/v/viem?colorA=21262d&colorB=21262d&style=flat">
-      <img src="https://img.shields.io/npm/v/viem?colorA=f6f8fa&colorB=f6f8fa&style=flat" alt="Version">
+      <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/npm/v/vimina?colorA=21262d&colorB=21262d&style=flat">
+      <img src="https://img.shields.io/npm/v/vimina?colorA=f6f8fa&colorB=f6f8fa&style=flat" alt="Version">
     </picture>
   </a>
-  <a href="https://app.codecov.io/gh/wevm/viem">
+  <a href="https://app.codecov.io/gh/wevm/vimina">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/codecov/c/github/wevm/viem?colorA=21262d&colorB=21262d&style=flat">
-      <img src="https://img.shields.io/codecov/c/github/wevm/viem?colorA=f6f8fa&colorB=f6f8fa&style=flat" alt="Code coverage">
+      <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/codecov/c/github/wevm/vimina?colorA=21262d&colorB=21262d&style=flat">
+      <img src="https://img.shields.io/codecov/c/github/wevm/vimina?colorA=f6f8fa&colorB=f6f8fa&style=flat" alt="Code coverage">
     </picture>
   </a>
-  <a href="https://github.com/wevm/viem/blob/main/LICENSE">
+  <a href="https://github.com/wevm/vimina/blob/main/LICENSE">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/npm/l/viem?colorA=21262d&colorB=21262d&style=flat">
-      <img src="https://img.shields.io/npm/l/viem?colorA=f6f8fa&colorB=f6f8fa&style=flat" alt="MIT License">
+      <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/npm/l/vimina?colorA=21262d&colorB=21262d&style=flat">
+      <img src="https://img.shields.io/npm/l/vimina?colorA=f6f8fa&colorB=f6f8fa&style=flat" alt="MIT License">
     </picture>
   </a>
-  <a href="https://www.npmjs.com/package/viem">
+  <a href="https://www.npmjs.com/package/vimina">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/npm/dm/viem?colorA=21262d&colorB=21262d&style=flat">
-      <img src="https://img.shields.io/npm/dm/viem?colorA=f6f8fa&colorB=f6f8fa&style=flat" alt="Downloads per month">
+      <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/npm/dm/vimina?colorA=21262d&colorB=21262d&style=flat">
+      <img src="https://img.shields.io/npm/dm/vimina?colorA=f6f8fa&colorB=f6f8fa&style=flat" alt="Downloads per month">
     </picture>
   </a>
-  <a href="https://bestofjs.org/projects/viem">
+  <a href="https://bestofjs.org/projects/vimina">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/endpoint?colorA=21262d&colorB=21262d&style=flat&url=https://bestofjs-serverless.now.sh/api/project-badge?fullName=wevm%2Fviem%26since=daily">
-      <img src="https://img.shields.io/endpoint?colorA=f6f8fa&colorB=f6f8fa&style=flat&url=https://bestofjs-serverless.now.sh/api/project-badge?fullName=wevm%2Fviem%26since=daily" alt="Best of JS">
+      <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/endpoint?colorA=21262d&colorB=21262d&style=flat&url=https://bestofjs-serverless.now.sh/api/project-badge?fullName=wevm%2Fvimina%26since=daily">
+      <img src="https://img.shields.io/endpoint?colorA=f6f8fa&colorB=f6f8fa&style=flat&url=https://bestofjs-serverless.now.sh/api/project-badge?fullName=wevm%2Fvimina%26since=daily" alt="Best of JS">
     </picture>
   </a>
 </p>
@@ -59,7 +59,7 @@
 - Import your Browser Extension, WalletConnect or Private Key Wallet
 - Browser native [BigInt](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt), instead of large BigNumber libraries
 - Utilities for working with [ABIs](https://ethereum.org/en/glossary/#abi) (encoding/decoding/inspection)
-- TypeScript ready ([infer types](https://viem.sh/docs/typescript) from ABIs and EIP-712 Typed Data)
+- TypeScript ready ([infer types](https://vimina.sh/docs/typescript) from ABIs and EIP-712 Typed Data)
 - First-class support for [Anvil](https://book.getfoundry.sh/), [Hardhat](https://hardhat.org/) & [Ganache](https://trufflesuite.com/ganache/)
 - Test suite running against [forked](https://ethereum.org/en/glossary/#fork) Ethereum network
 
@@ -69,8 +69,8 @@
 
 ```ts
 // 1. Import modules.
-import { createPublicClient, http } from 'viem';
-import { mainnet } from 'viem/chains';
+import { createPublicClient, http } from 'vimina';
+import { mainnet } from 'vimina/chains';
 
 // 2. Set up your client with desired chain & transport.
 const client = createPublicClient({
@@ -84,15 +84,15 @@ const blockNumber = await client.getBlockNumber();
 
 ## Documentation
 
-[Head to the documentation](https://viem.sh/docs/getting-started) to read and learn more about viem.
+[Head to the documentation](https://vimina.sh/docs/getting-started) to read and learn more about vimina.
 
 ## Community
 
-Check out the following places for more viem-related content:
+Check out the following places for more vimina-related content:
 
 - Follow [@wevm_dev](https://twitter.com/wevm_dev), [@_jxom](https://twitter.com/_jxom), and [@awkweb](https://twitter.com/awkweb) on Twitter for project updates
-- Join the [discussions on GitHub](https://github.com/wevm/viem/discussions)
-- [Share your project/organization](https://github.com/wevm/viem/discussions/104) that uses viem
+- Join the [discussions on GitHub](https://github.com/wevm/vimina/discussions)
+- [Share your project/organization](https://github.com/wevm/vimina/discussions/104) that uses vimina
 
 ## Support
 

@@ -100,8 +100,8 @@
     "ws": "8.18.0"
   },
   "license": "MIT",
-  "homepage": "https://viem.sh",
-  "repository": "wevm/viem",
+  "homepage": "https://vimina.sh",
+  "repository": "wevm/vimina",
   "authors": ["awkweb.eth", "jxom.eth"],
   "funding": [
     {

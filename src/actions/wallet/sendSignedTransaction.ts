@@ -15,7 +15,7 @@ export type SendSignedTransactionErrorType = RequestErrorType | ErrorType
 /**
  * Sends a **signed** transaction to the network
  *
- * - Docs: https://viem.sh/docs/actions/wallet/sendSignedTransaction
+ * - Docs: https://vimina.sh/docs/actions/wallet/sendSignedTransaction
  * - JSON-RPC Method: [`eth_sendSignedTransaction`](https://ethereum.github.io/execution-apis/api-documentation/)
  *
  * @param client - Client to use
@@ -23,9 +23,9 @@ export type SendSignedTransactionErrorType = RequestErrorType | ErrorType
  * @returns The transaction hash. {@link SendSignedTransactionReturnType}
  *
  * @example
- * import { createWalletClient, custom } from 'viem'
- * import { mainnet } from 'viem/chains'
- * import { sendSignedTransaction } from 'viem/wallet'
+ * import { createWalletClient, custom } from 'vimina'
+ * import { mainnet } from 'vimina/chains'
+ * import { sendSignedTransaction } from 'vimina/wallet'
  *
  * const client = createWalletClient({
  *   chain: mainnet,

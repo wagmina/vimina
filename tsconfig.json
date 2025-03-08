@@ -8,7 +8,7 @@
     "baseUrl": ".",
     "paths": {
       "~contracts/*": ["./contracts/*"],
-      "~viem/*": ["./src/*"],
+      "~vimina/*": ["./src/*"],
       "~test/*": ["./test/*"]
     }
   }

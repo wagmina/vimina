@@ -87,20 +87,20 @@ export type SendTransactionErrorType =
 /**
  * Creates, signs, and sends a new transaction to the network.
  *
- * - Docs: https://viem.sh/docs/actions/wallet/sendTransaction
- * - Examples: https://stackblitz.com/github/wevm/viem/tree/main/examples/transactions_sending-transactions
+ * - Docs: https://vimina.sh/docs/actions/wallet/sendTransaction
+ * - Examples: https://stackblitz.com/github/wevm/vimina/tree/main/examples/transactions_sending-transactions
  * - JSON-RPC Methods:
  *   - JSON-RPC Accounts: [`eth_sendTransaction`](https://ethereum.org/en/developers/docs/apis/json-rpc/#eth_sendtransaction)
  *   - Local Accounts: [`eth_sendSignedTransaction`](https://ethereum.org/en/developers/docs/apis/json-rpc/#eth_sendrawtransaction)
  *
  * @param client - Client to use
  * @param parameters - {@link SendTransactionParameters}
- * @returns The [Transaction](https://viem.sh/docs/glossary/terms#transaction) hash. {@link SendTransactionReturnType}
+ * @returns The [Transaction](https://vimina.sh/docs/glossary/terms#transaction) hash. {@link SendTransactionReturnType}
  *
  * @example
- * import { createWalletClient, custom } from 'viem'
- * import { mainnet } from 'viem/chains'
- * import { sendTransaction } from 'viem/wallet'
+ * import { createWalletClient, custom } from 'vimina'
+ * import { mainnet } from 'vimina/chains'
+ * import { sendTransaction } from 'vimina/wallet'
  *
  * const client = createWalletClient({
  *   chain: mainnet,
@@ -114,10 +114,10 @@ export type SendTransactionErrorType =
  *
  * @example
  * // Account Hoisting
- * import { createWalletClient, http } from 'viem'
- * import { privateKeyToAccount } from 'viem/accounts'
- * import { mainnet } from 'viem/chains'
- * import { sendTransaction } from 'viem/wallet'
+ * import { createWalletClient, http } from 'vimina'
+ * import { privateKeyToAccount } from 'vimina/accounts'
+ * import { mainnet } from 'vimina/chains'
+ * import { sendTransaction } from 'vimina/wallet'
  *
  * const client = createWalletClient({
  *   account: privateKeyToAccount('0x…'),
