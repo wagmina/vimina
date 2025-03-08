@@ -12,7 +12,7 @@ import {
   assertCurrentChain,
 } from '../../utils/chain/assertCurrentChain.js'
 import { getAction } from '../../utils/getAction.js'
-import { getNetworkId } from './getNetworkId.js'
+import { type GetNetworkIdErrorType, getNetworkId } from './getNetworkId.js'
 
 export type FetchAccountParameters<
   chain extends Chain | undefined = Chain | undefined,
@@ -36,7 +36,10 @@ export type FetchAccountParameters<
 
 export type FetchAccountReturnType = Account
 
-export type FetchAccountErrorType = AssertCurrentChainErrorType | ErrorType
+export type FetchAccountErrorType =
+  | GetNetworkIdErrorType
+  | AssertCurrentChainErrorType
+  | ErrorType
 
 /**
  * Returns the balance of an address in wei.
