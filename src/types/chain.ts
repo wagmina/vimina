@@ -40,6 +40,7 @@ export type Chain<
     [key: string]: ChainRpcUrls
     default: ChainRpcUrls
   }
+  graphqlEndpoint: string
   /** Source Chain ID (ie. the L1 chain) */
   sourceId?: number | undefined
   /** Flag for test networks */

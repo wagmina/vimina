@@ -6,10 +6,18 @@ import type { Client } from '../../clients/createClient.js'
 import type { Transport } from '../../clients/transports/createTransport.js'
 import type { ErrorType } from '../../errors/utils.js'
 import type { BlockTag } from '../../types/block.js'
-import type { Chain } from '../../types/chain.js'
-import type { RequestErrorType } from '../../utils/buildRequest.js'
+import type { Chain, GetChainParameter } from '../../types/chain.js'
+import {
+  type AssertCurrentChainErrorType,
+  assertCurrentChain,
+} from '../../utils/chain/assertCurrentChain.js'
+import { getAction } from '../../utils/getAction.js'
+import { getNetworkId } from './getNetworkId.js'
 
-export type FetchAccountParameters = {
+export type FetchAccountParameters<
+  chain extends Chain | undefined = Chain | undefined,
+  chainOverride extends Chain | undefined = Chain | undefined,
+> = {
   /** The address of the account. */
   address: Address
 } & (
@@ -23,11 +31,12 @@ export type FetchAccountParameters = {
       /** The balance of the account at a block tag. */
       blockTag?: BlockTag | undefined
     }
-)
+) &
+  GetChainParameter<chain, chainOverride>
 
 export type FetchAccountReturnType = Account
 
-export type FetchAccountErrorType = RequestErrorType | ErrorType
+export type FetchAccountErrorType = AssertCurrentChainErrorType | ErrorType
 
 /**
  * Returns the balance of an address in wei.
@@ -64,14 +73,26 @@ export type FetchAccountErrorType = RequestErrorType | ErrorType
  * })
  * // 10000000000000000000000n (wei)
  */
-export async function fetchAccount<chain extends Chain | undefined>(
-  _client: Client<Transport, chain>,
+export async function fetchAccount<
+  chain extends Chain | undefined,
+  chainOverride extends Chain | undefined = undefined,
+>(
+  client: Client<Transport, chain>,
   // { address, blockNumber, blockTag = "latest" }: FetchAccountParameters
-  { address }: FetchAccountParameters,
+  parameters: FetchAccountParameters<chain, chainOverride>,
 ): Promise<FetchAccountReturnType> {
-  const result = await o1js_fetchAccount({
-    publicKey: PublicKey.fromBase58(address),
+  const { address, chain = client.chain } = parameters
+  const networkId = await getAction(client, getNetworkId, 'getNetworkId')({})
+  assertCurrentChain({
+    currentNetworkId: networkId,
+    chain: client.chain,
   })
+  const result = await o1js_fetchAccount(
+    {
+      publicKey: PublicKey.fromBase58(address),
+    },
+    chain!.graphqlEndpoint,
+  )
   if (result.error) {
     throw result.error
   }
