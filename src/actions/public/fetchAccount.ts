@@ -5,7 +5,6 @@ import type { Account } from 'o1js/dist/node/lib/mina/account'
 import type { Client } from '../../clients/createClient.js'
 import type { Transport } from '../../clients/transports/createTransport.js'
 import type { ErrorType } from '../../errors/utils.js'
-import type { BlockTag } from '../../types/block.js'
 import type { Chain, GetChainParameter } from '../../types/chain.js'
 import {
   type AssertCurrentChainErrorType,
@@ -20,19 +19,7 @@ export type FetchAccountParameters<
 > = {
   /** The address of the account. */
   address: Address
-} & (
-  | {
-      /** The balance of the account at a block number. */
-      blockNumber?: bigint | undefined
-      blockTag?: undefined
-    }
-  | {
-      blockNumber?: undefined
-      /** The balance of the account at a block tag. */
-      blockTag?: BlockTag | undefined
-    }
-) &
-  GetChainParameter<chain, chainOverride>
+} & GetChainParameter<chain, chainOverride>
 
 export type FetchAccountReturnType = Account
 
