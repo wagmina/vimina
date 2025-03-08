@@ -75,7 +75,7 @@ export async function fetchAccount<
   const networkId = await getAction(client, getNetworkId, 'getNetworkId')({})
   assertCurrentChain({
     currentNetworkId: networkId,
-    chain: client.chain,
+    chain: chain ?? undefined,
   })
   const result = await o1js_fetchAccount(
     {
