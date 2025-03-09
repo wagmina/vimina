@@ -38,8 +38,6 @@
     "test:env:vite": "pnpm --filter test-vite test",
     "test:typecheck": "SKIP_GLOBAL_SETUP=true vitest --typecheck.only -c ./test/vitest.config.ts",
     "test:ui": "vitest dev -c ./test/vitest.config.ts --ui",
-    "vectors": "bun test vectors/**/*.test.ts",
-    "vectors:generate": "bun vectors/generate.ts",
     "version:update": "bun scripts/updateVersion.ts"
   },
   "devDependencies": {
@@ -68,7 +66,7 @@
     "pre-commit": "pnpm check"
   },
   "knip": {
-    "ignore": [".github/**", "environments/**", "vectors/**"],
+    "ignore": [".github/**", "environments/**"],
     "ignoreBinaries": ["dev", "forge", "only-allow", "printf"],
     "ignoreDependencies": ["bun", "@size-limit/preset-big-lib"],
     "ignoreWorkspaces": ["examples/**", "test"],

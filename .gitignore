@@ -24,10 +24,6 @@ src/node/trustedSetups_esm.ts
 .env.production.local
 .envrc
 
-# tests
-generated.ts
-vectors/**/*.json
-
 # docs
 site/dist
 .vercel
