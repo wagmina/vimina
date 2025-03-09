@@ -29,9 +29,8 @@ type RpcErrorOptions<code extends number = RpcErrorCode> = {
 }
 
 /**
- * Error subclass implementing JSON RPC 2.0 errors and Ethereum RPC errors per EIP-1474.
+ * Error subclass implementing JSON RPC 2.0 errors and Mina RPC errors per [RPCStandard].
  *
- * - EIP https://eips.ethereum.org/EIPS/eip-1474
  */
 export type RpcErrorType = RpcError & { name: 'RpcError' }
 export class RpcError<code_ extends number = RpcErrorCode> extends BaseError {
@@ -70,7 +69,7 @@ export type ProviderRpcErrorCode =
   | 20004 // Chain Not Recognized
 
 /**
- * Error subclass implementing Ethereum Provider errors per [standard].
+ * Error subclass implementing Mina Provider errors per [JavaScriptAPIStandard].
  *
  */
 export type ProviderRpcErrorType = ProviderRpcError & {
@@ -96,9 +95,8 @@ export class ProviderRpcError<
 }
 
 /**
- * Subclass for a "Parse error" EIP-1474 error.
+ * Subclass for a "Parse error" [RPCStandard] error.
  *
- * EIP https://eips.ethereum.org/EIPS/eip-1474#error-codes
  */
 export type ParseRpcErrorType = ParseRpcError & {
   code: -32700
@@ -118,9 +116,8 @@ export class ParseRpcError extends RpcError {
 }
 
 /**
- * Subclass for a "Invalid request" EIP-1474 error.
+ * Subclass for a "Invalid request" [RPCStandard] error.
  *
- * EIP https://eips.ethereum.org/EIPS/eip-1474#error-codes
  */
 export type InvalidRequestRpcErrorType = InvalidRequestRpcError & {
   code: -32600
@@ -139,9 +136,8 @@ export class InvalidRequestRpcError extends RpcError {
 }
 
 /**
- * Subclass for a "Method not found" EIP-1474 error.
+ * Subclass for a "Method not found" [RPCStandard] error.
  *
- * EIP https://eips.ethereum.org/EIPS/eip-1474#error-codes
  */
 export type MethodNotFoundRpcErrorType = MethodNotFoundRpcError & {
   code: -32601
@@ -160,9 +156,8 @@ export class MethodNotFoundRpcError extends RpcError {
 }
 
 /**
- * Subclass for an "Invalid params" EIP-1474 error.
+ * Subclass for an "Invalid params" [RPCStandard] error.
  *
- * EIP https://eips.ethereum.org/EIPS/eip-1474#error-codes
  */
 export type InvalidParamsRpcErrorType = InvalidParamsRpcError & {
   code: -32602
@@ -184,9 +179,8 @@ export class InvalidParamsRpcError extends RpcError {
 }
 
 /**
- * Subclass for an "Internal error" EIP-1474 error.
+ * Subclass for an "Internal error" [RPCStandard] error.
  *
- * EIP https://eips.ethereum.org/EIPS/eip-1474#error-codes
  */
 export type InternalRpcErrorType = InternalRpcError & {
   code: -32603
@@ -205,9 +199,8 @@ export class InternalRpcError extends RpcError {
 }
 
 /**
- * Subclass for an "Invalid input" EIP-1474 error.
+ * Subclass for an "Invalid input" [RPCStandard] error.
  *
- * EIP https://eips.ethereum.org/EIPS/eip-1474#error-codes
  */
 export type InvalidInputRpcErrorType = InvalidInputRpcError & {
   code: -32000
@@ -229,9 +222,8 @@ export class InvalidInputRpcError extends RpcError {
 }
 
 /**
- * Subclass for a "Resource not found" EIP-1474 error.
+ * Subclass for a "Resource not found" [RPCStandard] error.
  *
- * EIP https://eips.ethereum.org/EIPS/eip-1474#error-codes
  */
 export type ResourceNotFoundRpcErrorType = ResourceNotFoundRpcError & {
   code: -32001
@@ -251,9 +243,8 @@ export class ResourceNotFoundRpcError extends RpcError {
 }
 
 /**
- * Subclass for a "Resource unavailable" EIP-1474 error.
+ * Subclass for a "Resource unavailable" [RPCStandard] error.
  *
- * EIP https://eips.ethereum.org/EIPS/eip-1474#error-codes
  */
 export type ResourceUnavailableRpcErrorType = ResourceUnavailableRpcError & {
   code: -32002
@@ -272,9 +263,8 @@ export class ResourceUnavailableRpcError extends RpcError {
 }
 
 /**
- * Subclass for a "Transaction rejected" EIP-1474 error.
+ * Subclass for a "Transaction rejected" [RPCStandard] error.
  *
- * EIP https://eips.ethereum.org/EIPS/eip-1474#error-codes
  */
 export type TransactionRejectedRpcErrorType = TransactionRejectedRpcError & {
   code: -32003
@@ -293,9 +283,8 @@ export class TransactionRejectedRpcError extends RpcError {
 }
 
 /**
- * Subclass for a "Method not supported" EIP-1474 error.
+ * Subclass for a "Method not supported" [RPCStandard] error.
  *
- * EIP https://eips.ethereum.org/EIPS/eip-1474#error-codes
  */
 export type MethodNotSupportedRpcErrorType = MethodNotSupportedRpcError & {
   code: -32004
@@ -314,9 +303,8 @@ export class MethodNotSupportedRpcError extends RpcError {
 }
 
 /**
- * Subclass for a "Limit exceeded" EIP-1474 error.
+ * Subclass for a "Limit exceeded" [RPCStandard] error.
  *
- * EIP https://eips.ethereum.org/EIPS/eip-1474#error-codes
  */
 export type LimitExceededRpcErrorType = LimitExceededRpcError & {
   code: -32005
@@ -335,9 +323,8 @@ export class LimitExceededRpcError extends RpcError {
 }
 
 /**
- * Subclass for a "JSON-RPC version not supported" EIP-1474 error.
+ * Subclass for a "JSON-RPC version not supported" [RPCStandard] error.
  *
- * EIP https://eips.ethereum.org/EIPS/eip-1474#error-codes
  */
 export type JsonRpcVersionUnsupportedErrorType =
   JsonRpcVersionUnsupportedError & {
@@ -357,7 +344,7 @@ export class JsonRpcVersionUnsupportedError extends RpcError {
 }
 
 /**
- * Subclass for a "User Rejected Request" [standard] error.
+ * Subclass for a "User Rejected Request" [JavaScriptAPIStandard] error.
  *
  */
 export type UserRejectedRequestErrorType = UserRejectedRequestError & {
@@ -377,7 +364,7 @@ export class UserRejectedRequestError extends ProviderRpcError {
 }
 
 /**
- * Subclass for an "Unauthorized" [standard] error.
+ * Subclass for an "Unauthorized" [JavaScriptAPIStandard] error.
  *
  */
 export type UnauthorizedProviderErrorType = UnauthorizedProviderError & {
@@ -398,7 +385,7 @@ export class UnauthorizedProviderError extends ProviderRpcError {
 }
 
 /**
- * Subclass for an "Unsupported Method" [standard] error.
+ * Subclass for an "Unsupported Method" [JavaScriptAPIStandard] error.
  *
  */
 export type UnsupportedProviderMethodErrorType =
@@ -419,7 +406,7 @@ export class UnsupportedProviderMethodError extends ProviderRpcError {
 }
 
 /**
- * Subclass for an "Disconnected" [standard] error.
+ * Subclass for an "Disconnected" [JavaScriptAPIStandard] error.
  *
  */
 export type ProviderDisconnectedErrorType = ProviderDisconnectedError & {
@@ -439,7 +426,7 @@ export class ProviderDisconnectedError extends ProviderRpcError {
 }
 
 /**
- * Subclass for an "Chain Disconnected" [standard] error.
+ * Subclass for an "Chain Disconnected" [JavaScriptAPIStandard] error.
  *
  */
 export type ChainDisconnectedErrorType = ChainDisconnectedError & {
@@ -459,7 +446,7 @@ export class ChainDisconnectedError extends ProviderRpcError {
 }
 
 /**
- * Subclass for an "Switch Chain" [standard] error.
+ * Subclass for an "Switch Chain" [JavaScriptAPIStandard] error.
  *
  */
 export type SwitchChainErrorType = SwitchChainError & {

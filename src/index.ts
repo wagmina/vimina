@@ -306,13 +306,13 @@ export type {
 } from './types/misc.js'
 export type {
   AddMinaChainParameter,
-  RPCStandardEventMap,
-  RPCStandardEvents,
-  RPCStandardParameters,
-  RPCStandardProvider,
-  RPCStandardRequestFn,
-  EIP1474Methods,
-  ProviderRpcErrorType as RPCStandardProviderRpcErrorType,
+  JSAPIStandardEventMap,
+  JSAPIStandardEvents,
+  JSAPIStandardParameters,
+  JSAPIStandardProvider,
+  JSAPIStandardRequestFn,
+  RPCStandardMethods,
+  ProviderRpcErrorType as JSAPIStandardProviderRpcErrorType,
   ProviderConnectInfo,
   ProviderMessage,
   PublicRpcSchema,
@@ -330,8 +330,8 @@ export type {
   WalletPermission,
   WalletRpcSchema,
   WatchAssetParams,
-} from './types/rpcStandard.js'
-export { ProviderRpcError as RPCStandardProviderRpcError } from './types/rpcStandard.js'
+} from './types/jsApiStandard.js'
+export { ProviderRpcError as JSAPIStandardProviderRpcError } from './types/jsApiStandard.js'
 export type { GetTransportConfig, GetPollOptions } from './types/transport.js'
 export type { ParseAccount, DeriveAccount, HDKey } from './types/account.js'
 export type { Withdrawal } from './types/withdrawal.js'

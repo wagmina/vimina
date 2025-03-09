@@ -1,7 +1,7 @@
-import type { RPCStandardProvider } from './rpcStandard.js'
+import type { JSAPIStandardProvider } from './jsApiStandard.js'
 
 declare global {
   interface Window {
-    mina?: RPCStandardProvider | undefined
+    mina?: JSAPIStandardProvider | undefined
   }
 }

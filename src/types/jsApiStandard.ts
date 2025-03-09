@@ -6,11 +6,11 @@ import type { OneOf, Prettify } from './utils.js'
 //////////////////////////////////////////////////
 // Provider
 
-export type EIP1474Methods = [...PublicRpcSchema, ...WalletRpcSchema]
+export type RPCStandardMethods = [...PublicRpcSchema, ...WalletRpcSchema]
 
-export type RPCStandardProvider = Prettify<
-  RPCStandardEvents & {
-    request: RPCStandardRequestFn<EIP1474Methods>
+export type JSAPIStandardProvider = Prettify<
+  JSAPIStandardEvents & {
+    request: JSAPIStandardRequestFn<RPCStandardMethods>
   }
 >
 
@@ -44,7 +44,7 @@ export type ProviderMessage = {
   data: unknown
 }
 
-export type RPCStandardEventMap = {
+export type JSAPIStandardEventMap = {
   accountsChanged(accounts: Address[]): void
   chainChanged(networkId: string): void
   connect(connectInfo: ProviderConnectInfo): void
@@ -52,14 +52,14 @@ export type RPCStandardEventMap = {
   message(message: ProviderMessage): void
 }
 
-export type RPCStandardEvents = {
-  on<event extends keyof RPCStandardEventMap>(
+export type JSAPIStandardEvents = {
+  on<event extends keyof JSAPIStandardEventMap>(
     event: event,
-    listener: RPCStandardEventMap[event],
+    listener: JSAPIStandardEventMap[event],
   ): void
-  removeListener<event extends keyof RPCStandardEventMap>(
+  removeListener<event extends keyof JSAPIStandardEventMap>(
     event: event,
-    listener: RPCStandardEventMap[event],
+    listener: JSAPIStandardEventMap[event],
   ): void
 }
 
@@ -299,7 +299,7 @@ export type RpcSchema = readonly {
 
 export type RpcSchemaOverride = Omit<RpcSchema[number], 'Method'>
 
-export type RPCStandardParameters<
+export type JSAPIStandardParameters<
   rpcSchema extends RpcSchema | undefined = undefined,
 > = rpcSchema extends RpcSchema
   ? {
@@ -320,7 +320,7 @@ export type RPCStandardParameters<
       params?: unknown | undefined
     }
 
-export type RPCStandardRequestOptions = {
+export type JSAPIStandardRequestOptions = {
   // Deduplicate in-flight requests.
   dedupe?: boolean | undefined
   // The base delay (in ms) between retries.
@@ -338,13 +338,13 @@ type DerivedRpcSchema<
   ? [rpcSchemaOverride & { Method: string }]
   : rpcSchema
 
-export type RPCStandardRequestFn<
+export type JSAPIStandardRequestFn<
   rpcSchema extends RpcSchema | undefined = undefined,
 > = <
   rpcSchemaOverride extends RpcSchemaOverride | undefined = undefined,
-  _parameters extends RPCStandardParameters<
+  _parameters extends JSAPIStandardParameters<
     DerivedRpcSchema<rpcSchema, rpcSchemaOverride>
-  > = RPCStandardParameters<DerivedRpcSchema<rpcSchema, rpcSchemaOverride>>,
+  > = JSAPIStandardParameters<DerivedRpcSchema<rpcSchema, rpcSchemaOverride>>,
   _returnType = DerivedRpcSchema<rpcSchema, rpcSchemaOverride> extends RpcSchema
     ? Extract<
         DerivedRpcSchema<rpcSchema, rpcSchemaOverride>[number],
@@ -353,5 +353,5 @@ export type RPCStandardRequestFn<
     : unknown,
 >(
   args: _parameters,
-  options?: RPCStandardRequestOptions | undefined,
+  options?: JSAPIStandardRequestOptions | undefined,
 ) => Promise<_returnType>

@@ -3,7 +3,7 @@ import type { Client } from '../../clients/createClient.js'
 import type { Transport } from '../../clients/transports/createTransport.js'
 import type { ErrorType } from '../../errors/utils.js'
 import type { Chain } from '../../types/chain.js'
-import type { WalletPermission } from '../../types/rpcStandard.js'
+import type { WalletPermission } from '../../types/jsApiStandard.js'
 import type { Prettify } from '../../types/utils.js'
 import type { RequestErrorType } from '../../utils/buildRequest.js'
 

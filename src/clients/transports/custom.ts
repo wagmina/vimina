@@ -24,7 +24,7 @@ export type CustomTransport = Transport<'custom', {}, MinaProvider['request']>
 export type CustomTransportErrorType = CreateTransportErrorType | ErrorType
 
 /**
- * @description Creates a custom transport given an [standard] compliant `request` attribute.
+ * @description Creates a custom transport given an [JavaScriptAPIStandard] compliant `request` attribute.
  */
 export function custom<provider extends MinaProvider>(
   provider: provider,

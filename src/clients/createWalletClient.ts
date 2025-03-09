@@ -2,7 +2,7 @@ import type { Account, Address } from '../accounts/types.js'
 import type { ErrorType } from '../errors/utils.js'
 import type { ParseAccount } from '../types/account.js'
 import type { Chain } from '../types/chain.js'
-import type { RpcSchema, WalletRpcSchema } from '../types/rpcStandard.js'
+import type { RpcSchema, WalletRpcSchema } from '../types/jsApiStandard.js'
 import type { Prettify } from '../types/utils.js'
 import {
   type Client,

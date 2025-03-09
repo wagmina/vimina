@@ -1,20 +1,21 @@
 import type { ErrorType } from '../../errors/utils.js'
 import type { Chain } from '../../types/chain.js'
-import type { RPCStandardRequestFn } from '../../types/rpcStandard.js'
+import type { JSAPIStandardRequestFn } from '../../types/jsApiStandard.js'
 import { buildRequest } from '../../utils/buildRequest.js'
 import { uid as uid_ } from '../../utils/uid.js'
 import type { ClientConfig } from '../createClient.js'
 
 export type TransportConfig<
   type extends string = string,
-  rpcStandardRequestFn extends RPCStandardRequestFn = RPCStandardRequestFn,
+  jsApiStandardRequestFn extends
+    JSAPIStandardRequestFn = JSAPIStandardRequestFn,
 > = {
   /** The name of the transport. */
   name: string
   /** The key of the transport. */
   key: string
-  /** The JSON-RPC request function that matches the [standard] request spec. */
-  request: rpcStandardRequestFn
+  /** The JSON-RPC request function that matches the [JavaScriptAPIStandard] request spec. */
+  request: jsApiStandardRequestFn
   /** The base delay (in ms) between retries. */
   retryDelay?: number | undefined
   /** The max number of times to retry. */
@@ -28,7 +29,8 @@ export type TransportConfig<
 export type Transport<
   type extends string = string,
   rpcAttributes = Record<string, any>,
-  rpcStandardRequestFn extends RPCStandardRequestFn = RPCStandardRequestFn,
+  jsApiStandardRequestFn extends
+    JSAPIStandardRequestFn = JSAPIStandardRequestFn,
 > = <chain extends Chain | undefined = Chain>({
   chain,
 }: {
@@ -38,7 +40,7 @@ export type Transport<
   timeout?: TransportConfig['timeout'] | undefined
 }) => {
   config: TransportConfig<type>
-  request: rpcStandardRequestFn
+  request: jsApiStandardRequestFn
   value?: rpcAttributes | undefined
 }
 
