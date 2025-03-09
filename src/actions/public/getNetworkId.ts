@@ -9,27 +9,6 @@ export type GetNetworkIdReturnType = string
 
 export type GetNetworkIdErrorType = RequestErrorType | ErrorType
 
-/**
- * Returns the chain ID associated with the current network.
- *
- * - Docs: https://vimina.sh/docs/actions/public/getNetworkId
- * - JSON-RPC Methods: [`mina_networkId`](https://ethereum.org/en/developers/docs/apis/json-rpc/#mina_networkId)
- *
- * @param client - Client to use
- * @returns The current chain ID. {@link GetNetworkIdReturnType}
- *
- * @example
- * import { createPublicClient, http } from 'vimina'
- * import { mainnet } from 'vimina/chains'
- * import { getNetworkId } from 'vimina/public'
- *
- * const client = createPublicClient({
- *   chain: mainnet,
- *   transport: http(),
- * })
- * const networkId = await getNetworkId(client)
- * // 1
- */
 export async function getNetworkId<
   chain extends Chain | undefined,
   account extends Account | undefined,

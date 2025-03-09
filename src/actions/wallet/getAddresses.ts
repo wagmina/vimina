@@ -13,26 +13,6 @@ export type GetAddressesErrorType =
   | ChecksumAddressErrorType
   | ErrorType
 
-/**
- * Returns a list of account addresses owned by the wallet or client.
- *
- * - Docs: https://vimina.sh/docs/actions/wallet/getAddresses
- * - JSON-RPC Methods: [`mina_accounts`](https://ethereum.org/en/developers/docs/apis/json-rpc/#mina_accounts)
- *
- * @param client - Client to use
- * @returns List of account addresses owned by the wallet or client. {@link GetAddressesReturnType}
- *
- * @example
- * import { createWalletClient, custom } from 'vimina'
- * import { mainnet } from 'vimina/chains'
- * import { getAddresses } from 'vimina/wallet'
- *
- * const client = createWalletClient({
- *   chain: mainnet,
- *   transport: custom(window.ethereum),
- * })
- * const accounts = await getAddresses(client)
- */
 export async function getAddresses<
   chain extends Chain | undefined,
   account extends Account | undefined = undefined,

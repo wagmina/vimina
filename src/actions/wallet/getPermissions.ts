@@ -10,26 +10,6 @@ export type GetPermissionsReturnType = WalletPermission[]
 
 export type GetPermissionsErrorType = RequestErrorType | ErrorType
 
-/**
- * Gets the wallets current permissions.
- *
- * - Docs: https://vimina.sh/docs/actions/wallet/getPermissions
- * - JSON-RPC Methods: [`wallet_getPermissions`](https://eips.ethereum.org/EIPS/eip-2255)
- *
- * @param client - Client to use
- * @returns The wallet permissions. {@link GetPermissionsReturnType}
- *
- * @example
- * import { createWalletClient, custom } from 'vimina'
- * import { mainnet } from 'vimina/chains'
- * import { getPermissions } from 'vimina/wallet'
- *
- * const client = createWalletClient({
- *   chain: mainnet,
- *   transport: custom(window.ethereum),
- * })
- * const permissions = await getPermissions(client)
- */
 export async function getPermissions<
   chain extends Chain | undefined,
   account extends Account | undefined = undefined,

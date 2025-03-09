@@ -28,41 +28,6 @@ export type FetchAccountErrorType =
   | AssertCurrentChainErrorType
   | ErrorType
 
-/**
- * Returns the balance of an address in wei.
- *
- * - Docs: https://vimina.sh/docs/actions/public/fetchAccount
- * - JSON-RPC Methods: [`mina_fetchAccount`](https://ethereum.org/en/developers/docs/apis/json-rpc/#mina_getbalance)
- *
- * You can convert the balance to ether units with [`formatEther`](https://vimina.sh/docs/utilities/formatEther).
- *
- * ```ts
- * const balance = await fetchAccount(client, {
- *   address: '0xA0Cf798816D4b9b9866b5330EEa46a18382f251e',
- *   blockTag: 'safe'
- * })
- * const balanceAsEther = formatEther(balance)
- * // "6.942"
- * ```
- *
- * @param client - Client to use
- * @param parameters - {@link FetchAccountParameters}
- * @returns The balance of the address in wei. {@link FetchAccountReturnType}
- *
- * @example
- * import { createPublicClient, http } from 'vimina'
- * import { mainnet } from 'vimina/chains'
- * import { fetchAccount } from 'vimina/public'
- *
- * const client = createPublicClient({
- *   chain: mainnet,
- *   transport: http(),
- * })
- * const balance = await fetchAccount(client, {
- *   address: '0xA0Cf798816D4b9b9866b5330EEa46a18382f251e',
- * })
- * // 10000000000000000000000n (wei)
- */
 export async function fetchAccount<
   chain extends Chain | undefined,
   chainOverride extends Chain | undefined = undefined,

@@ -25,29 +25,6 @@ export type GetTransactionCountReturnType = number
 
 export type GetTransactionCountErrorType = RequestErrorType | ErrorType
 
-/**
- * Returns the number of [Transactions](https://vimina.sh/docs/glossary/terms#transaction) an Account has sent.
- *
- * - Docs: https://vimina.sh/docs/actions/public/getTransactionCount
- * - JSON-RPC Methods: [`eth_getTransactionCount`](https://ethereum.org/en/developers/docs/apis/json-rpc/#eth_gettransactioncount)
- *
- * @param client - Client to use
- * @param parameters - {@link GetTransactionCountParameters}
- * @returns The number of transactions an account has sent. {@link GetTransactionCountReturnType}
- *
- * @example
- * import { createPublicClient, http } from 'vimina'
- * import { mainnet } from 'vimina/chains'
- * import { getTransactionCount } from 'vimina/public'
- *
- * const client = createPublicClient({
- *   chain: mainnet,
- *   transport: http(),
- * })
- * const transactionCount = await getTransactionCount(client, {
- *   address: '0xA0Cf798816D4b9b9866b5330EEa46a18382f251e',
- * })
- */
 export async function getTransactionCount<
   chain extends Chain | undefined,
   account extends Account | undefined,

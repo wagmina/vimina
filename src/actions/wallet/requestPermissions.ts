@@ -18,29 +18,6 @@ export type RequestPermissionsReturnType = WalletPermission[]
 
 export type RequestPermissionsErrorType = RequestErrorType | ErrorType
 
-/**
- * Requests permissions for a wallet.
- *
- * - Docs: https://vimina.sh/docs/actions/wallet/requestPermissions
- * - JSON-RPC Methods: [`wallet_requestPermissions`](https://eips.ethereum.org/EIPS/eip-2255)
- *
- * @param client - Client to use
- * @param parameters - {@link RequestPermissionsParameters}
- * @returns The wallet permissions. {@link RequestPermissionsReturnType}
- *
- * @example
- * import { createWalletClient, custom } from 'vimina'
- * import { mainnet } from 'vimina/chains'
- * import { requestPermissions } from 'vimina/wallet'
- *
- * const client = createWalletClient({
- *   chain: mainnet,
- *   transport: custom(window.ethereum),
- * })
- * const permissions = await requestPermissions(client, {
- *   mina_accounts: {}
- * })
- */
 export async function requestPermissions<
   chain extends Chain | undefined,
   account extends Account | undefined = undefined,

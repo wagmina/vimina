@@ -305,7 +305,7 @@ export type {
   SignableMessage,
 } from './types/misc.js'
 export type {
-  AddEthereumChainParameter,
+  AddMinaChainParameter,
   EIP1193EventMap,
   EIP1193Events,
   EIP1193Parameters,

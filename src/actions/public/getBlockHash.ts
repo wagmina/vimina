@@ -28,29 +28,6 @@ export function getBlockHashCache(id: string) {
   return getCache(cacheKey(id))
 }
 
-/**
- * Returns the number of the most recent block seen.
- *
- * - Docs: https://vimina.sh/docs/actions/public/getBlockHash
- * - Examples: https://stackblitz.com/github/wevm/vimina/tree/main/examples/blocks/fetching-blocks
- * - JSON-RPC Methods: [`mina_blockHash`](https://ethereum.org/en/developers/docs/apis/json-rpc/#mina_blocknumber)
- *
- * @param client - Client to use
- * @param parameters - {@link GetBlockHashParameters}
- * @returns The number of the block. {@link GetBlockHashReturnType}
- *
- * @example
- * import { createPublicClient, http } from 'vimina'
- * import { mainnet } from 'vimina/chains'
- * import { getBlockHash } from 'vimina/public'
- *
- * const client = createPublicClient({
- *   chain: mainnet,
- *   transport: http(),
- * })
- * const blockNumber = await getBlockHash(client)
- * // 69420n
- */
 export async function getBlockHash<chain extends Chain | undefined>(
   client: Client<Transport, chain>,
   { cacheTime = client.cacheTime }: GetBlockHashParameters = {},

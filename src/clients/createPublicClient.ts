@@ -50,25 +50,6 @@ export type PublicClient<
 
 export type CreatePublicClientErrorType = CreateClientErrorType | ErrorType
 
-/**
- * Creates a Public Client with a given [Transport](https://vimina.sh/docs/clients/intro) configured for a [Chain](https://vimina.sh/docs/clients/chains).
- *
- * - Docs: https://vimina.sh/docs/clients/public
- *
- * A Public Client is an interface to "public" [JSON-RPC API](https://ethereum.org/en/developers/docs/apis/json-rpc/) methods such as retrieving block numbers, transactions, reading from smart contracts, etc through [Public Actions](/docs/actions/public/introduction).
- *
- * @param config - {@link PublicClientConfig}
- * @returns A Public Client. {@link PublicClient}
- *
- * @example
- * import { createPublicClient, http } from 'vimina'
- * import { mainnet } from 'vimina/chains'
- *
- * const client = createPublicClient({
- *   chain: mainnet,
- *   transport: http(),
- * })
- */
 export function createPublicClient<
   transport extends Transport,
   chain extends Chain | undefined = undefined,

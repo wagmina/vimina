@@ -53,43 +53,6 @@ export type WalletClient<
 >
 
 export type CreateWalletClientErrorType = CreateClientErrorType | ErrorType
-
-/**
- * Creates a Wallet Client with a given [Transport](https://vimina.sh/docs/clients/intro) configured for a [Chain](https://vimina.sh/docs/clients/chains).
- *
- * - Docs: https://vimina.sh/docs/clients/wallet
- *
- * A Wallet Client is an interface to interact with [Ethereum Account(s)](https://ethereum.org/en/glossary/#account) and provides the ability to retrieve accounts, execute transactions, sign messages, etc. through [Wallet Actions](https://vimina.sh/docs/actions/wallet/introduction).
- *
- * The Wallet Client supports signing over:
- * - [JSON-RPC Accounts](https://vimina.sh/docs/clients/wallet#json-rpc-accounts) (e.g. Browser Extension Wallets, WalletConnect, etc).
- * - [Local Accounts](https://vimina.sh/docs/clients/wallet#local-accounts-private-key-mnemonic-etc) (e.g. private key/mnemonic wallets).
- *
- * @param config - {@link WalletClientConfig}
- * @returns A Wallet Client. {@link WalletClient}
- *
- * @example
- * // JSON-RPC Account
- * import { createWalletClient, custom } from 'vimina'
- * import { mainnet } from 'vimina/chains'
- *
- * const client = createWalletClient({
- *   chain: mainnet,
- *   transport: custom(window.ethereum),
- * })
- *
- * @example
- * // Local Account
- * import { createWalletClient, custom } from 'vimina'
- * import { privateKeyToAccount } from 'vimina/accounts'
- * import { mainnet } from 'vimina/chains'
- *
- * const client = createWalletClient({
- *   account: privateKeyToAccount('0x…')
- *   chain: mainnet,
- *   transport: http(),
- * })
- */
 export function createWalletClient<
   transport extends Transport,
   chain extends Chain | undefined = undefined,

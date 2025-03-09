@@ -6,7 +6,7 @@ import {
   createTransport,
 } from './createTransport.js'
 
-type EthereumProvider = { request(...args: any): Promise<any> }
+type MinaProvider = { request(...args: any): Promise<any> }
 
 export type CustomTransportConfig = {
   /** The key of the transport. */
@@ -19,18 +19,14 @@ export type CustomTransportConfig = {
   retryDelay?: TransportConfig['retryDelay'] | undefined
 }
 
-export type CustomTransport = Transport<
-  'custom',
-  {},
-  EthereumProvider['request']
->
+export type CustomTransport = Transport<'custom', {}, MinaProvider['request']>
 
 export type CustomTransportErrorType = CreateTransportErrorType | ErrorType
 
 /**
  * @description Creates a custom transport given an EIP-1193 compliant `request` attribute.
  */
-export function custom<provider extends EthereumProvider>(
+export function custom<provider extends MinaProvider>(
   provider: provider,
   config: CustomTransportConfig = {},
 ): CustomTransport {

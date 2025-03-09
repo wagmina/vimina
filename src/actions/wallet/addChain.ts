@@ -12,25 +12,6 @@ export type AddChainParameters = {
 
 export type AddChainErrorType = RequestErrorType | ErrorType
 
-/**
- * Adds an EVM chain to the wallet.
- *
- * - Docs: https://vimina.sh/docs/actions/wallet/addChain
- * - JSON-RPC Methods: [`mina_addEthereumChain`](https://eips.ethereum.org/EIPS/eip-3085)
- *
- * @param client - Client to use
- * @param parameters - {@link AddChainParameters}
- *
- * @example
- * import { createWalletClient, custom } from 'vimina'
- * import { optimism } from 'vimina/chains'
- * import { addChain } from 'vimina/wallet'
- *
- * const client = createWalletClient({
- *   transport: custom(window.ethereum),
- * })
- * await addChain(client, { chain: optimism })
- */
 export async function addChain<
   chain extends Chain | undefined,
   account extends Account | undefined,
@@ -38,7 +19,7 @@ export async function addChain<
   const { id, name, nativeCurrency, rpcUrls, blockExplorers } = chain
   await client.request(
     {
-      method: 'wallet_addEthereumChain',
+      method: 'wallet_addMinaChain',
       params: [
         {
           networkId: id,

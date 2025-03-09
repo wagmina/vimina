@@ -68,49 +68,6 @@ export type SignTransactionErrorType =
   | RequestErrorType
   | ErrorType
 
-/**
- * Signs a transaction.
- *
- * - Docs: https://vimina.sh/docs/actions/wallet/signTransaction
- * - JSON-RPC Methods:
- *   - JSON-RPC Accounts: [`eth_signTransaction`](https://ethereum.github.io/execution-apis/api-documentation/)
- *   - Local Accounts: Signs locally. No JSON-RPC request.
- *
- * @param args - {@link SignTransactionParameters}
- * @returns The signed serialized transaction. {@link SignTransactionReturnType}
- *
- * @example
- * import { createWalletClient, custom } from 'vimina'
- * import { mainnet } from 'vimina/chains'
- * import { signTransaction } from 'vimina/actions'
- *
- * const client = createWalletClient({
- *   chain: mainnet,
- *   transport: custom(window.ethereum),
- * })
- * const signature = await signTransaction(client, {
- *   account: '0xA0Cf798816D4b9b9866b5330EEa46a18382f251e',
- *   to: '0x0000000000000000000000000000000000000000',
- *   value: 1n,
- * })
- *
- * @example
- * // Account Hoisting
- * import { createWalletClient, http } from 'vimina'
- * import { privateKeyToAccount } from 'vimina/accounts'
- * import { mainnet } from 'vimina/chains'
- * import { signTransaction } from 'vimina/actions'
- *
- * const client = createWalletClient({
- *   account: privateKeyToAccount('0x…'),
- *   chain: mainnet,
- *   transport: custom(window.ethereum),
- * })
- * const signature = await signTransaction(client, {
- *   to: '0x0000000000000000000000000000000000000000',
- *   value: 1n,
- * })
- */
 export async function signTransaction<
   transactionType extends TransactionType,
   chain extends Chain | undefined,

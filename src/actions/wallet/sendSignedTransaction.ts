@@ -12,30 +12,6 @@ export type SendSignedTransactionReturnType = Hash
 
 export type SendSignedTransactionErrorType = RequestErrorType | ErrorType
 
-/**
- * Sends a **signed** transaction to the network
- *
- * - Docs: https://vimina.sh/docs/actions/wallet/sendSignedTransaction
- * - JSON-RPC Method: [`eth_sendSignedTransaction`](https://ethereum.github.io/execution-apis/api-documentation/)
- *
- * @param client - Client to use
- * @param parameters - {@link SendSignedTransactionParameters}
- * @returns The transaction hash. {@link SendSignedTransactionReturnType}
- *
- * @example
- * import { createWalletClient, custom } from 'vimina'
- * import { mainnet } from 'vimina/chains'
- * import { sendSignedTransaction } from 'vimina/wallet'
- *
- * const client = createWalletClient({
- *   chain: mainnet,
- *   transport: custom(window.ethereum),
- * })
- *
- * const hash = await sendSignedTransaction(client, {
- *   signedTransaction: '0x02f850018203118080825208808080c080a04012522854168b27e5dc3d5839bab5e6b39e1a0ffd343901ce1622e3d64b48f1a04e00902ae0502c4728cbf12156290df99c3ed7de85b1dbfe20b5c36931733a33'
- * })
- */
 export async function sendSignedTransaction<chain extends Chain | undefined>(
   client: Client<Transport, chain>,
   parameters: SendSignedTransactionParameters,

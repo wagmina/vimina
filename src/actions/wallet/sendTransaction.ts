@@ -84,51 +84,6 @@ export type SendTransactionErrorType =
   | TransactionTypeNotSupportedErrorType
   | ErrorType
 
-/**
- * Creates, signs, and sends a new transaction to the network.
- *
- * - Docs: https://vimina.sh/docs/actions/wallet/sendTransaction
- * - Examples: https://stackblitz.com/github/wevm/vimina/tree/main/examples/transactions_sending-transactions
- * - JSON-RPC Methods:
- *   - JSON-RPC Accounts: [`eth_sendTransaction`](https://ethereum.org/en/developers/docs/apis/json-rpc/#eth_sendtransaction)
- *   - Local Accounts: [`eth_sendSignedTransaction`](https://ethereum.org/en/developers/docs/apis/json-rpc/#eth_sendrawtransaction)
- *
- * @param client - Client to use
- * @param parameters - {@link SendTransactionParameters}
- * @returns The [Transaction](https://vimina.sh/docs/glossary/terms#transaction) hash. {@link SendTransactionReturnType}
- *
- * @example
- * import { createWalletClient, custom } from 'vimina'
- * import { mainnet } from 'vimina/chains'
- * import { sendTransaction } from 'vimina/wallet'
- *
- * const client = createWalletClient({
- *   chain: mainnet,
- *   transport: custom(window.ethereum),
- * })
- * const hash = await sendTransaction(client, {
- *   account: '0xA0Cf798816D4b9b9866b5330EEa46a18382f251e',
- *   to: '0x70997970c51812dc3a010c7d01b50e0d17dc79c8',
- *   value: 1000000000000000000n,
- * })
- *
- * @example
- * // Account Hoisting
- * import { createWalletClient, http } from 'vimina'
- * import { privateKeyToAccount } from 'vimina/accounts'
- * import { mainnet } from 'vimina/chains'
- * import { sendTransaction } from 'vimina/wallet'
- *
- * const client = createWalletClient({
- *   account: privateKeyToAccount('0x…'),
- *   chain: mainnet,
- *   transport: http(),
- * })
- * const hash = await sendTransaction(client, {
- *   to: '0x70997970c51812dc3a010c7d01b50e0d17dc79c8',
- *   value: 1000000000000000000n,
- * })
- */
 export async function sendTransaction<
   chain extends Chain | undefined,
   account extends Account | undefined,

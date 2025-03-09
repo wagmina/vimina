@@ -47,31 +47,6 @@ export type WatchBlockHashReturnType = () => void
 
 export type WatchBlockHashErrorType = PollErrorType | ErrorType
 
-/**
- * Watches and returns incoming block numbers.
- *
- * - Docs: https://vimina.sh/docs/actions/public/watchBlockHash
- * - Examples: https://stackblitz.com/github/wevm/vimina/tree/main/examples/blocks/watching-blocks
- * - JSON-RPC Methods:
- *   - When `poll: true`, calls [`mina_blockHash`](https://ethereum.org/en/developers/docs/apis/json-rpc/#mina_blocknumber) on a polling interval.
- *   - When `poll: false` & WebSocket Transport, uses a WebSocket subscription via [`mina_subscribe`](https://docs.alchemy.com/reference/eth-subscribe-polygon) and the `"newHeads"` event.
- *
- * @param client - Client to use
- * @param parameters - {@link WatchBlockHashParameters}
- * @returns A function that can be invoked to stop watching for new block numbers. {@link WatchBlockHashReturnType}
- *
- * @example
- * import { createPublicClient, watchBlockHash, http } from 'vimina'
- * import { mainnet } from 'vimina/chains'
- *
- * const client = createPublicClient({
- *   chain: mainnet,
- *   transport: http(),
- * })
- * const unwatch = watchBlockHash(client, {
- *   onBlockHash: (blockNumber) => console.log(blockNumber),
- * })
- */
 export function watchBlockHash<
   chain extends Chain | undefined,
   transport extends Transport,
