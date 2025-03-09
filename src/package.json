@@ -69,13 +69,27 @@
   },
   "typesVersions": {
     "*": {
-      "accounts": ["./_types/accounts/index.d.ts"],
-      "actions": ["./_types/actions/index.d.ts"],
-      "chains": ["./_types/chains/index.d.ts"],
-      "chains/utils": ["./_types/chains/utils.d.ts"],
-      "node": ["./_types/node/index.d.ts"],
-      "utils": ["./_types/utils/index.d.ts"],
-      "window": ["./_types/window/index.d.ts"]
+      "accounts": [
+        "./_types/accounts/index.d.ts"
+      ],
+      "actions": [
+        "./_types/actions/index.d.ts"
+      ],
+      "chains": [
+        "./_types/chains/index.d.ts"
+      ],
+      "chains/utils": [
+        "./_types/chains/utils.d.ts"
+      ],
+      "node": [
+        "./_types/node/index.d.ts"
+      ],
+      "utils": [
+        "./_types/utils/index.d.ts"
+      ],
+      "window": [
+        "./_types/window/index.d.ts"
+      ]
     }
   },
   "peerDependencies": {
@@ -87,10 +101,7 @@
     }
   },
   "dependencies": {
-    "@mina-js/connect": "https://pkg.pr.new/palladians/mina-js/@mina-js/connect@d652e7a",
-    "@mina-js/providers": "https://pkg.pr.new/palladians/mina-js/@mina-js/providers@d652e7a",
     "@mina-js/utils": "https://pkg.pr.new/palladians/mina-js/@mina-js/utils@d652e7a",
-    "@noble/curves": "1.7.0",
     "@noble/hashes": "1.6.1",
     "@scure/bip32": "1.6.0",
     "@scure/bip39": "1.5.0",
@@ -102,14 +113,23 @@
   "license": "MIT",
   "homepage": "https://vimina.sh",
   "repository": "wevm/vimina",
-  "authors": ["awkweb.eth", "jxom.eth"],
+  "authors": [
+    "awkweb.eth",
+    "jxom.eth"
+  ],
   "funding": [
     {
       "type": "github",
       "url": "https://github.com/sponsors/wevm"
     }
   ],
-  "keywords": ["mina", "dapps", "wallet", "web3", "typescript"],
+  "keywords": [
+    "mina",
+    "dapps",
+    "wallet",
+    "web3",
+    "typescript"
+  ],
   "devDependencies": {
     "@aurowallet/mina-provider": "1.0.6"
   }
