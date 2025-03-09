@@ -1,6 +1,6 @@
 {
-  "name": "@wevm/vimina",
-  "version": "2.21.53",
+  "name": "vimina",
+  "version": "0.0.1",
   "exports": {
     ".": "./index.ts",
     "./accounts": "./accounts/index.ts",
