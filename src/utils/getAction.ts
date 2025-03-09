@@ -4,7 +4,7 @@ import type { WalletActions } from '../clients/decorators/wallet.js'
 import type { Transport } from '../clients/transports/createTransport.js'
 import type { Account } from '../types/account.js'
 import type { Chain } from '../types/chain.js'
-import type { RpcSchema } from '../types/eip1193.js'
+import type { RpcSchema } from '../types/rpcStandard.js'
 
 /**
  * Retrieves and returns an action from the client (if exists), and falls

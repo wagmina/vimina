@@ -7,10 +7,10 @@ import type { ErrorType } from '../errors/utils.js'
 import type { Account } from '../types/account.js'
 import type { Chain } from '../types/chain.js'
 import type {
-  EIP1193RequestFn,
   EIP1474Methods,
+  RPCStandardRequestFn,
   RpcSchema,
-} from '../types/eip1193.js'
+} from '../types/rpcStandard.js'
 import type { ExactPartial, Prettify } from '../types/utils.js'
 import { uid } from '../utils/uid.js'
 import type { PublicActions } from './decorators/public.js'
@@ -120,7 +120,7 @@ type Client_Base<
   /** Frequency (in ms) for polling enabled actions & events. Defaults to 4_000 milliseconds. */
   pollingInterval: number
   /** Request function wrapped with friendly error handling */
-  request: EIP1193RequestFn<
+  request: RPCStandardRequestFn<
     rpcSchema extends undefined ? EIP1474Methods : rpcSchema
   >
   /** The RPC transport */

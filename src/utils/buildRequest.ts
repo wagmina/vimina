@@ -52,9 +52,9 @@ import {
 } from '../errors/rpc.js'
 import type { ErrorType } from '../errors/utils.js'
 import type {
-  EIP1193RequestFn,
-  EIP1193RequestOptions,
-} from '../types/eip1193.js'
+  RPCStandardRequestFn,
+  RPCStandardRequestOptions,
+} from '../types/rpcStandard.js'
 import type { CreateBatchSchedulerErrorType } from './promise/createBatchScheduler.js'
 import { withDedupe } from './promise/withDedupe.js'
 import { type WithRetryErrorType, withRetry } from './promise/withRetry.js'
@@ -93,8 +93,8 @@ export type RequestErrorType =
 
 export function buildRequest<request extends (args: any) => Promise<any>>(
   request: request,
-  options: EIP1193RequestOptions = {},
-): EIP1193RequestFn {
+  options: RPCStandardRequestOptions = {},
+): RPCStandardRequestFn {
   return async (args, overrideOptions = {}) => {
     const {
       dedupe = false,

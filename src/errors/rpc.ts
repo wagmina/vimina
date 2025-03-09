@@ -70,9 +70,8 @@ export type ProviderRpcErrorCode =
   | 20004 // Chain Not Recognized
 
 /**
- * Error subclass implementing Ethereum Provider errors per EIP-1193.
+ * Error subclass implementing Ethereum Provider errors per [standard].
  *
- * - EIP https://eips.ethereum.org/EIPS/eip-1193
  */
 export type ProviderRpcErrorType = ProviderRpcError & {
   name: 'ProviderRpcError'
@@ -358,9 +357,8 @@ export class JsonRpcVersionUnsupportedError extends RpcError {
 }
 
 /**
- * Subclass for a "User Rejected Request" EIP-1193 error.
+ * Subclass for a "User Rejected Request" [standard] error.
  *
- * EIP https://eips.ethereum.org/EIPS/eip-1193#provider-errors
  */
 export type UserRejectedRequestErrorType = UserRejectedRequestError & {
   code: 4001
@@ -379,9 +377,8 @@ export class UserRejectedRequestError extends ProviderRpcError {
 }
 
 /**
- * Subclass for an "Unauthorized" EIP-1193 error.
+ * Subclass for an "Unauthorized" [standard] error.
  *
- * EIP https://eips.ethereum.org/EIPS/eip-1193#provider-errors
  */
 export type UnauthorizedProviderErrorType = UnauthorizedProviderError & {
   code: 4100
@@ -401,9 +398,8 @@ export class UnauthorizedProviderError extends ProviderRpcError {
 }
 
 /**
- * Subclass for an "Unsupported Method" EIP-1193 error.
+ * Subclass for an "Unsupported Method" [standard] error.
  *
- * EIP https://eips.ethereum.org/EIPS/eip-1193#provider-errors
  */
 export type UnsupportedProviderMethodErrorType =
   UnsupportedProviderMethodError & {
@@ -423,9 +419,8 @@ export class UnsupportedProviderMethodError extends ProviderRpcError {
 }
 
 /**
- * Subclass for an "Disconnected" EIP-1193 error.
+ * Subclass for an "Disconnected" [standard] error.
  *
- * EIP https://eips.ethereum.org/EIPS/eip-1193#provider-errors
  */
 export type ProviderDisconnectedErrorType = ProviderDisconnectedError & {
   code: 4900
@@ -444,9 +439,8 @@ export class ProviderDisconnectedError extends ProviderRpcError {
 }
 
 /**
- * Subclass for an "Chain Disconnected" EIP-1193 error.
+ * Subclass for an "Chain Disconnected" [standard] error.
  *
- * EIP https://eips.ethereum.org/EIPS/eip-1193#provider-errors
  */
 export type ChainDisconnectedErrorType = ChainDisconnectedError & {
   code: 4901
@@ -465,9 +459,8 @@ export class ChainDisconnectedError extends ProviderRpcError {
 }
 
 /**
- * Subclass for an "Switch Chain" EIP-1193 error.
+ * Subclass for an "Switch Chain" [standard] error.
  *
- * EIP https://eips.ethereum.org/EIPS/eip-1193#provider-errors
  */
 export type SwitchChainErrorType = SwitchChainError & {
   code: 20004

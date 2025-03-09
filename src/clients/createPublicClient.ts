@@ -1,7 +1,7 @@
 import type { ErrorType } from '../errors/utils.js'
 import type { Account, Address, ParseAccount } from '../types/account.js'
 import type { Chain } from '../types/chain.js'
-import type { PublicRpcSchema, RpcSchema } from '../types/eip1193.js'
+import type { PublicRpcSchema, RpcSchema } from '../types/rpcStandard.js'
 import type { Prettify } from '../types/utils.js'
 import {
   type Client,

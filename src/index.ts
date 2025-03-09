@@ -306,13 +306,13 @@ export type {
 } from './types/misc.js'
 export type {
   AddMinaChainParameter,
-  EIP1193EventMap,
-  EIP1193Events,
-  EIP1193Parameters,
-  EIP1193Provider,
-  EIP1193RequestFn,
+  RPCStandardEventMap,
+  RPCStandardEvents,
+  RPCStandardParameters,
+  RPCStandardProvider,
+  RPCStandardRequestFn,
   EIP1474Methods,
-  ProviderRpcErrorType as EIP1193ProviderRpcErrorType,
+  ProviderRpcErrorType as RPCStandardProviderRpcErrorType,
   ProviderConnectInfo,
   ProviderMessage,
   PublicRpcSchema,
@@ -330,8 +330,8 @@ export type {
   WalletPermission,
   WalletRpcSchema,
   WatchAssetParams,
-} from './types/eip1193.js'
-export { ProviderRpcError as EIP1193ProviderRpcError } from './types/eip1193.js'
+} from './types/rpcStandard.js'
+export { ProviderRpcError as RPCStandardProviderRpcError } from './types/rpcStandard.js'
 export type { GetTransportConfig, GetPollOptions } from './types/transport.js'
 export type { ParseAccount, DeriveAccount, HDKey } from './types/account.js'
 export type { Withdrawal } from './types/withdrawal.js'

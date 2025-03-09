@@ -1,7 +1,7 @@
-import type { EIP1193Provider } from './eip1193.js'
+import type { RPCStandardProvider } from './rpcStandard.js'
 
 declare global {
   interface Window {
-    mina?: EIP1193Provider | undefined
+    mina?: RPCStandardProvider | undefined
   }
 }

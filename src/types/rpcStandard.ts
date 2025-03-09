@@ -8,9 +8,9 @@ import type { OneOf, Prettify } from './utils.js'
 
 export type EIP1474Methods = [...PublicRpcSchema, ...WalletRpcSchema]
 
-export type EIP1193Provider = Prettify<
-  EIP1193Events & {
-    request: EIP1193RequestFn<EIP1474Methods>
+export type RPCStandardProvider = Prettify<
+  RPCStandardEvents & {
+    request: RPCStandardRequestFn<EIP1474Methods>
   }
 >
 
@@ -44,7 +44,7 @@ export type ProviderMessage = {
   data: unknown
 }
 
-export type EIP1193EventMap = {
+export type RPCStandardEventMap = {
   accountsChanged(accounts: Address[]): void
   chainChanged(networkId: string): void
   connect(connectInfo: ProviderConnectInfo): void
@@ -52,14 +52,14 @@ export type EIP1193EventMap = {
   message(message: ProviderMessage): void
 }
 
-export type EIP1193Events = {
-  on<event extends keyof EIP1193EventMap>(
+export type RPCStandardEvents = {
+  on<event extends keyof RPCStandardEventMap>(
     event: event,
-    listener: EIP1193EventMap[event],
+    listener: RPCStandardEventMap[event],
   ): void
-  removeListener<event extends keyof EIP1193EventMap>(
+  removeListener<event extends keyof RPCStandardEventMap>(
     event: event,
-    listener: EIP1193EventMap[event],
+    listener: RPCStandardEventMap[event],
   ): void
 }
 
@@ -299,7 +299,7 @@ export type RpcSchema = readonly {
 
 export type RpcSchemaOverride = Omit<RpcSchema[number], 'Method'>
 
-export type EIP1193Parameters<
+export type RPCStandardParameters<
   rpcSchema extends RpcSchema | undefined = undefined,
 > = rpcSchema extends RpcSchema
   ? {
@@ -320,7 +320,7 @@ export type EIP1193Parameters<
       params?: unknown | undefined
     }
 
-export type EIP1193RequestOptions = {
+export type RPCStandardRequestOptions = {
   // Deduplicate in-flight requests.
   dedupe?: boolean | undefined
   // The base delay (in ms) between retries.
@@ -338,13 +338,13 @@ type DerivedRpcSchema<
   ? [rpcSchemaOverride & { Method: string }]
   : rpcSchema
 
-export type EIP1193RequestFn<
+export type RPCStandardRequestFn<
   rpcSchema extends RpcSchema | undefined = undefined,
 > = <
   rpcSchemaOverride extends RpcSchemaOverride | undefined = undefined,
-  _parameters extends EIP1193Parameters<
+  _parameters extends RPCStandardParameters<
     DerivedRpcSchema<rpcSchema, rpcSchemaOverride>
-  > = EIP1193Parameters<DerivedRpcSchema<rpcSchema, rpcSchemaOverride>>,
+  > = RPCStandardParameters<DerivedRpcSchema<rpcSchema, rpcSchemaOverride>>,
   _returnType = DerivedRpcSchema<rpcSchema, rpcSchemaOverride> extends RpcSchema
     ? Extract<
         DerivedRpcSchema<rpcSchema, rpcSchemaOverride>[number],
@@ -353,5 +353,5 @@ export type EIP1193RequestFn<
     : unknown,
 >(
   args: _parameters,
-  options?: EIP1193RequestOptions | undefined,
+  options?: RPCStandardRequestOptions | undefined,
 ) => Promise<_returnType>
