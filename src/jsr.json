@@ -1,0 +1,22 @@
+{
+  "name": "vimina",
+  "version": "0.0.1",
+  "exports": {
+    ".": "./index.ts",
+    "./accounts": "./accounts/index.ts",
+    "./actions": "./actions/index.ts",
+    "./chains": "./chains/index.ts",
+    "./chains/utils": "./chains/utils.ts",
+    "./node": "./node/index.ts",
+    "./utils": "./utils/index.ts"
+  },
+  "publish": {
+    "include": ["LICENSE", "README.md", "CHANGELOG.md", "**/*.ts"],
+    "exclude": [
+      "**/*.bench.ts",
+      "**/*.bench-d.ts",
+      "**/*.test.ts",
+      "**/*.test-d.ts"
+    ]
+  }
+}

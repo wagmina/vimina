@@ -1,0 +1,106 @@
+{
+  "name": "vimina",
+  "description": "TypeScript Interface for Mina",
+  "version": "0.0.1",
+  "type": "module",
+  "main": "./_cjs/index.js",
+  "module": "./_esm/index.js",
+  "types": "./_types/index.d.ts",
+  "typings": "./_types/index.d.ts",
+  "sideEffects": false,
+  "files": [
+    "*",
+    "!**/*.bench.ts",
+    "!**/*.bench-d.ts",
+    "!**/*.test.ts",
+    "!**/*.test.ts.snap",
+    "!**/*.test-d.ts",
+    "!**/*.tsbuildinfo",
+    "!tsconfig.build.json",
+    "!jsr.json"
+  ],
+  "exports": {
+    ".": {
+      "types": "./_types/index.d.ts",
+      "import": "./_esm/index.js",
+      "default": "./_cjs/index.js"
+    },
+    "./accounts": {
+      "types": "./_types/accounts/index.d.ts",
+      "import": "./_esm/accounts/index.js",
+      "default": "./_cjs/accounts/index.js"
+    },
+    "./actions": {
+      "types": "./_types/actions/index.d.ts",
+      "import": "./_esm/actions/index.js",
+      "default": "./_cjs/actions/index.js"
+    },
+    "./chains": {
+      "types": "./_types/chains/index.d.ts",
+      "import": "./_esm/chains/index.js",
+      "default": "./_cjs/chains/index.js"
+    },
+    "./chains/utils": {
+      "types": "./_types/chains/utils.d.ts",
+      "import": "./_esm/chains/utils.js",
+      "default": "./_cjs/chains/utils.js"
+    },
+    "./node": {
+      "types": "./_types/node/index.d.ts",
+      "import": "./_esm/node/index.js",
+      "default": "./_cjs/node/index.js"
+    },
+    "./nonce": {
+      "types": "./_types/nonce/index.d.ts",
+      "import": "./_esm/nonce/index.js",
+      "default": "./_cjs/nonce/index.js"
+    },
+    "./utils": {
+      "types": "./_types/utils/index.d.ts",
+      "import": "./_esm/utils/index.js",
+      "default": "./_cjs/utils/index.js"
+    },
+    "./window": {
+      "types": "./_types/window/index.d.ts",
+      "import": "./_esm/window/index.js",
+      "default": "./_cjs/window/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "typesVersions": {
+    "*": {
+      "accounts": ["./_types/accounts/index.d.ts"],
+      "actions": ["./_types/actions/index.d.ts"],
+      "chains": ["./_types/chains/index.d.ts"],
+      "chains/utils": ["./_types/chains/utils.d.ts"],
+      "node": ["./_types/node/index.d.ts"],
+      "utils": ["./_types/utils/index.d.ts"],
+      "window": ["./_types/window/index.d.ts"]
+    }
+  },
+  "peerDependencies": {
+    "typescript": ">=5.0.4"
+  },
+  "peerDependenciesMeta": {
+    "typescript": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "@mina-js/utils": "https://pkg.pr.new/palladians/mina-js/@mina-js/utils@d652e7a",
+    "@noble/hashes": "1.6.1",
+    "@scure/bip32": "1.6.0",
+    "@scure/bip39": "1.5.0",
+    "bs58": "^6.0.0",
+    "isows": "1.0.6",
+    "o1js": "^1.6.0",
+    "ws": "8.18.0"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/DeMonkeyCoder/vimina",
+  "repository": "DeMonkeyCoder/vimina",
+  "keywords": ["mina", "dapps", "wallet", "web3", "typescript"],
+  "devDependencies": {
+    "@aurowallet/mina-provider": "1.0.6"
+  }
+}

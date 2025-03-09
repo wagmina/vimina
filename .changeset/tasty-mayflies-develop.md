@@ -1,0 +1,5 @@
+---
+"vimina": patch
+---
+
+Updated dependencies.
