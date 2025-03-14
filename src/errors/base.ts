@@ -6,16 +6,7 @@ type ErrorConfig = {
 }
 
 let errorConfig: ErrorConfig = {
-  getDocsUrl: ({
-    docsBaseUrl,
-    docsPath = '',
-    docsSlug,
-  }: BaseErrorParameters) =>
-    docsPath
-      ? `${docsBaseUrl ?? 'https://vimina.sh'}${docsPath}${
-          docsSlug ? `#${docsSlug}` : ''
-        }`
-      : undefined,
+  getDocsUrl: (_args: BaseErrorParameters) => undefined,
   version,
 }
 
