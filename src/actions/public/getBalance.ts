@@ -9,6 +9,7 @@ import type { RequestErrorType } from '../../utils/buildRequest.js'
 export type GetBalanceParameters = {
   /** The address of the account. */
   address: Address
+  tokenId?: string
 } & (
   | {
       /** The balance of the account at a block number. */
@@ -29,14 +30,15 @@ export type GetBalanceErrorType = RequestErrorType | ErrorType
 export async function getBalance<chain extends Chain | undefined>(
   client: Client<Transport, chain>,
   // { address, blockNumber, blockTag = "latest" }: GetBalanceParameters
-  { address }: GetBalanceParameters,
+  { address, tokenId }: GetBalanceParameters,
 ): Promise<GetBalanceReturnType> {
   // const blockNumberHex = blockNumber ? numberToHex(blockNumber) : undefined;
 
-  const balance = await client.request({
+  const balance: string = await client.request({
     method: 'mina_getBalance',
     // params: [address, blockNumberHex || blockTag],
-    params: [address],
+    // @ts-ignore
+    params: tokenId !== undefined ? [address, tokenId] : [address],
   })
   return BigInt(balance)
 }

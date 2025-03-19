@@ -19,6 +19,7 @@ export type FetchAccountParameters<
 > = {
   /** The address of the account. */
   address: Address
+  tokenId?: string
 } & GetChainParameter<chain, chainOverride>
 
 export type FetchAccountReturnType = Account
@@ -36,16 +37,21 @@ export async function fetchAccount<
   // { address, blockNumber, blockTag = "latest" }: FetchAccountParameters
   parameters: FetchAccountParameters<chain, chainOverride>,
 ): Promise<FetchAccountReturnType> {
-  const { address, chain = client.chain } = parameters
+  const { address, tokenId, chain = client.chain } = parameters
   const networkId = await getAction(client, getNetworkId, 'getNetworkId')({})
   assertCurrentChain({
     currentNetworkId: networkId,
     chain: chain ?? undefined,
   })
   const result = await o1js_fetchAccount(
-    {
-      publicKey: PublicKey.fromBase58(address),
-    },
+    tokenId !== undefined
+      ? {
+          publicKey: PublicKey.fromBase58(address),
+          tokenId,
+        }
+      : {
+          publicKey: PublicKey.fromBase58(address),
+        },
     chain!.graphqlEndpoint,
   )
   if (result.error) {
