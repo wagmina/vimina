@@ -37,7 +37,6 @@ export async function getBalance<chain extends Chain | undefined>(
   const balance: string = await client.request({
     method: 'mina_getBalance',
     // params: [address, blockNumberHex || blockTag],
-    // @ts-ignore
     params: tokenId !== undefined ? [address, tokenId] : [address],
   })
   return BigInt(balance)

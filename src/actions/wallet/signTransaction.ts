@@ -158,6 +158,7 @@ export async function signTransaction<
               params: [
                 // @ts-ignore
                 {
+                  // @ts-ignore
                   command: {
                     zkappCommand: parameters.zkappCommand,
                     feePayer: parameters.feePayer
@@ -195,6 +196,7 @@ export async function signTransaction<
           params: [
             // @ts-ignore
             {
+              // @ts-ignore
               transaction: {
                 fee:
                   parameters?.fee !== undefined

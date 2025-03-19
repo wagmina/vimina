@@ -227,10 +227,7 @@ export type PublicRpcSchema = [
   },
   {
     Method: 'mina_getBalance'
-    Parameters: [
-      address: Address,
-      // block: BlockHash | BlockTag | BlockIdentifier
-    ]
+    Parameters: [address: Address] | [address: Address, tokenId: string]
     ReturnType: Quantity
   },
 ]
