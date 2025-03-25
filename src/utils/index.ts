@@ -15,23 +15,13 @@ export {
 } from './chain/extractChain.js'
 
 export {
-  type WebSocketAsyncErrorType,
-  type WebSocketAsyncOptions,
-  type WebSocketAsyncReturnType,
-  type WebSocketErrorType,
-  type WebSocketOptions,
-  type WebSocketReturnType,
-  getSocket,
-  rpc,
-} from './rpc/compat.js'
-export {
-  type HttpRpcClient,
-  type HttpRpcClientOptions,
-  type HttpRequestErrorType,
-  type HttpRequestParameters,
-  type HttpRequestReturnType,
-  getHttpRpcClient,
-} from './rpc/http.js'
+  type KlesiaRpcClient,
+  type KlesiaRpcClientOptions,
+  type KlesiaRequestErrorType,
+  type KlesiaRequestParameters,
+  type KlesiaRequestReturnType,
+  getKlesiaRpcClient,
+} from './rpc/klesia.js'
 export {
   type GetSocketRpcClientErrorType,
   type GetSocketRpcClientParameters,

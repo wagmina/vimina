@@ -52,7 +52,7 @@ export async function fetchAccount<
       : {
           publicKey: PublicKey.fromBase58(address),
         },
-    chain!.graphqlEndpoint,
+    chain!.rpcUrls.default.http[0],
   )
   if (result.error) {
     throw result.error

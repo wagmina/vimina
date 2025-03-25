@@ -114,6 +114,12 @@ export {
   http,
 } from './clients/transports/http.js'
 export {
+  type KlesiaTransport,
+  type KlesiaTransportConfig,
+  type KlesiaTransportErrorType,
+  klesia,
+} from './clients/transports/klesia.js'
+export {
   type PublicClient,
   type PublicClientConfig,
   type CreatePublicClientErrorType,
@@ -220,8 +226,8 @@ export {
   type SizeOverflowErrorType,
 } from './errors/encoding.js'
 export {
-  HttpRequestError,
-  type HttpRequestErrorType,
+  KlesiaRequestError,
+  type KlesiaRequestErrorType,
   RpcRequestError,
   type RpcRequestErrorType,
   TimeoutError,

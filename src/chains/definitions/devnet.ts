@@ -6,7 +6,8 @@ export const devnet = /*#__PURE__*/ defineChain({
   nativeCurrency: { name: 'MINA', symbol: 'MINA', decimals: 9 },
   rpcUrls: {
     default: {
-      http: ['https://devnet.klesia.palladians.xyz/api'],
+      http: ['https://api.minascan.io/node/devnet/v1/graphql'],
+      klesia: ['https://devnet.klesia.palladians.xyz/api'],
     },
   },
   blockExplorers: {
@@ -15,5 +16,4 @@ export const devnet = /*#__PURE__*/ defineChain({
       url: 'https://minascan.io/devnet',
     },
   },
-  graphqlEndpoint: 'https://api.minascan.io/node/devnet/v1/graphql',
 })

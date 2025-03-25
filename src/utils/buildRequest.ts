@@ -1,7 +1,7 @@
 import { BaseError } from '../errors/base.js'
 import {
-  HttpRequestError,
-  type HttpRequestErrorType,
+  KlesiaRequestError,
+  type KlesiaRequestErrorType,
   type RpcRequestErrorType,
   type TimeoutErrorType,
   type WebSocketRequestErrorType,
@@ -64,7 +64,7 @@ import { stringify } from './stringify.js'
 export type RequestErrorType =
   | ChainDisconnectedErrorType
   | CreateBatchSchedulerErrorType
-  | HttpRequestErrorType
+  | KlesiaRequestErrorType
   | InternalRpcErrorType
   | InvalidInputRpcErrorType
   | InvalidParamsRpcErrorType
@@ -191,7 +191,7 @@ export function buildRequest<request extends (args: any) => Promise<any>>(
           {
             delay: ({ count, error }) => {
               // If we find a Retry-After header, let's retry after the given time.
-              if (error && error instanceof HttpRequestError) {
+              if (error && error instanceof KlesiaRequestError) {
                 const retryAfter = error?.headers?.get('Retry-After')
                 if (retryAfter?.match(/\d/))
                   return Number.parseInt(retryAfter) * 1000
@@ -217,7 +217,7 @@ export function shouldRetry(error: Error) {
     if (error.code === InternalRpcError.code) return true
     return false
   }
-  if (error instanceof HttpRequestError && error.status) {
+  if (error instanceof KlesiaRequestError && error.status) {
     // Forbidden
     if (error.status === 403) return true
     // Request Timeout

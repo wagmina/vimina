@@ -6,7 +6,6 @@ import {
 import type { ErrorType } from '../../errors/utils.js'
 import type { Hash } from '../../types/misc.js'
 import type { RpcResponse } from '../../types/rpc.js'
-import { getSocket } from '../../utils/rpc/compat.js'
 import type { SocketRpcClient } from '../../utils/rpc/socket.js'
 import {
   type GetWebSocketRpcClientOptions,
@@ -67,10 +66,6 @@ export type WebSocketTransportConfig = {
 export type WebSocketTransport = Transport<
   'webSocket',
   {
-    /**
-     * @deprecated use `getRpcClient` instead.
-     */
-    getSocket(): Promise<WebSocket>
     getRpcClient(): Promise<SocketRpcClient<WebSocket>>
     subscribe: WebSocketTransportSubscribe['subscribe']
   }
@@ -129,9 +124,6 @@ export function webSocket(
         type: 'webSocket',
       },
       {
-        getSocket() {
-          return getSocket(url_)
-        },
         getRpcClient() {
           return getWebSocketRpcClient(url_)
         },
