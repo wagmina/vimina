@@ -88,7 +88,7 @@ export function http(
       typeof batch === 'object' ? batch : {}
     const retryCount = config.retryCount ?? retryCount_
     const timeout = timeout_ ?? config.timeout ?? 10_000
-    const url_ = url || chain?.rpcUrls.default.http[0]
+    const url_ = url || chain?.rpcUrls.default.http?.[0]
     if (!url_) throw new UrlRequiredError()
 
     const rpcClient = getHttpRpcClient(url_, {

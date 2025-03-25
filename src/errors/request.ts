@@ -44,6 +44,47 @@ export class HttpRequestError extends BaseError {
   }
 }
 
+export type GraphqlRequestErrorType = GraphqlRequestError & {
+  name: 'GraphqlRequestError'
+}
+export class GraphqlRequestError extends BaseError {
+  body?: { [x: string]: unknown } | { [y: string]: unknown }[] | undefined
+  headers?: Headers | undefined
+  status?: number | undefined
+  url: string
+
+  constructor({
+    body,
+    cause,
+    details,
+    headers,
+    status,
+    url,
+  }: {
+    body?: { [x: string]: unknown } | { [y: string]: unknown }[] | undefined
+    cause?: Error | undefined
+    details?: string | undefined
+    headers?: Headers | undefined
+    status?: number | undefined
+    url: string
+  }) {
+    super('HTTP request failed.', {
+      cause,
+      details,
+      metaMessages: [
+        status && `Status: ${status}`,
+        `URL: ${getUrl(url)}`,
+        body && `Request body: ${stringify(body)}`,
+      ].filter(Boolean) as string[],
+      name: 'GraphqlRequestError',
+    })
+    this.body = body
+    this.headers = headers
+    this.status = status
+    this.url = url
+  }
+}
+
 export type WebSocketRequestErrorType = WebSocketRequestError & {
   name: 'WebSocketRequestError'
 }

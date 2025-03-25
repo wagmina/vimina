@@ -25,7 +25,7 @@ export async function addChain<
           networkId: id,
           chainName: name,
           nativeCurrency,
-          rpcUrls: rpcUrls.default.http,
+          rpcUrls: rpcUrls.default.graphql,
           blockExplorerUrls: blockExplorers
             ? Object.values(blockExplorers).map(({ url }) => url)
             : undefined,

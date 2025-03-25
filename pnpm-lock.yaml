@@ -146,6 +146,9 @@ importers:
 
   src:
     dependencies:
+      '@mina-js/klesia-utils':
+        specifier: https://pkg.pr.new/DeMonkeyCoder/mina-js/@mina-js/klesia-utils@7dcfc5a
+        version: https://pkg.pr.new/DeMonkeyCoder/mina-js/@mina-js/klesia-utils@7dcfc5a(typescript@5.8.2)
       '@mina-js/utils':
         specifier: https://pkg.pr.new/palladians/mina-js/@mina-js/utils@d652e7a
         version: https://pkg.pr.new/palladians/mina-js/@mina-js/utils@d652e7a(typescript@5.8.2)
@@ -176,6 +179,14 @@ importers:
         version: 1.0.6
 
 packages:
+
+  '@0no-co/graphql.web@1.1.2':
+    resolution: {integrity: sha512-N2NGsU5FLBhT8NZ+3l2YrzZSHITjNXNuDhC4iDiikv0IujaJ0Xc6xIxQZ/Ek3Cb+rgPjnLHYyJm11tInuJn+cw==}
+    peerDependencies:
+      graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
+    peerDependenciesMeta:
+      graphql:
+        optional: true
 
   '@ampproject/remapping@2.3.0':
     resolution: {integrity: sha512-30iZtAPgz+LTIYoeivqYo853f02jBYSd5uGnGpkFV0M3xOt9aN73erkgYAmZU43x4VfqcnLxW9Kpg3R5LC4YYw==}
@@ -514,6 +525,12 @@ packages:
 
   '@manypkg/get-packages@1.1.3':
     resolution: {integrity: sha512-fo+QhuU3qE/2TQMQmbVMqaQ6EWbMhi4ABWP+O4AM1NqPBuy0OrApV5LO6BrrgnhtAHS2NH6RrVk9OL181tTi8A==}
+
+  '@mina-js/klesia-utils@https://pkg.pr.new/DeMonkeyCoder/mina-js/@mina-js/klesia-utils@7dcfc5a':
+    resolution: {tarball: https://pkg.pr.new/DeMonkeyCoder/mina-js/@mina-js/klesia-utils@7dcfc5a}
+    version: 0.1.0
+    peerDependencies:
+      typescript: ^5.0.0
 
   '@mina-js/utils@https://pkg.pr.new/palladians/mina-js/@mina-js/utils@d652e7a':
     resolution: {tarball: https://pkg.pr.new/palladians/mina-js/@mina-js/utils@d652e7a}
@@ -864,6 +881,9 @@ packages:
   '@types/ws@8.5.13':
     resolution: {integrity: sha512-osM/gWBTPKgHV8XkTunnegTRIsvF6owmf5w+JtAfOw472dptdm0dlGv4xCt6GwQRcC2XVOvvRE/0bAoQcL2QkA==}
 
+  '@urql/core@5.1.1':
+    resolution: {integrity: sha512-aGh024z5v2oINGD/In6rAtVKTm4VmQ2TxKQBAtk2ZSME5dunZFcjltw4p5ENQg+5CBhZ3FHMzl0Oa+rwqiWqlg==}
+
   '@vitest/coverage-v8@1.0.4':
     resolution: {integrity: sha512-xD6Yuql6RW0Ir/JJIs6rVrmnG2/KOWJF+IRX1oJQk5wGKGxbtdrYPbl+WTUn/4ICCQ2G20zbE1e8/nPNyAG5Vg==}
     peerDependencies:
@@ -976,6 +996,7 @@ packages:
 
   bun@1.1.30:
     resolution: {integrity: sha512-ysRL1pq10Xba0jqVLPrKU3YIv0ohfp3cTajCPtpjCyppbn3lfiAVNpGoHfyaxS17OlPmWmR67UZRPw/EueQuug==}
+    cpu: [arm64, x64]
     os: [darwin, linux, win32]
     hasBin: true
 
@@ -1782,6 +1803,10 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
+  serialize-error@12.0.0:
+    resolution: {integrity: sha512-ZYkZLAvKTKQXWuh5XpBw7CdbSzagarX39WyZ2H07CDLC5/KfsRGlIXV8d4+tfqX1M7916mRqR1QfNHSij+c9Pw==}
+    engines: {node: '>=18'}
+
   shebang-command@1.2.0:
     resolution: {integrity: sha512-EV3L1+UQWGor21OmnvojK36mhg+TyIKDh3iFBKBohr5xeXIhNBcx8oWdgkTEEQ+BEFFYdLRuqMfd5L84N1V5Vg==}
     engines: {node: '>=0.10.0'}
@@ -1942,6 +1967,10 @@ packages:
     resolution: {integrity: sha512-8iGv75BYOa0xRJHK5vRLEjE2H/i4lulTjzpUXic3Eg8akftYjkmQDa8JARQ42rlczXyFR3IeRoeFCc7RxHsYZA==}
     engines: {node: '>=16'}
 
+  superjson@2.2.2:
+    resolution: {integrity: sha512-5JRxVqC8I8NuOUjzBbvVJAKNM8qoVuH0O77h4WInc/qC2q5IreqKxYwgkga3PfA22OayK2ikceb/B26dztPl+Q==}
+    engines: {node: '>=16'}
+
   supports-color@7.2.0:
     resolution: {integrity: sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw==}
     engines: {node: '>=8'}
@@ -2008,6 +2037,10 @@ packages:
   type-detect@4.1.0:
     resolution: {integrity: sha512-Acylog8/luQ8L7il+geoSxhEkazvkslg7PSNKOX59mbB9cOveP5aq9h74Y7YU8yDpJwetzQQrfIwtf4Wp4LKcw==}
     engines: {node: '>=4'}
+
+  type-fest@4.38.0:
+    resolution: {integrity: sha512-2dBz5D5ycHIoliLYLi0Q2V7KRaDlH0uWIvmk7TYlAg5slqwiPv1ezJdZm1QEM0xgk29oYWMCbIG7E6gHpvChlg==}
+    engines: {node: '>=16'}
 
   typescript@5.3.3:
     resolution: {integrity: sha512-pXWcraxM0uxAS+tN0AG/BF2TyqmHO014Z070UsJ+pFvYuRSq8KH8DmWpnbXe0pEPDHXZV3FcAbJkijJ5oNEnWw==}
@@ -2159,6 +2192,9 @@ packages:
     engines: {node: '>=8'}
     hasBin: true
 
+  wonka@6.3.5:
+    resolution: {integrity: sha512-SSil+ecw6B4/Dm7Pf2sAshKQ5hWFvfyGlfPbEd6A14dOH6VDjrmbY86u6nZvy9omGwwIPFR8V41+of1EezgoUw==}
+
   wrap-ansi@7.0.0:
     resolution: {integrity: sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q==}
     engines: {node: '>=10'}
@@ -2214,6 +2250,8 @@ packages:
     resolution: {integrity: sha512-lY7CDW43ECgW9u1TcT3IoXHflywfVqDYze4waEz812jR/bZ8FHDsl7pFQoSZTz5N+2NqRXs8GBwnAwo3ZNxqhQ==}
 
 snapshots:
+
+  '@0no-co/graphql.web@1.1.2': {}
 
   '@ampproject/remapping@2.3.0':
     dependencies:
@@ -2579,6 +2617,16 @@ snapshots:
       globby: 11.1.0
       read-yaml-file: 1.1.0
 
+  '@mina-js/klesia-utils@https://pkg.pr.new/DeMonkeyCoder/mina-js/@mina-js/klesia-utils@7dcfc5a(typescript@5.8.2)':
+    dependencies:
+      '@urql/core': 5.1.1
+      mina-signer: 3.0.7
+      serialize-error: 12.0.0
+      superjson: 2.2.2
+      typescript: 5.8.2
+    transitivePeerDependencies:
+      - graphql
+
   '@mina-js/utils@https://pkg.pr.new/palladians/mina-js/@mina-js/utils@d652e7a(typescript@5.6.2)':
     dependencies:
       mina-signer: 3.0.7
@@ -2867,6 +2915,13 @@ snapshots:
   '@types/ws@8.5.13':
     dependencies:
       '@types/node': 20.16.12
+
+  '@urql/core@5.1.1':
+    dependencies:
+      '@0no-co/graphql.web': 1.1.2
+      wonka: 6.3.5
+    transitivePeerDependencies:
+      - graphql
 
   '@vitest/coverage-v8@1.0.4(vitest@1.0.4)':
     dependencies:
@@ -3832,6 +3887,10 @@ snapshots:
 
   semver@7.6.3: {}
 
+  serialize-error@12.0.0:
+    dependencies:
+      type-fest: 4.38.0
+
   shebang-command@1.2.0:
     dependencies:
       shebang-regex: 1.0.0
@@ -3955,6 +4014,10 @@ snapshots:
     dependencies:
       copy-anything: 3.0.5
 
+  superjson@2.2.2:
+    dependencies:
+      copy-anything: 3.0.5
+
   supports-color@7.2.0:
     dependencies:
       has-flag: 4.0.0
@@ -4010,6 +4073,8 @@ snapshots:
   tslib@2.8.1: {}
 
   type-detect@4.1.0: {}
+
+  type-fest@4.38.0: {}
 
   typescript@5.3.3: {}
 
@@ -4166,6 +4231,8 @@ snapshots:
     dependencies:
       siginfo: 2.0.0
       stackback: 0.0.2
+
+  wonka@6.3.5: {}
 
   wrap-ansi@7.0.0:
     dependencies:

@@ -156,6 +156,7 @@ type ChainNativeCurrency = {
 }
 
 type ChainRpcUrls = {
-  http: readonly string[]
+  graphql: readonly string[]
+  http?: readonly string[] | undefined
   webSocket?: readonly string[] | undefined
 }
