@@ -101,8 +101,8 @@
     }
   },
   "dependencies": {
-    "@mina-js/klesia-utils": "https://pkg.pr.new/palladians/mina-js/@mina-js/klesia-utils@b5e48fd",
-    "@mina-js/utils": "https://pkg.pr.new/palladians/mina-js/@mina-js/utils@d652e7a",
+    "@mina-js/klesia-utils": "https://pkg.pr.new/palladians/mina-js/@mina-js/klesia-utils@e944086",
+    "@mina-js/utils": "https://pkg.pr.new/palladians/mina-js/@mina-js/utils@e944086",
     "@noble/hashes": "1.6.1",
     "@scure/bip32": "1.6.0",
     "@scure/bip39": "1.5.0",
