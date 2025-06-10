@@ -1,0 +1,125 @@
+name: Test and Publish
+
+on:
+  push:
+    branches:
+      - '**'
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      max-parallel: 3
+      matrix:
+        transport-mode: ['http']
+        shard: [1, 2, 3]
+        total-shards: [3]
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v4
+        with: 
+          submodules: 'recursive'
+
+      - name: Set up pnpm and install dependencies
+        uses: DeMonkeyCoder/wagmina-actions/.github/actions/pnpm@main
+
+      - name: Run tests
+        uses: nick-fields/retry@v3
+        with:
+          timeout_minutes: 10
+          max_attempts: 3
+          command: pnpm test:ci --shard=${{ matrix.shard }}/${{ matrix.total-shards }}
+        env:
+          VITE_NETWORK_TRANSPORT_MODE: ${{ matrix.transport-mode }}
+
+  test-envs:
+    name: Test Environments
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        type: ['bun', 'node-18', 'node-20', 'node-latest', 'next', 'tsc', 'vite']
+        include:
+          - type: bun
+            runtime: bun
+          - type: node-18
+            node-version: 18
+            runtime: node
+          - type: node-20
+            node-version: 20
+            runtime: node
+          - type: node-latest
+            node-version: latest
+            runtime: node
+          - type: next
+            runtime: next
+          - type: tsc
+            node-version: 20
+            runtime: tsc
+          - type: vite
+            runtime: vite
+
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v4
+        with: 
+          submodules: 'recursive'
+
+      - name: Set up Bun
+        if: ${{ matrix.runtime == 'bun' }}
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.0.30
+
+      - name: Set up Node
+        if: ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Set up pnpm and install dependencies
+        uses: DeMonkeyCoder/wagmina-actions/.github/actions/pnpm@main
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install Playwright Browsers
+        if: ${{ matrix.runtime == 'next' || matrix.runtime == 'vite' }}
+        run: pnpx playwright@1.52.0 install --with-deps
+
+      - name: Build
+        run: pnpm build
+
+      - name: Link
+        run: pnpm install
+
+      - name: Run tests
+        run: pnpm test:env:${{ matrix.runtime }}
+
+  publish:
+    runs-on: ubuntu-latest
+    needs: [test, test-envs]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build packages
+        run: pnpm build
+
+      - name: Publish preview packages
+        run: pnpm dlx pkg-pr-new publish './src'
