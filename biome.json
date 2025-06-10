@@ -19,7 +19,7 @@
       "tsconfig.json",
       "tsconfig.*.json",
       "generated.ts",
-      "wagmi",
+      "wagmina",
       "site/dist"
     ]
   },

@@ -12,7 +12,7 @@ coverage
 node_modules
 environments/**/test-results
 tsconfig*.tsbuildinfo
-wagmi
+wagmina
 src/node/trustedSetups_esm.ts
 **/trusted-setups/**/*.txt
 .idea
