@@ -5,7 +5,7 @@ import { Client } from './client'
 export default async function Home() {
   const client = createPublicClient({
     chain: mainnet,
-    transport: http('https://mainnet.klesia.palladians.xyz/api'),
+    transport: http('https://api.minascan.io/node/mainnet/v1/graphql'),
   })
 
   await client.getBlockHash()

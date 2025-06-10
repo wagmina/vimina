@@ -89,7 +89,10 @@ importers:
     dependencies:
       next:
         specifier: 14.2.15
-        version: 14.2.15(@playwright/test@1.41.2)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        version: 14.2.15(@playwright/test@1.52.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      o1js:
+        specifier: ^1.*
+        version: 1.9.1
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -101,8 +104,8 @@ importers:
         version: file:src(typescript@5.6.2)
     devDependencies:
       '@playwright/test':
-        specifier: 1.41.2
-        version: 1.41.2
+        specifier: 1.52.0
+        version: 1.52.0
       '@types/node':
         specifier: ^20.8.3
         version: 20.16.12
@@ -138,8 +141,8 @@ importers:
         version: file:src(typescript@5.6.2)
     devDependencies:
       '@playwright/test':
-        specifier: 1.41.2
-        version: 1.41.2
+        specifier: 1.52.0
+        version: 1.52.0
       '@types/node':
         specifier: ^20.8.3
         version: 20.16.12
@@ -754,10 +757,9 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@playwright/test@1.41.2':
-    resolution: {integrity: sha512-qQB9h7KbibJzrDpkXkYvsmiDJK14FULCCZgEcoe2AvFAS64oCirWTwzTlAYEbKaRxWs5TFesE1Na6izMv3HfGg==}
-    engines: {node: '>=16'}
-    deprecated: Please update to the latest version of Playwright to test up-to-date browsers.
+  '@playwright/test@1.52.0':
+    resolution: {integrity: sha512-uh6W7sb55hl7D6vsAeA+V2p5JnlAqzhqFyF0VcJkKZXkgnFcVG9PziERRHQfPLfNGx1C292a4JqbWzhR8L4R1g==}
+    engines: {node: '>=18'}
     hasBin: true
 
   '@polka/url@1.0.0-next.28':
@@ -1846,14 +1848,14 @@ packages:
   pkg-types@1.2.1:
     resolution: {integrity: sha512-sQoqa8alT3nHjGuTjuKgOnvjo4cljkufdtLMnO2LBP/wRwuDlo1tkaEdMxCRhyGRPacv/ztlZgDPm2b7FAmEvw==}
 
-  playwright-core@1.41.2:
-    resolution: {integrity: sha512-VaTvwCA4Y8kxEe+kfm2+uUUw5Lubf38RxF7FpBxLPmGe5sdNkSg5e3ChEigaGrX7qdqT3pt2m/98LiyvU2x6CA==}
-    engines: {node: '>=16'}
+  playwright-core@1.52.0:
+    resolution: {integrity: sha512-l2osTgLXSMeuLZOML9qYODUQoPPnUsKsb5/P6LJ2e6uPKXUdPK5WYhN4z03G+YNbWmGDY4YENauNu4ZKczreHg==}
+    engines: {node: '>=18'}
     hasBin: true
 
-  playwright@1.41.2:
-    resolution: {integrity: sha512-v0bOa6H2GJChDL8pAeLa/LZC4feoAMbSQm1/jF/ySsWWoaNItvrMP7GEkvEEFyCTUYKMxjQKaTSg5up7nR6/8A==}
-    engines: {node: '>=16'}
+  playwright@1.52.0:
+    resolution: {integrity: sha512-JAwMNMBlxJ2oD1kce4KPtMkDeKGHQstdpFPcPH3maElAXon/QZeTvtsfXmTMRyO9TslfoYOXkSsvao2nE1ilTw==}
+    engines: {node: '>=18'}
     hasBin: true
 
   postcss@8.4.31:
@@ -3062,9 +3064,9 @@ snapshots:
   '@oven/bun-windows-x64@1.1.30':
     optional: true
 
-  '@playwright/test@1.41.2':
+  '@playwright/test@1.52.0':
     dependencies:
-      playwright: 1.41.2
+      playwright: 1.52.0
 
   '@polka/url@1.0.0-next.28': {}
 
@@ -3978,7 +3980,7 @@ snapshots:
     dependencies:
       picocolors: 1.1.1
 
-  next@14.2.15(@playwright/test@1.41.2)(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
+  next@14.2.15(@playwright/test@1.52.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
     dependencies:
       '@next/env': 14.2.15
       '@swc/helpers': 0.5.5
@@ -3999,7 +4001,7 @@ snapshots:
       '@next/swc-win32-arm64-msvc': 14.2.15
       '@next/swc-win32-ia32-msvc': 14.2.15
       '@next/swc-win32-x64-msvc': 14.2.15
-      '@playwright/test': 1.41.2
+      '@playwright/test': 1.52.0
     transitivePeerDependencies:
       - '@babel/core'
       - babel-plugin-macros
@@ -4151,11 +4153,11 @@ snapshots:
       mlly: 1.7.2
       pathe: 1.1.2
 
-  playwright-core@1.41.2: {}
+  playwright-core@1.52.0: {}
 
-  playwright@1.41.2:
+  playwright@1.52.0:
     dependencies:
-      playwright-core: 1.41.2
+      playwright-core: 1.52.0
     optionalDependencies:
       fsevents: 2.3.2
 
