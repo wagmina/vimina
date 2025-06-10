@@ -42,13 +42,10 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        type: ['bun', 'node-18', 'node-20', 'node-latest', 'next', 'tsc', 'vite']
+        type: ['bun', 'node-20', 'node-latest', 'next', 'tsc', 'vite']
         include:
           - type: bun
             runtime: bun
-          - type: node-18
-            node-version: 18
-            runtime: node
           - type: node-20
             node-version: 20
             runtime: node
