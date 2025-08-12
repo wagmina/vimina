@@ -120,6 +120,9 @@ export async function sendTransaction<
       case 'zkapp': {
         const auroWalletTransactionParams: SendTransactionArgs = {
           transaction: JSON.stringify(parameters.zkappCommand),
+          nonce: parameters.feePayer?.nonce
+            ? Number(parameters.feePayer.nonce)
+            : undefined,
           // @ts-ignore for exactOptionalPropertyTypes
           feePayer: parameters.feePayer
             ? {

@@ -129,6 +129,9 @@ export async function signTransaction<
                 memo: parameters.feePayer.memo,
               }
             : undefined,
+          nonce: parameters.feePayer?.nonce
+            ? Number(parameters.feePayer.nonce)
+            : undefined,
           onlySign: true,
         }
         const res = (await client.request(
