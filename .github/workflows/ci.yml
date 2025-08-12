@@ -79,7 +79,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Set up pnpm and install dependencies
-        uses: DeMonkeyCoder/wagmina-actions/.github/actions/pnpm@main
+        uses: wagmina/actions/.github/actions/pnpm@main
         with:
           node-version: ${{ matrix.node-version }}
 

@@ -112,8 +112,8 @@
     "ws": "8.18.0"
   },
   "license": "MIT",
-  "homepage": "https://github.com/DeMonkeyCoder/vimina",
-  "repository": "DeMonkeyCoder/vimina",
+  "homepage": "https://github.com/wagmina/vimina",
+  "repository": "wagmina/vimina",
   "keywords": [
     "mina",
     "dapps",
