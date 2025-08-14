@@ -91,6 +91,9 @@ export async function signTransaction<
   if (!account_) throw new AccountNotFoundError()
   const account = parseAccount(account_)
 
+  // biome-ignore lint/suspicious/noConsoleLog: <explanation>
+  console.log({ parameters })
+
   assertRequest({
     account,
     ...parameters,
@@ -114,6 +117,8 @@ export async function signTransaction<
 
   switch (parameters.type) {
     case 'zkapp': {
+      // biome-ignore lint/suspicious/noConsoleLog: <explanation>
+      console.log('zkapp')
       /* TODO: remove this try catch block after having a standard way of
            signing transactions with both AuroWallet and Pallad */
       // First try it AuroWallet's way
@@ -134,6 +139,8 @@ export async function signTransaction<
             : undefined,
           onlySign: true,
         }
+        // biome-ignore lint/suspicious/noConsoleLog: <explanation>
+        console.log({ auroWalletTransactionParams })
         const res = (await client.request(
           {
             // @ts-ignore
@@ -143,6 +150,8 @@ export async function signTransaction<
           },
           { retryCount: 0 },
         )) as { signedData: string }
+        // biome-ignore lint/suspicious/noConsoleLog: <explanation>
+        console.log({ res })
         return JSON.parse(res.signedData)
           .zkappCommand as SignTransactionReturnType<transactionType>
       } catch (e: any) {
