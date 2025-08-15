@@ -99,13 +99,19 @@ export async function signTransaction<
     ...parameters,
   })
 
+  // biome-ignore lint/suspicious/noConsoleLog: <explanation>
+  console.log('assertRequest done')
   const networkId = await getAction(client, getNetworkId, 'getNetworkId')({})
+  // biome-ignore lint/suspicious/noConsoleLog: <explanation>
+  console.log({ networkId })
   if (chain !== null)
     assertCurrentChain({
       currentNetworkId: networkId,
       chain,
     })
 
+  // biome-ignore lint/suspicious/noConsoleLog: <explanation>
+  console.log('assertRequest done')
   // if (account.signTransaction)
   //   return account.signTransaction(
   //     {
