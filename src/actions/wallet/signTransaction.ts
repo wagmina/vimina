@@ -103,7 +103,7 @@ export async function signTransaction<
   console.log('assertRequest done')
   const networkId = await getAction(client, getNetworkId, 'getNetworkId')({})
   // biome-ignore lint/suspicious/noConsoleLog: <explanation>
-  console.log({ networkId })
+  console.log({ networkId, chain })
   if (chain !== null)
     assertCurrentChain({
       currentNetworkId: networkId,
@@ -111,7 +111,7 @@ export async function signTransaction<
     })
 
   // biome-ignore lint/suspicious/noConsoleLog: <explanation>
-  console.log('assertRequest done')
+  console.log('assertCurrentChain done')
   // if (account.signTransaction)
   //   return account.signTransaction(
   //     {
