@@ -13,12 +13,25 @@ export async function getNetworkId<
   chain extends Chain | undefined,
   account extends Account | undefined,
 >(client: Client<Transport, chain, account>): Promise<GetNetworkIdReturnType> {
-  return (
-    await client.request(
+  let networkIdResponse: any
+  // First try it Pallad's way
+  try {
+    networkIdResponse = await client.request(
       {
         method: 'mina_networkId',
       },
       { dedupe: true },
     )
-  ).split(':')[1]
+    if (typeof networkIdResponse === 'string')
+      return networkIdResponse.split(':')[1]
+  } catch (_e) {}
+  // Try it AuroWallet's way
+  networkIdResponse = await client.request(
+    {
+      // @ts-ignore
+      method: 'mina_requestNetwork',
+    },
+    { dedupe: true },
+  )
+  return networkIdResponse.networkID.split(':')[1]
 }
