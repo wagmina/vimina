@@ -26,10 +26,6 @@ export type {
   GetTransactionCountReturnType,
 } from './actions/public/getTransactionCount.js'
 export type {
-  GetPermissionsErrorType,
-  GetPermissionsReturnType,
-} from './actions/wallet/getPermissions.js'
-export type {
   OnBlockHashFn,
   OnBlockHashParameter,
   WatchBlockHashErrorType,
@@ -40,11 +36,6 @@ export type {
   RequestAddressesErrorType,
   RequestAddressesReturnType,
 } from './actions/wallet/requestAddresses.js'
-export type {
-  RequestPermissionsErrorType,
-  RequestPermissionsReturnType,
-  RequestPermissionsParameters,
-} from './actions/wallet/requestPermissions.js'
 export type {
   SendSignedTransactionErrorType,
   SendSignedTransactionParameters,
@@ -322,20 +313,9 @@ export type {
   ProviderConnectInfo,
   ProviderMessage,
   PublicRpcSchema,
-  NetworkSync,
   RpcSchema,
   RpcSchemaOverride,
-  WalletCapabilities,
-  WalletCapabilitiesRecord,
-  WalletCallReceipt,
-  WalletGetCallsStatusReturnType,
-  WalletGrantPermissionsParameters,
-  WalletGrantPermissionsReturnType,
-  WalletSendCallsParameters,
-  WalletPermissionCaveat,
-  WalletPermission,
   WalletRpcSchema,
-  WatchAssetParams,
 } from './types/jsApiStandard.js'
 export { ProviderRpcError as JSAPIStandardProviderRpcError } from './types/jsApiStandard.js'
 export type { GetTransportConfig, GetPollOptions } from './types/transport.js'

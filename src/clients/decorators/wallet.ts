@@ -12,18 +12,9 @@ import {
   getAddresses,
 } from '../../actions/wallet/getAddresses.js'
 import {
-  type GetPermissionsReturnType,
-  getPermissions,
-} from '../../actions/wallet/getPermissions.js'
-import {
   type RequestAddressesReturnType,
   requestAddresses,
 } from '../../actions/wallet/requestAddresses.js'
-import {
-  type RequestPermissionsParameters,
-  type RequestPermissionsReturnType,
-  requestPermissions,
-} from '../../actions/wallet/requestPermissions.js'
 import {
   type SwitchChainParameters,
   switchChain,
@@ -39,11 +30,7 @@ export type WalletActions<
   addChain: (args: AddChainParameters) => Promise<void>
   getAddresses: () => Promise<GetAddressesReturnType>
   getNetworkId: () => Promise<GetNetworkIdReturnType>
-  getPermissions: () => Promise<GetPermissionsReturnType>
   requestAddresses: () => Promise<RequestAddressesReturnType>
-  requestPermissions: (
-    args: RequestPermissionsParameters,
-  ) => Promise<RequestPermissionsReturnType>
   switchChain: (args: SwitchChainParameters) => Promise<void>
 }
 
@@ -56,9 +43,7 @@ export function walletActions<
     addChain: (args) => addChain(client, args),
     getAddresses: () => getAddresses(client),
     getNetworkId: () => getNetworkId(client),
-    getPermissions: () => getPermissions(client),
     requestAddresses: () => requestAddresses(client),
-    requestPermissions: (args) => requestPermissions(client, args),
     switchChain: (args) => switchChain(client, args),
   }
 }

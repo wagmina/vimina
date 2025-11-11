@@ -32,18 +32,12 @@ export async function getTransactionCount<
   client: Client<Transport, chain, account>,
   { address, blockNumber }: GetTransactionCountParameters,
 ): Promise<GetTransactionCountReturnType> {
-  // TODO: fix this method's type
-  const accountData: {
-    nonce: string
-    balance: string
-  } = await client.request(
+  const transactionCount = await client.request(
     {
-      // @ts-ignore
-      method: 'mina_getAccount',
-      // params: [address, blockNumber ? numberToHex(blockNumber) : blockTag],
+      method: 'mina_getTransactionCount',
       params: [address],
     },
     { dedupe: Boolean(blockNumber) },
   )
-  return Number(accountData.nonce)
+  return Number(transactionCount)
 }

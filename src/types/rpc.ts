@@ -7,7 +7,7 @@ import type {
 } from './transaction.js'
 import type { OneOf } from './utils.js'
 
-export type Quantity = `0x${string}`
+export type Quantity = string
 export type RpcTransactionReceipt = TransactionReceipt
 export type RpcTransactionRequest = OneOf<
   | TransactionRequestZkApp

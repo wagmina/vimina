@@ -1,7 +1,6 @@
 import type { Address } from '../accounts/types.js'
-import type { Hex } from './misc.js'
 import type { Quantity } from './rpc.js'
-import type { OneOf, Prettify } from './utils.js'
+import type { Prettify } from './utils.js'
 
 //////////////////////////////////////////////////
 // Provider
@@ -84,136 +83,6 @@ export type AddMinaChainParameter = {
   iconUrls?: string[] | undefined
 }
 
-export type NetworkSync = {
-  /** The current block number */
-  currentBlock: Quantity
-  /** Number of latest block on the network */
-  highestBlock: Quantity
-  /** Block number at which syncing started */
-  startingBlock: Quantity
-}
-
-export type WalletCapabilities = {
-  [capability: string]: any
-}
-
-export type WalletCapabilitiesRecord<
-  capabilities extends WalletCapabilities = WalletCapabilities,
-  id extends string | number = Hex,
-> = {
-  [networkId in id]: capabilities
-}
-
-export type WalletCallReceipt<quantity = Hex, status = Hex> = {
-  logs: {
-    address: Hex
-    data: Hex
-    topics: Hex[]
-  }[]
-  status: status
-  blockHash: Hex
-  blockNumber: quantity
-  gasUsed: quantity
-  transactionHash: Hex
-}
-
-export type WalletGrantPermissionsParameters = {
-  signer?:
-    | {
-        type: string
-        data?: unknown | undefined
-      }
-    | undefined
-  permissions: readonly {
-    data: unknown
-    policies: readonly {
-      data: unknown
-      type: string
-    }[]
-    required?: boolean | undefined
-    type: string
-  }[]
-  expiry: number
-}
-
-export type WalletGrantPermissionsReturnType = {
-  expiry: number
-  factory?: `0x${string}` | undefined
-  factoryData?: string | undefined
-  grantedPermissions: readonly {
-    data: unknown
-    policies: readonly {
-      data: unknown
-      type: string
-    }[]
-    required?: boolean | undefined
-    type: string
-  }[]
-  permissionsContext: string
-  signerData?:
-    | {
-        userOpBuilder?: `0x${string}` | undefined
-        submitToAddress?: `0x${string}` | undefined
-      }
-    | undefined
-}
-
-export type WalletGetCallsStatusReturnType<quantity = Hex, status = Hex> = {
-  status: 'PENDING' | 'CONFIRMED'
-  receipts?: WalletCallReceipt<quantity, status>[] | undefined
-}
-
-export type WalletPermissionCaveat = {
-  type: string
-  value: any
-}
-
-export type WalletPermission = {
-  caveats: WalletPermissionCaveat[]
-  date: number
-  id: string
-  invoker: `http://${string}` | `https://${string}`
-  parentCapability: 'mina_accounts' | string
-}
-
-export type WalletSendCallsParameters<
-  capabilities extends WalletCapabilities = WalletCapabilities,
-  networkId extends string = string,
-  quantity extends Quantity | bigint = Quantity,
-> = [
-  {
-    calls: OneOf<
-      | {
-          to: Address
-          data?: Hex | undefined
-          value?: quantity | undefined
-        }
-      | {
-          data: Hex
-        }
-    >[]
-    capabilities?: capabilities | undefined
-    networkId: networkId
-    from: Address
-    version: string
-  },
-]
-
-export type WatchAssetParams = {
-  /** Token type. */
-  type: 'ERC20'
-  options: {
-    /** The address of the token contract */
-    address: string
-    /** A ticker symbol or shorthand, up to 11 characters */
-    symbol: string
-    /** The number of token decimals */
-    decimals: number
-    /** A string url of the token logo */
-    image?: string | undefined
-  }
-}
-
 export type PublicRpcSchema = [
   {
     Method: 'mina_blockHash'
@@ -227,7 +96,12 @@ export type PublicRpcSchema = [
   },
   {
     Method: 'mina_getBalance'
-    Parameters: [address: Address] | [address: Address, tokenId: string]
+    Parameters: [address: Address, tokenId?: string]
+    ReturnType: Quantity
+  },
+  {
+    Method: 'mina_getTransactionCount'
+    Parameters: [address: Address]
     ReturnType: Quantity
   },
 ]
@@ -254,28 +128,8 @@ export type WalletRpcSchema = [
     ReturnType: null
   },
   {
-    Method: 'wallet_getCapabilities'
-    Parameters?: [Address]
-    ReturnType: Prettify<WalletCapabilitiesRecord>
-  },
-  {
-    Method: 'wallet_getPermissions'
-    Parameters?: undefined
-    ReturnType: WalletPermission[]
-  },
-  {
-    Method: 'wallet_grantPermissions'
-    Parameters?: [WalletGrantPermissionsParameters]
-    ReturnType: Prettify<WalletGrantPermissionsReturnType>
-  },
-  {
-    Method: 'wallet_requestPermissions'
-    Parameters: [permissions: { mina_accounts: Record<string, any> }]
-    ReturnType: WalletPermission[]
-  },
-  {
     Method: 'wallet_revokePermissions'
-    Parameters: [permissions: { mina_accounts: Record<string, any> }]
+    Parameters?: undefined
     ReturnType: null
   },
   {

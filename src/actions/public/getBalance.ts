@@ -19,7 +19,7 @@ export async function getBalance<chain extends Chain | undefined>(
   client: Client<Transport, chain>,
   { address, tokenId }: GetBalanceParameters,
 ): Promise<GetBalanceReturnType> {
-  const balance: string = await client.request({
+  const balance = await client.request({
     method: 'mina_getBalance',
     params: tokenId !== undefined ? [address, tokenId] : [address],
   })

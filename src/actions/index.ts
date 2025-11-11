@@ -47,21 +47,10 @@ export {
   getAddresses,
 } from './wallet/getAddresses.js'
 export {
-  type GetPermissionsErrorType,
-  type GetPermissionsReturnType,
-  getPermissions,
-} from './wallet/getPermissions.js'
-export {
   type RequestAddressesErrorType,
   type RequestAddressesReturnType,
   requestAddresses,
 } from './wallet/requestAddresses.js'
-export {
-  type RequestPermissionsErrorType,
-  type RequestPermissionsReturnType,
-  type RequestPermissionsParameters,
-  requestPermissions,
-} from './wallet/requestPermissions.js'
 export {
   type SendSignedTransactionErrorType,
   type SendSignedTransactionParameters,
