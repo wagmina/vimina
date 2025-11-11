@@ -66,21 +66,7 @@ export type JSAPIStandardEvents = {
 // Provider Requests
 
 export type AddMinaChainParameter = {
-  /** A 0x-prefixed hexadecimal string */
-  networkId: string
-  /** The chain name. */
-  chainName: string
-  /** Native currency for the chain. */
-  nativeCurrency?:
-    | {
-        name: string
-        symbol: string
-        decimals: number
-      }
-    | undefined
-  rpcUrls: readonly string[]
-  blockExplorerUrls?: string[] | undefined
-  iconUrls?: string[] | undefined
+  url: string
 }
 
 export type PublicRpcSchema = [
@@ -113,6 +99,11 @@ export type WalletRpcSchema = [
     ReturnType: Address[]
   },
   {
+    Method: 'mina_addChain'
+    Parameters: [chain: AddMinaChainParameter]
+    ReturnType: null
+  },
+  {
     Method: 'mina_networkId'
     Parameters?: undefined
     ReturnType: string
@@ -123,18 +114,13 @@ export type WalletRpcSchema = [
     ReturnType: Address[]
   },
   {
-    Method: 'wallet_addMinaChain'
-    Parameters: [chain: AddMinaChainParameter]
+    Method: 'mina_switchChain'
+    Parameters: [networkId: string]
     ReturnType: null
   },
   {
     Method: 'wallet_revokePermissions'
     Parameters?: undefined
-    ReturnType: null
-  },
-  {
-    Method: 'mina_switchChain'
-    Parameters: [networkId: string]
     ReturnType: null
   },
 ]

@@ -16,11 +16,25 @@ export async function switchChain<
   chain extends Chain | undefined,
   account extends Account | undefined = undefined,
 >(client: Client<Transport, chain, account>, { id }: SwitchChainParameters) {
+  const caipNetworkId = `mina:${id}`
+  try {
+    await client.request(
+      {
+        method: 'mina_switchChain',
+        params: [caipNetworkId],
+      },
+      { retryCount: 0 },
+    )
+  } catch (_e) {}
+  // Try it AuroWallet's way
   await client.request(
     {
       method: 'mina_switchChain',
-      params: [id],
+      params: {
+        // @ts-ignore
+        networkID: caipNetworkId,
+      },
     },
-    { retryCount: 0 },
+    { dedupe: true, retryCount: 0 },
   )
 }

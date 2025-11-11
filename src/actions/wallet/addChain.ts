@@ -16,21 +16,29 @@ export async function addChain<
   chain extends Chain | undefined,
   account extends Account | undefined,
 >(client: Client<Transport, chain, account>, { chain }: AddChainParameters) {
-  const { id, name, nativeCurrency, rpcUrls, blockExplorers } = chain
+  const { rpcUrls, id } = chain
+  try {
+    await client.request(
+      {
+        method: 'mina_addChain',
+        params: [
+          {
+            url: rpcUrls.default.http[0],
+          },
+        ],
+      },
+      { dedupe: true, retryCount: 0 },
+    )
+  } catch (_e) {}
+  // Try it AuroWallet's way
   await client.request(
     {
-      method: 'wallet_addMinaChain',
-      params: [
-        {
-          networkId: id,
-          chainName: name,
-          nativeCurrency,
-          rpcUrls: rpcUrls.default.http,
-          blockExplorerUrls: blockExplorers
-            ? Object.values(blockExplorers).map(({ url }) => url)
-            : undefined,
-        },
-      ],
+      method: 'mina_addChain',
+      params: {
+        // @ts-ignore
+        url: rpcUrls.default.http[0],
+        name: `mina:${id}`,
+      },
     },
     { dedupe: true, retryCount: 0 },
   )
