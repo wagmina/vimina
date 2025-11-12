@@ -1,19 +1,19 @@
 import type { Hex } from './misc.js'
+import type { TransactionReceipt } from './transaction.js'
+import type { ZkappCommand } from 'o1js/dist/web/bindings/mina-transaction/gen/transaction-json.js'
 import type {
-  TransactionReceipt,
-  TransactionRequestDelegation,
-  TransactionRequestPayment,
-  TransactionRequestZkApp,
-} from './transaction.js'
-import type { OneOf } from './utils.js'
+  StakeDelegation,
+  Payment,
+} from 'o1js/dist/web/mina-signer/src/types.js'
 
 export type Quantity = string
 export type RpcTransactionReceipt = TransactionReceipt
-export type RpcTransactionRequest = OneOf<
-  | TransactionRequestZkApp
-  | TransactionRequestPayment
-  | TransactionRequestDelegation
->
+export type RpcTransactionRequest =
+  | {
+      zkappCommand: ZkappCommand
+    }
+  | StakeDelegation
+  | Payment
 type SuccessResult<result> = {
   method?: undefined
   result: result

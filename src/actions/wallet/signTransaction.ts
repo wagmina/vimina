@@ -156,10 +156,8 @@ export async function signTransaction<
           // Try it Pallad's way
           const res = (await client.request(
             {
-              // @ts-ignore
               method: 'mina_signTransaction',
               params: [
-                // @ts-ignore
                 {
                   // @ts-ignore
                   command: {
@@ -194,10 +192,8 @@ export async function signTransaction<
     case 'payment': {
       const res = (await client.request(
         {
-          // @ts-ignore
           method: 'mina_signTransaction',
           params: [
-            // @ts-ignore
             {
               // @ts-ignore
               transaction: {

@@ -1,6 +1,12 @@
 import type { Address } from '../accounts/types.js'
-import type { Quantity } from './rpc.js'
+import type {
+  Quantity,
+  RpcTransactionRequest as TransactionRequest,
+} from './rpc.js'
 import type { Prettify } from './utils.js'
+import type { TransactionRequestSigned } from './transaction.js'
+import type { ZkappCommand } from 'o1js/dist/web/bindings/mina-transaction/gen/transaction-json.js'
+import type { Signature } from './misc.js'
 
 //////////////////////////////////////////////////
 // Provider
@@ -90,6 +96,11 @@ export type PublicRpcSchema = [
     Parameters: [address: Address]
     ReturnType: Quantity
   },
+  {
+    Method: 'mina_sendSignedTransaction'
+    Parameters: [signedTransaction: Omit<TransactionRequestSigned, 'type'>]
+    ReturnType: string
+  },
 ]
 
 export type WalletRpcSchema = [
@@ -112,6 +123,16 @@ export type WalletRpcSchema = [
     Method: 'mina_requestAccounts'
     Parameters?: undefined
     ReturnType: Address[]
+  },
+  {
+    Method: 'mina_signTransaction'
+    Parameters: [request: TransactionRequest]
+    ReturnType: ZkappCommand | Signature
+  },
+  {
+    Method: 'mina_sendTransaction'
+    Parameters: [transaction: TransactionRequest]
+    ReturnType: string
   },
   {
     Method: 'mina_switchChain'
