@@ -72,9 +72,13 @@ export type {
 export type {
   TransactionReceipt,
   TransactionRequest,
+  TransactionRequestSigned,
   TransactionRequestDelegation,
+  TransactionRequestDelegationSigned,
   TransactionRequestPayment,
+  TransactionRequestPaymentSigned,
   TransactionRequestZkApp,
+  TransactionRequestZkAppSigned,
   TransactionType,
 } from './types/transaction.js'
 // biome-ignore lint/performance/noBarrelFile:
